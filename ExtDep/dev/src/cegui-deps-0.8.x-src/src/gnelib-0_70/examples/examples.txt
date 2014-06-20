@@ -1,0 +1,57 @@
+Examples for GNE, in order of implementation, oldest first
+
+exthreads -- shows the basics of creating, starting, and syncronizing with
+  threads.
+
+exuptime -- Very small example using Timer::getCurrentTime, which uses the
+  rdtsc instruction where possible.  On many systems, this is time in CPU
+  cycles since system start, so this is one way of getting system uptime.
+
+extimer -- Shows usage of the Timer class.
+
+exinput -- Shows usage of the Console class, also uses timers.
+
+exhello -- Everyone knows the "Hello World" program.  Perhaps it's been coded
+  too many times.  However, the GNE coders just plain don't care ;).
+  This is an example to show the minimum code needed to connect and send
+  data, in this case, "Hello Server (or Client)!" to the other end of the
+  connection.  This version uses asynchronous sockets.  This example program
+  should be compatable client and server with exsynchello.
+
+expacket -- Shows how to derive a new type of packet, and create the proper
+  parsing functions interacting with Buffer to allow GNE to use your packet.
+  This example does NOT show how to use the packet over the network.
+  See exhello for that.
+
+exrawtest -- Basically a test of the Buffer class.  Does show usage of the
+  Buffer class, but the usage in this case because this is a test uses the
+  class is "hackish" ways.
+  
+exaddr -- A small test for the Address class that also shows its usage.
+
+exsynchello -- Same as exhello, but uses only SyncConnections.  exsynchello
+  and exhello should be able to talk to each other, but in practice it is
+  not recommended to mix event-driven and SyncConnections, because it makes
+  for more complex code, but it is entirely possible.
+
+exnetperf -- Shows how to use the statistical functions in GNE.  This
+  example should serve well for GNE to measure network performance, as best
+  as is possible with the GNE and HawkNL APIs.
+
+exping -- Shows how to use the PingPacket API and how to create and respond
+  to PingPackets.  Also functions as a test of the PingPacket class.
+
+expong -- It's console pong.  Over the internet.  What kind of nonsense is
+  this?  Anyways, this is a COMPLETE game example showing how to do a simple
+  framework for a fully functional and correct GNE game that will expand to
+  fit most projects.  This means all error handling and the whole shebang.
+  
+exconsole -- shows off the new ConsoleBuffer/TextConsole classes, and acts
+  also as a partial test of these classes.
+  
+exbroker --  Test of ObjectBrokerServer and ObjectBrokerClient classes.  Not
+  much of an example because this usage is far from the practical usage, but
+  it does show and track the state of the ObjectBrokers while they interact.
+
+expointers -- A test for the new SmartPtr and WeakPtr reference counted
+  smart pointer classes.

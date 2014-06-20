@@ -1,0 +1,93 @@
+--- hawknl1.68/include/nl.h~	2007-03-13 15:44:17.000000000 +0100
++++ hawknl1.68/include/nl.h	2007-03-13 15:44:17.000000000 +0100
+@@ -107,11 +107,6 @@
+   #define NL_BIG_ENDIAN
+ #endif
+ 
+-/* How do we detect Solaris 64 and Linux 64 bit? */
+-#if defined WIN64
+-#define IS_64_BIT
+-#endif
+-
+ /* 8 bit */
+ typedef char NLbyte;
+ typedef unsigned char NLubyte;
+@@ -121,14 +116,9 @@
+ typedef unsigned short NLushort;
+ /* 32 bit */
+ typedef float NLfloat;
+-#ifdef IS_64_BIT
+ typedef int NLlong;             /* Longs are 64 bit on a 64 bit CPU, but integers are still 32 bit. */
+ typedef unsigned int NLulong;   /* This is, of course, not true on Windows (yet another exception), */
+                                 /* but it does not hurt. */
+-#else
+-typedef long NLlong;
+-typedef unsigned long NLulong;
+-#endif
+ /* 64 bit */
+ typedef double NLdouble;
+ /* multithread */
+--- hawknl1.68/src/sock.c~	2007-03-13 16:25:34.000000000 +0100
++++ hawknl1.68/src/sock.c	2007-03-13 16:25:34.000000000 +0100
+@@ -85,7 +85,7 @@
+ 
+ /* define INADDR_NONE if not already */
+ #ifndef INADDR_NONE
+-#define INADDR_NONE ((unsigned long) -1)
++#define INADDR_NONE ((unsigned int) -1)
+ #endif
+ 
+ /* SGI and MacOS X do not include socklen_t */
+@@ -376,7 +376,7 @@
+ static NLboolean sock_SetNonBlocking(SOCKET socket)
+ {
+     int rc;
+-    unsigned long i = 1;
++    unsigned int i = 1;
+     
+     rc = ioctl(socket, FIONBIO, &i);
+     if(rc == SOCKET_ERROR)
+@@ -1760,13 +1760,13 @@
+     port = ntohs(((struct sockaddr_in *)address)->sin_port);
+     if(port == 0)
+     {
+-        _stprintf(string, TEXT("%lu.%lu.%lu.%lu"), (addr >> 24) & 0xff, (addr >> 16)
++        _stprintf(string, TEXT("%u.%u.%u.%u"), (addr >> 24) & 0xff, (addr >> 16)
+             & 0xff, (addr >> 8) & 0xff, addr & 0xff);
+     }
+     else
+     {
+-        _stprintf(string, TEXT("%lu.%lu.%lu.%lu:%u"), (addr >> 24) & 0xff, (addr >> 16)
+-            & 0xff, (addr >> 8) & 0xff, addr & 0xff, port);
++        _stprintf(string, TEXT("%u.%u.%u.%u:%u"), (addr >> 24) & 0xff, (addr >> 16)
++            & 0xff, (addr >> 8) & 0xff, addr & 0xff, (unsigned int)port);
+     }
+     return string;
+ }
+@@ -1777,7 +1777,7 @@
+     NLulong     ipaddress, port = 0;
+     int         ret;
+ 
+-    ret = _stscanf((const NLchar *)string, (const NLchar *)TEXT("%lu.%lu.%lu.%lu:%lu"), &a1, &a2, &a3, &a4, &port);
++    ret = _stscanf((const NLchar *)string, (const NLchar *)TEXT("%u.%u.%u.%u:%u"), &a1, &a2, &a3, &a4, &port);
+ 
+     if(a1 > 255 || a2 > 255 || a3 > 255 || a4 > 255 || port > 65535 || ret < 4)
+     {
+@@ -1930,7 +1930,7 @@
+     }
+     else
+     {
+-        if(((struct sockaddr_in *)address)->sin_addr.s_addr == (unsigned long)INADDR_NONE)
++        if(((struct sockaddr_in *)address)->sin_addr.s_addr == (unsigned int)INADDR_NONE)
+         {
+             _tcsncpy(tempname, (const NLchar *)TEXT("Bad address"), (size_t)(NL_MAX_STRING_LENGTH));
+         }
+@@ -1998,7 +1998,7 @@
+     {
+         nlSetError(NL_NO_ERROR);
+     }
+-    if(((struct sockaddr_in *)address)->sin_addr.s_addr != (unsigned long)INADDR_NONE)
++    if(((struct sockaddr_in *)address)->sin_addr.s_addr != (unsigned int)INADDR_NONE)
+     {
+         /* we are already done! */
+         address->valid = NL_TRUE;

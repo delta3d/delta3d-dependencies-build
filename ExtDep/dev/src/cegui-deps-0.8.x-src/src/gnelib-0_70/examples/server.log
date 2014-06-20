@@ -1,0 +1,43 @@
+ServerConnectionListener.cpp, line   42, thrd     main: 1025b0: created
+ServerConnectionListener.cpp, line   98, thrd     main: 1025b0: Registering listen socket 0
+                  Thread.cpp, line  324, thrd     main: 1021b0: Starting Thread Timer
+                  Thread.cpp, line  124, thrd EventGen: 104b04: Thread created
+        ServerConnection.cpp, line   50, thrd EventGen: 104ad0: created
+                  Thread.cpp, line  124, thrd EventGen: 104c40: Thread created
+             EventThread.cpp, line   37, thrd EventGen: 104c40: created
+                  Thread.cpp, line  324, thrd EventGen: 104b04: Starting Thread SrvrConn
+        ServerConnection.cpp, line  106, thrd SrvrConn: 104ad0: New connection incoming from 127.0.0.1:61910
+        ServerConnection.cpp, line  166, thrd SrvrConn: 104ad0: Waiting for the client's CRP.
+                  Thread.cpp, line  124, thrd SrvrConn: 105000: Thread created
+            PacketStream.cpp, line  380, thrd SrvrConn: 105000:   Negotiated current rate: 0, rate step: 0
+            PacketStream.cpp, line   63, thrd SrvrConn: 105000: PacketStream negotiated: max: 0 requested: 0
+            PacketStream.cpp, line   64, thrd SrvrConn: 105000: created
+        ServerConnection.cpp, line  181, thrd SrvrConn: 104ad0: Got CRP, now sending CAP.
+        ServerConnection.cpp, line  261, thrd SrvrConn: 104ad0: Sent a CAP with 12 bytes.
+        ServerConnection.cpp, line  189, thrd SrvrConn: 104ad0: Unreliable connection not requested or refused.
+        ServerConnection.cpp, line  115, thrd SrvrConn: 104ad0: GNE Protocol Handshake Successful.
+          SyncConnection.cpp, line   39, thrd SrvrConn: 104fc0: created
+          SyncConnection.cpp, line   40, thrd SrvrConn: 104fc0: Wrapping Connection 104ad0 into a SyncConnection.
+                  Thread.cpp, line  324, thrd SrvrConn: 105000: Starting Thread PktStrm
+                  Thread.cpp, line  324, thrd SrvrConn: 104c40: Starting Thread EventThr
+              Connection.cpp, line  348, thrd SrvrConn: 104ad0: Registered reliable socket 1
+        ServerConnection.cpp, line  131, thrd SrvrConn: 104ad0: Starting onNewConn r: 1, u: -1
+          SyncConnection.cpp, line  138, thrd SrvrConn: 104fc0: Releasing Connection 104ad0
+          SyncConnection.cpp, line   58, thrd SrvrConn: 104fc0: destroyed
+                  Thread.cpp, line  112, thrd SrvrConn: 104b04: Thread SrvrConn Ending
+             EventThread.cpp, line  112, thrd EventGen: 104c40: onExit Event triggered.
+              Connection.cpp, line  361, thrd EventThr: 104ad0: Unregistered reliable socket 1
+              Connection.cpp, line  123, thrd EventThr: 104ad0: disconnecting r: 1, u: -1
+                  Thread.cpp, line  112, thrd  PktStrm: 105000: Thread PktStrm Ending
+             EventThread.cpp, line  103, thrd EventThr: 104c40: onDisconnect Event triggered.
+                  Thread.cpp, line  112, thrd EventThr: 104c40: Thread EventThr Ending
+             EventThread.cpp, line   57, thrd     main: 104c40: destroyed
+        ServerConnection.cpp, line   84, thrd     main: 104ad0: destroyed
+                  Thread.cpp, line  138, thrd     main: 104b04: Thread destroyed
+            PacketStream.cpp, line   96, thrd     main: 105000: destroyed
+                  Thread.cpp, line  138, thrd     main: 105000: Thread destroyed
+                  Thread.cpp, line  138, thrd     main: 104c40: Thread destroyed
+                     GNE.cpp, line   97, thrd     main: Shutting down CEG.
+                     GNE.cpp, line  103, thrd     main: GNE Shutdown begin: Closing all listeners.
+ServerConnectionListener.cpp, line  175, thrd     main: 1025b0: Unregistering listen socket 0
+ConnectionEventGenerator.cpp, line   89, thrd EventGen: 101320: Low-level HawkNL error: System error 9: Bad file descriptor.
