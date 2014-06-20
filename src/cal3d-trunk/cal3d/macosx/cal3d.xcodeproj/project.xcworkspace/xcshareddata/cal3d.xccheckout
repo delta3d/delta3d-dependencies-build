@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>64EFCFF5-363C-40FF-89FB-BE5CFDF20937</string>
+	<key>IDESourceControlProjectName</key>
+	<string>cal3d</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>851AAB0E-6C1D-4401-980E-7B37CB8A0959</key>
+		<string>http://svn.gna.org/svn/cal3d/trunk</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>cal3d/macosx/cal3d.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>851AAB0E-6C1D-4401-980E-7B37CB8A0959</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>851AAB0E-6C1D-4401-980E-7B37CB8A0959</key>
+		<string>http://svn.gna.org/svn/cal3d</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>http://svn.gna.org/svn/cal3d/trunk/cal3d/macosx/cal3d.xcodeproj</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>851AAB0E-6C1D-4401-980E-7B37CB8A0959</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryBranchesRelativeLocationKey</key>
+			<string>branches</string>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlRepositoryTagsRelativeLocationKey</key>
+			<string>tags</string>
+			<key>IDESourceControlRepositoryTrunkRelativeLocationKey</key>
+			<string>trunk</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>851AAB0E-6C1D-4401-980E-7B37CB8A0959</string>
+			<key>IDESourceControlWCCName</key>
+			<string>cal3d-trunk</string>
+		</dict>
+	</array>
+</dict>
+</plist>

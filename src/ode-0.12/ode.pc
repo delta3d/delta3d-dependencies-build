@@ -1,0 +1,11 @@
+prefix=/Users/david/development/ext/src/cegui-deps-0.8.x-src/src/ode-0.12/stage
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: ode
+Description: Open Dynamics Engine
+Version: 0.12
+Libs: -L${libdir} -lode
+Libs.private: -lstdc++ -lm
+Cflags: -I${includedir} -DdSINGLE

@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'cal3d iOS' target in the 'cal3d iOS' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
