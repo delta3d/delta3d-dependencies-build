@@ -190,6 +190,7 @@ option(DELTA3D_BUILD_CPPUNIT "Specifies whether to build the cppunit library.  D
 option(DELTA3D_BUILD_NL "Specifies whether to build the Hawk NL library.  DELTA3D" TRUE)
 option(DELTA3D_BUILD_GNE "Specifies whether to build the GNE library.  DELTA3D" TRUE)
 option(DELTA3D_BUILD_CAL3D "Specifies whether to build the cal3d library.  DELTA3D" TRUE)
+option(DELTA3D_BUILD_ALUT "Specifies whether to build the cal3d library.  ALUT" TRUE)
 
 #if (CEGUI_BUILD_SILLY OR CEGUI_BUILD_CORONA OR CEGUI_BUILD_DEVIL)
     set(CEGUI_BUILD_LIBPNG TRUE)
@@ -334,6 +335,10 @@ endif()
 
 if (DELTA3D_BUILD_CAL3D)    
    add_subdirectory(src/cal3d-trunk/CEGUI-BUILD)
+endif()
+
+if (DELTA3D_BUILD_ALUT)    
+   add_subdirectory(src/freealut-1.1.0-src)
 endif()
 
 
