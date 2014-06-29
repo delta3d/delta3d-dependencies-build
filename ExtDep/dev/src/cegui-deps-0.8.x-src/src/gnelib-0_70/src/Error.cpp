@@ -106,7 +106,7 @@ Error::ErrorCode Error::getCode() const {
   return code;
 }
 
-const void Error::setCode(Error::ErrorCode newCode) {
+void Error::setCode(Error::ErrorCode newCode) {
   code = newCode;
 }
 

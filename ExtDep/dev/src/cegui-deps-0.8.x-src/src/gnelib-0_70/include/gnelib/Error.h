@@ -96,7 +96,7 @@ public:
    * code.  The Error object still retains the low-level specific error
    * information.
    */
-  const void setCode(ErrorCode newCode);
+  void setCode(ErrorCode newCode);
 
   /**
    * Returns a string description of this error.  When possible, the string
