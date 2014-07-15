@@ -1228,7 +1228,10 @@ void CalMixer::updateSkeleton()
   }
 
   // lock the skeleton state
-  pSkeleton->lockState();
+  if ( ! m_listAnimationPose.empty())
+  {
+      pSkeleton->lockState();
+  }
 
 
   // loop through all animation cycles
@@ -1284,7 +1287,10 @@ void CalMixer::updateSkeleton()
   }
 
   // lock the skeleton state
-  pSkeleton->lockState();
+  if ( ! m_listAnimationCycle.empty())
+  {
+      pSkeleton->lockState();
+  }
 
   // let the skeleton calculate its final state
   pSkeleton->calculateState();
