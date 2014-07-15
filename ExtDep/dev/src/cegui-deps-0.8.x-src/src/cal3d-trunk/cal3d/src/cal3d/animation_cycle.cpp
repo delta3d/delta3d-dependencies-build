@@ -123,8 +123,7 @@ bool CalAnimationCycle::update(float deltaTime)
   else
   {
     // not reached target delay yet, interpolate between current and target weight
-    float factor;
-    factor = deltaTime / m_targetDelay;
+    float factor = deltaTime / m_targetDelay;
     setWeight((1.0f - factor) * getWeight() + factor * m_targetWeight);
     m_targetDelay -= deltaTime;
   }

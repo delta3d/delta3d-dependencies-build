@@ -25,6 +25,10 @@
 
 CalBone::CalBone(CalCoreBone *coreBone)
   : m_pSkeleton(0)
+  , m_accumulatedWeight(0.0f)
+  , m_accumulatedWeightAbsolute(0.0f)
+  , m_accumulatedReplacementAttenuation(0.0f)
+  , m_firstBlendScale(1.0f)
 {
   assert(coreBone);
   m_pCoreBone = coreBone;
@@ -143,7 +147,12 @@ void CalBone::blendState(float unrampedWeight, const CalVector& translation,
     // Point        1.0           1.0                 0.0               1.0 (not replace)   n/a (100%)
     // Wave         1.0           1.0                 1.0               1.0 (not replace)   1.0/(1.0+1.0) = 0.5
     // Walk         1.0           1.0                 2.0               1.0 (not replace)   1.0/(1.0+2.0) = 0.33
-    float factor = scale * attenuatedWeight / ( m_accumulatedWeightAbsolute + attenuatedWeight );
+    float fullWeight = m_accumulatedWeightAbsolute + attenuatedWeight;
+    if (fullWeight == 0.0f)
+    {
+       return;
+    }
+    float factor = scale * attenuatedWeight / fullWeight;//( m_accumulatedWeightAbsolute + attenuatedWeight );
 
     // If the scale of the first blend was not 1.0, then I will adjust the factor of the second blend
     // to compensate, 
@@ -156,7 +165,7 @@ void CalBone::blendState(float unrampedWeight, const CalVector& translation,
     m_translationAbsolute.blend(factor, newTrans);
     m_rotationAbsolute.blend(factor, rotation);
     m_accumulatedWeightAbsolute += attenuatedWeight;
-    m_firstBlendScale = 1.0;
+    m_firstBlendScale = 1.0f;
   }
   if( replace ) {
     m_accumulatedReplacementAttenuation *= ( 1.0f - rampValue );
@@ -210,7 +219,7 @@ void CalBone::calculateState()
   m_translationBoneSpace = m_pCoreBone->getTranslationBoneSpace();
 
   // Must go before the *= m_rotationAbsolute.
-  bool meshScalingOn;
+  bool meshScalingOn = false;
   if( m_meshScaleAbsolute.x != 1 || m_meshScaleAbsolute.y != 1 || m_meshScaleAbsolute.z != 1 ) {
     meshScalingOn = true;
     CalVector scalevec;

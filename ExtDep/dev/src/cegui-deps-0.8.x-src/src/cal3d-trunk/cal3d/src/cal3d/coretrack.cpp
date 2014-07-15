@@ -581,6 +581,24 @@ bool CalCoreTrack::getState(float time, CalVector& translation, CalQuaternion& r
   return true;
 }
 
+bool CalCoreTrack::getStateAtEnd(CalVector& translation, CalQuaternion& rotation) const
+{
+   std::vector<CalCoreKeyframe*>::const_reverse_iterator iteratorEndKeyframe = m_keyframes.rbegin();
+
+   if (iteratorEndKeyframe == m_keyframes.rend())
+   {
+      return false;
+   }
+
+   CalCoreKeyframe* keyframe = *iteratorEndKeyframe;
+
+   translation = keyframe->getTranslation();
+
+   rotation = keyframe->getRotation();
+
+   return true;
+}
+
 std::vector<CalCoreKeyframe *>::const_iterator CalCoreTrack::getUpperBound(float time) const
 {
 

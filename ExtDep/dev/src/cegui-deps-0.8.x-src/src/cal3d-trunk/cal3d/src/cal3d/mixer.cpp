@@ -33,6 +33,7 @@
 #include "cal3d/animation.h"
 #include "cal3d/animation_action.h"
 #include "cal3d/animation_cycle.h"
+#include "cal3d/animation_pose.h"
 
  /*****************************************************************************/
 /** Constructs the mixer instance.
@@ -78,11 +79,19 @@ CalMixer::~CalMixer()
     delete pAnimationAction;
   }
 
+  // destroy all active animation poses
+  while(!m_listAnimationPose.empty())
+  {
+    CalAnimationPose *pAnimationPose = m_listAnimationPose.front();
+    m_listAnimationPose.pop_front();
+
+    delete pAnimationPose;
+  }
+
   // destroy all active animation cycles
   while(!m_listAnimationCycle.empty())
   {
-    CalAnimationCycle *pAnimationCycle;
-    pAnimationCycle = m_listAnimationCycle.front();
+    CalAnimationCycle *pAnimationCycle = m_listAnimationCycle.front();
     m_listAnimationCycle.pop_front();
 
     delete pAnimationCycle;
@@ -620,6 +629,79 @@ bool CalMixer::blendCycle(int id, float weight, float delay)
 }
 
  /*****************************************************************************/
+/** Interpolates the weight of an animation pose.
+  *
+  * This function interpolates the weight of an animation pose to a new value
+  * in a given amount of time. If the specified animation pose is not active
+  * yet, it is activated.
+  *
+  * @param id The ID of the animation pose that should be blended.
+  * @param weight The weight to interpolate the animation pose to.
+  * @param delay The time in seconds until the new weight should be reached.
+  *
+  * @return One of the following values:
+  *         \li \b true if successful
+  *         \li \b false if an error happened
+  *****************************************************************************/
+bool CalMixer::blendPose(int id, float weight, float delay)
+{
+  if((id < 0) || (id >= (int)m_vectorAnimation.size()))
+  {
+    CalError::setLastError(CalError::INVALID_HANDLE, __FILE__, __LINE__);
+    return false;
+  }
+
+  // get the animation for the given id
+  CalAnimation *pAnimation = m_vectorAnimation[id];
+
+  // create a new animation instance if it is not active yet
+  if (pAnimation == 0)
+  {
+    // take the fast way out if we are trying to clear an inactive animation
+    if (weight == 0.0f) return true;
+
+    // get the core animation
+    CalCoreAnimation* pCoreAnimation = m_pModel->getCoreModel()->getCoreAnimation(id);
+    if (pCoreAnimation == 0) return false;
+
+    // allocate a new animation cycle instance
+    CalAnimationPose* pAnimationPose = new(std::nothrow) CalAnimationPose(pCoreAnimation);
+    if (pAnimationPose == 0)
+    {
+      CalError::setLastError(CalError::MEMORY_ALLOCATION_FAILED, __FILE__, __LINE__);
+      return false;
+    }
+
+    // insert new animation into the tables
+    m_vectorAnimation[id] = pAnimationPose;
+    m_listAnimationPose.push_front(pAnimationPose);
+
+    // blend the animation
+    return pAnimationPose->blend(weight, delay);
+  }
+
+  // check if this is really a animation pose instance
+  if (pAnimation->getType() != CalAnimation::TYPE_POSE)
+  {
+      CalError::setLastError(CalError::INVALID_ANIMATION_TYPE, __FILE__, __LINE__);
+      return false;
+  }
+
+  // clear the animation pose from the active vector if the target weight is zero
+  if (weight == 0.0f)
+  {
+      m_vectorAnimation[id] = 0;
+  }
+
+  // cast it to an animation pose
+  CalAnimationCycle* pAnimationPose = (CalAnimationCycle *)pAnimation;
+
+  // blend the animation pose
+  pAnimationPose->blend(weight, delay);
+  return true;
+}
+
+ /*****************************************************************************/
 /** Fades an animation cycle out.
   *
   * This function fades an animation cycle out in a given amount of time.
@@ -643,8 +725,7 @@ bool CalMixer::clearCycle(int id, float delay)
   }
 
   // get the animation for the given id
-  CalAnimation *pAnimation;
-  pAnimation = m_vectorAnimation[id];
+  CalAnimation *pAnimation = m_vectorAnimation[id];
 
   // we can only clear cycles that are active
   if(pAnimation == 0) return true;
@@ -660,8 +741,7 @@ bool CalMixer::clearCycle(int id, float delay)
   m_vectorAnimation[id] = 0;
 
   // cast it to an animation cycle
-  CalAnimationCycle *pAnimationCycle;
-  pAnimationCycle = (CalAnimationCycle *)pAnimation;
+  CalAnimationCycle* pAnimationCycle = (CalAnimationCycle *)pAnimation;
 
   // set animation cycle to async state
   pAnimationCycle->setAsync(m_animationTime, m_animationDuration);
@@ -669,6 +749,43 @@ bool CalMixer::clearCycle(int id, float delay)
   // blend the animation cycle
   pAnimationCycle->blend(0.0f, delay);
   pAnimationCycle->checkCallbacks(0, m_pModel);
+  return true;
+}
+
+bool CalMixer::clearPose(int id, float delay)
+{
+  // check if the animation id is valid
+  if((id < 0) || (id >= (int)m_vectorAnimation.size()))
+  {
+    CalError::setLastError(CalError::INVALID_HANDLE, __FILE__, __LINE__);
+    return false;
+  }
+
+  // get the animation for the given id
+  CalAnimation* pAnimation = m_vectorAnimation[id];
+
+  // we can only clear poses that are active
+  if(pAnimation == 0) return true;
+
+  // check if this is really a animation pose instance
+  if(pAnimation->getType() != CalAnimation::TYPE_POSE)
+  {
+      CalError::setLastError(CalError::INVALID_ANIMATION_TYPE, __FILE__, __LINE__);
+      return false;
+  }
+
+  // clear the animation pose from the active vector
+  m_vectorAnimation[id] = 0;
+
+  // cast it to an animation pose
+  CalAnimationPose* pAnimationPose = (CalAnimationPose *)pAnimation;
+
+  // set animation pose to async state
+  pAnimationPose->setAsync(m_animationTime, m_animationDuration);
+
+  // blend the animation pose
+  pAnimationPose->blend(0.0f, delay);
+
   return true;
 }
 
@@ -836,7 +953,29 @@ void CalMixer::updateAnimation(float deltaTime)
     }
   }
 
-  // todo: update all active animation poses of this model
+
+  // update all active animation poses of this model
+  CalAnimationPose* curPose = NULL;
+  std::list<CalAnimationPose *>::iterator iteratorAnimationPose;
+  iteratorAnimationPose = m_listAnimationPose.begin();
+  while(iteratorAnimationPose != m_listAnimationPose.end())
+  {
+     curPose = *iteratorAnimationPose;
+
+    // update and check if animation pose is still active
+    if(curPose->update(deltaTime))
+    {
+      ++iteratorAnimationPose;
+    }
+    else
+    {
+      // animation pose has ended, destroy and remove it from the animation list
+      delete curPose;
+      curPose = NULL;
+      iteratorAnimationPose = m_listAnimationPose.erase(iteratorAnimationPose);
+    }
+  }
+
 
   // update the weight of all active animation cycles of this model
   std::list<CalAnimationCycle *>::iterator iteratorAnimationCycle;
@@ -846,26 +985,31 @@ void CalMixer::updateAnimation(float deltaTime)
   accumulatedWeight = 0.0f;
   accumulatedDuration = 0.0f;
 
+  CalCoreAnimation* curCoreCycle = NULL;
+  CalAnimationCycle* curCycle = NULL;
   while(iteratorAnimationCycle != m_listAnimationCycle.end())
   {
+     curCycle = *iteratorAnimationCycle;
+
     // update and check if animation cycle is still active
-    if((*iteratorAnimationCycle)->update(deltaTime))
+    if(curCycle->update(deltaTime))
     {
       // check if it is in sync. if yes, update accumulated weight and duration
-      if((*iteratorAnimationCycle)->getState() == CalAnimation::STATE_SYNC)
+      if(curCycle->getState() == CalAnimation::STATE_SYNC)
       {
-        accumulatedWeight += (*iteratorAnimationCycle)->getWeight();
-        accumulatedDuration += (*iteratorAnimationCycle)->getWeight() * (*iteratorAnimationCycle)->getCoreAnimation()->getDuration();
+        accumulatedWeight += curCycle->getWeight();
+        accumulatedDuration += curCycle->getWeight() * curCycle->getCoreAnimation()->getDuration();
       }
 
-      (*iteratorAnimationCycle)->checkCallbacks(m_animationTime,m_pModel);
+      curCycle->checkCallbacks(m_animationTime,m_pModel);
       ++iteratorAnimationCycle;
     }
     else
     {
       // animation cycle has ended, destroy and remove it from the animation list
-      (*iteratorAnimationCycle)->completeCallbacks(m_pModel);
-      delete (*iteratorAnimationCycle);
+      curCycle->completeCallbacks(m_pModel);
+      delete curCycle;
+      curCycle = NULL;
       iteratorAnimationCycle = m_listAnimationCycle.erase(iteratorAnimationCycle);
     }
   }
@@ -998,7 +1142,7 @@ void CalMixer::updateSkeleton()
 
   // The bone adjustments are "replace" so they have to go first, giving them
   // highest priority and full influence.  Subsequent animations affecting the same bones, 
-  // including subsequent replace animations, will have their incluence attenuated appropriately.
+  // including subsequent replace animations, will have their influence attenuated appropriately.
   applyBoneAdjustments();
 
   // loop through all animation actions
@@ -1043,6 +1187,49 @@ void CalMixer::updateSkeleton()
 
   // lock the skeleton state
   pSkeleton->lockState();
+
+
+  // loop through all animation poses
+  CalAnimationPose* pAnimPose = NULL;
+  std::list<CalAnimationPose *>::iterator iteratorAnimationPose;
+  iteratorAnimationPose = m_listAnimationPose.begin();
+  while (iteratorAnimationPose != m_listAnimationPose.end())
+  {
+     pAnimPose = *iteratorAnimationPose;
+    CalCoreAnimation* pCoreAnimation = pAnimPose->getCoreAnimation();
+
+    // get the list of core tracks of above core animation
+    std::list<CalCoreTrack *>& listCoreTrack = pCoreAnimation->getListCoreTrack();
+
+    // loop through all core tracks of the core animation
+    CalCoreTrack* pTrack = NULL;
+    std::list<CalCoreTrack *>::iterator iteratorCoreTrack;
+    for(iteratorCoreTrack = listCoreTrack.begin(); iteratorCoreTrack != listCoreTrack.end(); ++iteratorCoreTrack)
+    {
+      pTrack = *iteratorCoreTrack;
+
+      // get the appropriate bone of the track
+      CalBone *pBone = vectorBone[pTrack->getCoreBoneId()];
+
+      // get the current translation and rotation
+      CalVector translation;
+      CalQuaternion rotation;
+
+      // Time should be the end of the animation, which should be one frame long.
+      pTrack->getStateAtEnd(translation, rotation);
+
+      // blend the bone state with the new state
+      bool absoluteTrans = pTrack->getTranslationRequired();
+      float weight = pAnimPose->getWeight();
+      pBone->blendState(weight, translation, rotation, 1.0f, false, 1.0f, absoluteTrans);
+    }
+
+     ++iteratorAnimationPose;
+  }
+
+  // lock the skeleton state
+  pSkeleton->lockState();
+
 
   // loop through all animation cycles
   CalAnimationCycle* pAnimCycle = NULL;
@@ -1173,7 +1360,7 @@ float CalMixer::getTimeFactor() const
   *
   *****************************************************************************/
 
-CalModel *CalMixer::getCalModel() 
+CalModel* CalMixer::getCalModel() 
 { 
   return m_pModel;
 } 
@@ -1185,7 +1372,7 @@ CalModel *CalMixer::getCalModel()
   *
   *****************************************************************************/
 
-const CalModel *CalMixer::getCalModel() const
+const CalModel* CalMixer::getCalModel() const
 {
   return m_pModel;
 }
@@ -1197,7 +1384,7 @@ const CalModel *CalMixer::getCalModel() const
   *
   *****************************************************************************/
 
-std::vector<CalAnimation *> &CalMixer::getAnimationVector() 
+std::vector<CalAnimation *>& CalMixer::getAnimationVector() 
 { 
   return m_vectorAnimation;
 } 
@@ -1209,7 +1396,7 @@ std::vector<CalAnimation *> &CalMixer::getAnimationVector()
   *
   *****************************************************************************/
 
-const std::vector<CalAnimation *> &CalMixer::getAnimationVector() const
+const std::vector<CalAnimation *>& CalMixer::getAnimationVector() const
 {
   return m_vectorAnimation;
 }
@@ -1221,7 +1408,7 @@ const std::vector<CalAnimation *> &CalMixer::getAnimationVector() const
   *
   *****************************************************************************/
 
-std::list<CalAnimationAction *> & CalMixer::getAnimationActionList() 
+std::list<CalAnimationAction *>& CalMixer::getAnimationActionList() 
 { 
     return m_listAnimationAction;
 }
@@ -1233,33 +1420,57 @@ std::list<CalAnimationAction *> & CalMixer::getAnimationActionList()
   *
   *****************************************************************************/
 
-const std::list<CalAnimationAction *> &CalMixer::getAnimationActionList() const
+const std::list<CalAnimationAction *>& CalMixer::getAnimationActionList() const
 {
   return m_listAnimationAction;
 }
 
 /*****************************************************************************/
-/** Get the list of the cycle animation.
+/** Get the list of cycle animations.
   * 
-  * This function return the list of the cycle animation of the mixer instance.
+  * This function returns the list of cycle animations of the mixer instance.
   *
   *****************************************************************************/
 
-std::list<CalAnimationCycle *> & CalMixer::getAnimationCycle() 
+std::list<CalAnimationCycle *>& CalMixer::getAnimationCycle() 
 { 
   return m_listAnimationCycle;
 } 
 
 /*****************************************************************************/
-/** Get the list of the cycle animation.
+/** Get the list of cycle animations.
   * 
-  * This function return the list of the cycle animation of the mixer instance.
+  * This function returns the list of cycle animations.
   *
   *****************************************************************************/
 
-const std::list<CalAnimationCycle *> &CalMixer::getAnimationCycle() const
+const std::list<CalAnimationCycle *>& CalMixer::getAnimationCycle() const
 {
   return m_listAnimationCycle;
+}
+
+/*****************************************************************************/
+/** Get the list of pose animations.
+  * 
+  * This function returns the list of pose animations.
+  *
+  *****************************************************************************/
+
+std::list<CalAnimationPose *>& CalMixer::getAnimationPose()
+{
+   return m_listAnimationPose;
+}
+
+/*****************************************************************************/
+/** Get the list of pose animations.
+  * 
+  * This function returns the list of pose animations.
+  *
+  *****************************************************************************/
+
+const std::list<CalAnimationPose *>& CalMixer::getAnimationPose() const
+{
+   return m_listAnimationPose;
 }
 
 //****************************************************************************//

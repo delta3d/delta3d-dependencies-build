@@ -28,6 +28,7 @@ class CalModel;
 class CalAnimation;
 class CalAnimationAction;
 class CalAnimationCycle;
+class CalAnimationPose;
 
 struct CalMixerManualAnimationAttributes {
   bool on_;
@@ -201,6 +202,8 @@ public:
   virtual bool isDefaultMixer() const { return true; }
   bool blendCycle(int id, float weight, float delay);
   bool clearCycle(int id, float delay);
+  bool blendPose(int id, float weight, float delay);
+  bool clearPose(int id, float delay);
   bool executeAction(int id, float delayIn, float delayOut, float weightTarget = 1.0f, bool autoLock=false);
   bool removeAction(int id);
   virtual void updateAnimation(float deltaTime);
@@ -210,14 +213,16 @@ public:
   void setAnimationTime(float animationTime);
   void setTimeFactor(float timeFactor);
   float getTimeFactor() const;
-  CalModel *getCalModel();
-  const CalModel *getCalModel() const;
-  std::vector<CalAnimation *> &getAnimationVector();
-  const std::vector<CalAnimation *> &getAnimationVector() const;
-  std::list<CalAnimationAction *> &getAnimationActionList();
-  const std::list<CalAnimationAction *> &getAnimationActionList() const;
-  std::list<CalAnimationCycle *> &getAnimationCycle();
-  const std::list<CalAnimationCycle *> &getAnimationCycle() const;
+  CalModel* getCalModel();
+  const CalModel* getCalModel() const;
+  std::vector<CalAnimation *>& getAnimationVector();
+  const std::vector<CalAnimation *>& getAnimationVector() const;
+  std::list<CalAnimationAction *>& getAnimationActionList();
+  const std::list<CalAnimationAction *>& getAnimationActionList() const;
+  std::list<CalAnimationCycle *>& getAnimationCycle();
+  const std::list<CalAnimationCycle *>& getAnimationCycle() const;
+  std::list<CalAnimationPose *>& getAnimationPose();
+  const std::list<CalAnimationPose *>& getAnimationPose() const;
   bool actionOn( int coreAnimationId );
   bool stopAction( int coreAnimationId );
   bool addManualAnimation( int coreAnimationId );
@@ -239,6 +244,7 @@ protected:
   std::vector<CalAnimation *>     m_vectorAnimation;
   std::list<CalAnimationAction *> m_listAnimationAction;
   std::list<CalAnimationCycle *>  m_listAnimationCycle;
+  std::list<CalAnimationPose *>   m_listAnimationPose;
   float                           m_animationTime;
   float                           m_animationDuration;
   float                           m_timeFactor;
