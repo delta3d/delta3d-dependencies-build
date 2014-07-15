@@ -304,6 +304,10 @@
 				>
 			</File>
 			<File
+				RelativePath="animation_pose.cpp"
+				>
+			</File>
+			<File
 				RelativePath="bone.cpp"
 				>
 			</File>
@@ -494,6 +498,10 @@
 			</File>
 			<File
 				RelativePath="animation_cycle.h"
+				>
+			</File>
+			<File
+				RelativePath="animation_pose.h"
 				>
 			</File>
 			<File

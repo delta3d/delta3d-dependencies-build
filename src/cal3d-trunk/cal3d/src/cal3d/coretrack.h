@@ -50,6 +50,7 @@ public:
   unsigned int size();
 
   bool getState(float time, CalVector& translation, CalQuaternion& rotation) const;
+  bool getStateAtEnd(CalVector& translation, CalQuaternion& rotation) const;
 
   /*****************************************************************************/
   /** Returns the ID of the core bone.
