@@ -55,7 +55,7 @@ public:
   CalSpringSystem *getSpringSystem();
   const CalSpringSystem *getSpringSystem() const;
   CalBoundingBox & getBoundingBox(bool precision = false);
-  const Cal::UserData getUserData() const;
+  Cal::UserData getUserData() const;
   std::vector<CalMesh *>& getVectorMesh();
   void setLodLevel(float lodLevel);
   void setMaterialSet(int setId);

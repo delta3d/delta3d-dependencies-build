@@ -627,7 +627,7 @@ CalBoundingBox & CalModel::getBoundingBox(bool precision)
   * @return The user data stored in the model instance.
   *****************************************************************************/
 
-const Cal::UserData CalModel::getUserData() const
+Cal::UserData CalModel::getUserData() const
 {
   return m_userData;
 }

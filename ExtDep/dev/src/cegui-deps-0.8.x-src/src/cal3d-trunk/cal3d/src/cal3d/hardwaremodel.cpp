@@ -559,43 +559,7 @@ int CalHardwareModel::getTotalVertexCount() const
   *         \li \b 0 if an error happened
   *****************************************************************************/
 
-Cal::UserData CalHardwareModel::getMapUserData(int mapId)
-{
-  if( m_selectedHardwareMesh >= 0 && m_selectedHardwareMesh < int(m_vectorHardwareMesh.size()))
-  {
-    if(m_vectorHardwareMesh[m_selectedHardwareMesh].pCoreMaterial==0)
-      return 0;
-    
-    // get the map vector
-        std::vector<CalCoreMaterial::Map>& vectorMap = m_vectorHardwareMesh[m_selectedHardwareMesh].pCoreMaterial->getVectorMap();
-    
-    
-        // check if the map id is valid
-        if((mapId < 0) || (mapId >= (int)vectorMap.size()))
-        {
-      CalError::setLastError(CalError::INVALID_HANDLE, __FILE__, __LINE__);
-      return 0;
-        }
-        
-        return vectorMap[mapId].userData;
-  }
-  return 0;
-}
-
- /*****************************************************************************/
-/** Provides access to a specified map user data.
-  *
-  * This function returns the user data stored in the specified map of the
-  * material of the selected hardware mesh.
-  *
-  * @param mapId The ID of the map.
-  *
-  * @return One of the following values:
-  *         \li the user data stored in the specified map
-  *         \li \b 0 if an error happened
-  *****************************************************************************/
-
-const Cal::UserData CalHardwareModel::getMapUserData(int mapId) const
+Cal::UserData CalHardwareModel::getMapUserData(int mapId) const
 {
   if( m_selectedHardwareMesh >= 0 && m_selectedHardwareMesh < int(m_vectorHardwareMesh.size()))
   {

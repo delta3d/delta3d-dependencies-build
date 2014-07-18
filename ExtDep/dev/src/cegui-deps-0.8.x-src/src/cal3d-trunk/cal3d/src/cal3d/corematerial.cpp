@@ -140,32 +140,7 @@ const std::string& CalCoreMaterial::getMapType(int mapId)
   *         \li \b 0 if an error happened
   *****************************************************************************/
 
-Cal::UserData CalCoreMaterial::getMapUserData(int mapId)
-{
-  // check if the map id is valid
-  if((mapId < 0) || (mapId >= (int)m_vectorMap.size()))
-  {
-    CalError::setLastError(CalError::INVALID_HANDLE, __FILE__, __LINE__);
-    return 0;
-  }
-
-  return m_vectorMap[mapId].userData;
-}
-
- /*****************************************************************************/
-/** Provides access to a specified map user data.
-  *
-  * This function returns the user data stored in the specified map of the core
-  * material instance.
-  *
-  * @param mapId The ID of the map.
-  *
-  * @return One of the following values:
-  *         \li the user data stored in the specified map
-  *         \li \b 0 if an error happened
-  *****************************************************************************/
-
-const Cal::UserData CalCoreMaterial::getMapUserData(int mapId) const
+Cal::UserData CalCoreMaterial::getMapUserData(int mapId) const
 {
   // check if the map id is valid
   if((mapId < 0) || (mapId >= (int)m_vectorMap.size()))
@@ -211,20 +186,7 @@ const CalCoreMaterial::Color& CalCoreMaterial::getSpecularColor() const
   * @return The user data stored in the core material instance.
   *****************************************************************************/
 
-Cal::UserData CalCoreMaterial::getUserData()
-{
-  return m_userData;
-}
-
- /*****************************************************************************/
-/** Provides access to the user data.
-  *
-  * This function returns the user data stored in the core material instance.
-  *
-  * @return The user data stored in the core material instance.
-  *****************************************************************************/
-
-const Cal::UserData CalCoreMaterial::getUserData() const
+Cal::UserData CalCoreMaterial::getUserData() const
 {
   return m_userData;
 }

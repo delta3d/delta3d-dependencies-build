@@ -55,8 +55,7 @@ public:
   const CalVector& getTranslation() const;
   const CalVector& getTranslationAbsolute() const;
   const CalVector& getTranslationBoneSpace() const;
-  Cal::UserData getUserData();
-  const Cal::UserData getUserData() const;
+  Cal::UserData getUserData() const;
   void setCoreSkeleton(CalCoreSkeleton *pCoreSkeleton);
   void setParentId(int parentId);
   void setRotation(const CalQuaternion& rotation);
