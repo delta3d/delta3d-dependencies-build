@@ -24,7 +24,7 @@ cmake_dependent_option( CEGUI_MSVC_STATIC_RUNTIME "Specifies whether to the stat
 mark_as_advanced(CEGUI_MSVC_STATIC_RUNTIME)
 
 if (APPLE)
-    set(CEGUI_APPLE_DYLIB_INSTALL_PATH "@executable_path/../Frameworks" CACHE STRING "Specifies the install path for generated dylibs." )
+    set(CEGUI_APPLE_DYLIB_INSTALL_PATH "@executable_path/../lib" CACHE STRING "Specifies the install path for generated dylibs." )
     mark_as_advanced(CEGUI_APPLE_DYLIB_INSTALL_PATH)
 endif()
 
