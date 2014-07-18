@@ -74,8 +74,7 @@ public:
   int getTotalFaceCount() const;
   int getTotalVertexCount() const;
 
-  Cal::UserData getMapUserData(int mapId);
-  const Cal::UserData getMapUserData(int mapId) const;
+  Cal::UserData getMapUserData(int mapId) const;
   
   bool selectHardwareMesh(size_t meshId);
   

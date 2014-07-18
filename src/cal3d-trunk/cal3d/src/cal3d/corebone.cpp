@@ -258,20 +258,7 @@ const CalVector& CalCoreBone::getTranslationBoneSpace() const
   * @return The user data stored in the core bone instance.
   *****************************************************************************/
 
-Cal::UserData CalCoreBone::getUserData()
-{
-  return m_userData;
-}
-
- /*****************************************************************************/
-/** Provides access to the user data.
-  *
-  * This function returns the user data stored in the core bone instance.
-  *
-  * @return The user data stored in the core bone instance.
-  *****************************************************************************/
-
-const Cal::UserData CalCoreBone::getUserData() const
+Cal::UserData CalCoreBone::getUserData() const
 {
   return m_userData;
 }

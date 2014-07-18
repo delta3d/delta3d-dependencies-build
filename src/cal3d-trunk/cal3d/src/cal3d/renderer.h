@@ -33,8 +33,7 @@ public:
   int getFaceCount() const;
   int getFaces(CalIndex *pFaceBuffer) const;
   int getMapCount() const;
-  Cal::UserData getMapUserData(int mapId);
-  const Cal::UserData getMapUserData(int mapId) const;
+  Cal::UserData getMapUserData(int mapId) const;
   int getMeshCount() const;
   int getNormals(float *pNormalBuffer, int stride=0) const;
   float getShininess() const;

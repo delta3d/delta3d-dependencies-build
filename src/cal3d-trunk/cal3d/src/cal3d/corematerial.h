@@ -49,12 +49,10 @@ public:
   int getMapCount() const;
   const std::string& getMapFilename(int mapId) const;
   const std::string& getMapType(int mapId);
-  Cal::UserData getMapUserData(int mapId);
-  const Cal::UserData getMapUserData(int mapId) const;
+  Cal::UserData getMapUserData(int mapId) const;
   float getShininess() const;
   const Color& getSpecularColor() const;
-  Cal::UserData getUserData();
-  const Cal::UserData getUserData() const;
+  Cal::UserData getUserData() const;
   std::vector<Map>& getVectorMap();
   const std::vector<Map>& getVectorMap() const;
   bool reserve(int mapCount);

@@ -728,20 +728,7 @@ const CalCoreSkeleton *CalCoreModel::getCoreSkeleton() const
   * @return The user data stored in the core model instance.
   *****************************************************************************/
 
-Cal::UserData CalCoreModel::getUserData()
-{
-  return m_userData;
-}
-
- /*****************************************************************************/
-/** Provides access to the user data.
-  *
-  * This function returns the user data stored in the core model instance.
-  *
-  * @return The user data stored in the core model instance.
-  *****************************************************************************/
-
-const Cal::UserData CalCoreModel::getUserData() const
+Cal::UserData CalCoreModel::getUserData() const
 {
   return m_userData;
 }

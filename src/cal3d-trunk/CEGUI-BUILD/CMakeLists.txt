@@ -4,6 +4,7 @@ set(SOURCES
 ../cal3d/src/cal3d/animation.cpp
 ../cal3d/src/cal3d/animation_action.cpp
 ../cal3d/src/cal3d/animation_cycle.cpp
+../cal3d/src/cal3d/animation_pose.cpp
 ../cal3d/src/cal3d/bone.cpp
 ../cal3d/src/cal3d/buffersource.cpp
 ../cal3d/src/cal3d/cal3d_wrapper.cpp
@@ -53,6 +54,7 @@ set(HEADERS
 animation.h
 animation_action.h
 animation_cycle.h
+animation_pose.h
 animcallback.h
 bone.h
 buffersource.h

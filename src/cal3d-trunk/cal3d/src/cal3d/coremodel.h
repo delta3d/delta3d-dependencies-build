@@ -29,8 +29,7 @@ public:
   CalCoreModel(const CalCoreModel& inOther);
   ~CalCoreModel();
 
-  Cal::UserData getUserData();
-  const Cal::UserData getUserData() const;
+  Cal::UserData getUserData() const;
   void setUserData(Cal::UserData userData);
   const std::string& getName() const;
   void setName( const char* inName );
