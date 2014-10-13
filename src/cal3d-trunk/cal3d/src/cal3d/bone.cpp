@@ -159,6 +159,14 @@ void CalBone::blendState(float unrampedWeight, const CalVector& translation,
     //
     //      factor' = 1 - m_firstBlendScale * ( 1 - factor )
     //
+    if (factor != factor) // NAN?
+    {
+       factor = 0.0f;
+    }
+    else if (factor > 1.0f) // This condition may be hit by floating point error.
+    {
+       factor = 1.0f;
+    }
     assert( factor <= 1.0f );
     factor = 1.0f - m_firstBlendScale * ( 1.0f - factor );
     CalVector newTrans(absoluteTranslation ? translation : m_translation + translation);
