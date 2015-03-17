@@ -106,12 +106,11 @@ int SocketPair::rawRead(bool reliable, Buffer& buf) const {
 
   buf.clear();
   int read = nlRead( act, (NLvoid*)buf.getData(), (NLint)buf.getCapacity() );
-  if (NL_INVALID == read) {
-     buf.clear();
-  }
-  else {
-     buf.setLimit( read );
-  }
+  
+  //this if checks prevents an exception being thrown under forceful disconnect
+  //which will leave the socket in a bad state
+  if(read > 0) buf.setLimit( read );
+
   return read;
 }
 
