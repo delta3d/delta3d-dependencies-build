@@ -96,7 +96,7 @@ void doTrace(int level, const char* fn, int lineno, const char* msg, ...) {
       vsprintf(buf, msg, arg);
 
       //Remove the path to the file, to conserve line width.
-      char* temp = strrchr(fn, '\\'); //Try Microsoft style path
+      const char* temp = strrchr(fn, '\\'); //Try Microsoft style path
       if (temp == NULL) {
         temp = strrchr(fn, '/');      //Try UNIX style path
         if (temp == NULL)
