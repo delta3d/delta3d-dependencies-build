@@ -218,7 +218,7 @@ if (WIN32 AND CEGUI_BUILD_EFFECTS11 AND EXISTS "$ENV{DXSDK_DIR}/Samples/C++/Effe
 endif()
 
 if (CEGUI_BUILD_ZLIB)
-    add_subdirectory(src/zlib-1.2.5/CEGUI-BUILD)
+    add_subdirectory(src/zlib-1.2.8/CEGUI-BUILD)
     set(zlibDep zlib)
 endif()
 
