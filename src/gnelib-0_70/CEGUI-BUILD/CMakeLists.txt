@@ -130,6 +130,7 @@ include_directories(../include ../../../dependencies/include ${Boost_INCLUDE_DIR
 cegui_add_library(${DEPNAME} SOURCES NONE)
 
 target_link_libraries(${DEPNAME} NL)
+add_dependencies(${DEPNAME}_static NL_static)
 
 if (APPLE)
  
