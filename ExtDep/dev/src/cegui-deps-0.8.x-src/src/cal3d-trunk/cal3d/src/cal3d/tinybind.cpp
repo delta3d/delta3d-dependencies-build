@@ -13,7 +13,7 @@ GetTiXmlBinding( StlIntVector const &,  StlIntVector const &  )
 #endif
 
 
-#ifdef WIN32
+#if defined(WIN32) || defined (_WIN64)
 #undef TIXML_USE_STL
 #else
 #define TIXML_USE_STL
