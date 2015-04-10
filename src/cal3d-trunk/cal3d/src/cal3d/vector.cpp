@@ -8,7 +8,7 @@
 // your option) any later version.                                            //
 //****************************************************************************//
 
-#ifndef WIN32
+#if !defined(WIN32) && !defined(WIN64)
 #ifdef HAVE_CONFIG_H
 #include "config.h"
 #endif
