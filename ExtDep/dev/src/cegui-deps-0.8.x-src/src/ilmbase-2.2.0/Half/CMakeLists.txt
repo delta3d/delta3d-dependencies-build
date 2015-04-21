@@ -1,0 +1,78 @@
+# yue.nicholas@gmail.com
+
+ADD_EXECUTABLE ( eLut eLut.cpp )
+
+ADD_CUSTOM_COMMAND (
+  TARGET eLut POST_BUILD
+  COMMAND eLut > ${CMAKE_CURRENT_BINARY_DIR}/eLut.h
+  WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+)
+SET_SOURCE_FILES_PROPERTIES(
+  ${CMAKE_CURRENT_BINARY_DIR}/eLut.h
+  PROPERTIES HEADER_FILE_ONLY TRUE
+  )
+
+ADD_EXECUTABLE ( toFloat toFloat.cpp )
+ADD_CUSTOM_COMMAND (
+  TARGET toFloat POST_BUILD
+  COMMAND toFloat > ${CMAKE_CURRENT_BINARY_DIR}/toFloat.h
+  WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+)
+SET_SOURCE_FILES_PROPERTIES(
+  ${CMAKE_CURRENT_BINARY_DIR}/toFloat.h
+  PROPERTIES HEADER_FILE_ONLY TRUE
+  )
+
+SET_SOURCE_FILES_PROPERTIES(
+  half.cpp
+  PROPERTIES
+  OBJECT_DEPENDS
+  ${CMAKE_CURRENT_BINARY_DIR}/eLut.h
+  OBJECT_DEPENDS
+  ${CMAKE_CURRENT_BINARY_DIR}/toFloat.h
+  )
+
+#IF(BUILD_SHARED_LIBS)
+#    ADD_DEFINITIONS(-DHALF_EXPORTS)
+#ENDIF()
+
+#ADD_LIBRARY ( Half ${LIB_TYPE}
+#  half.cpp
+#  )
+
+set(SOURCES half.cpp)
+
+cegui_add_library(Half SOURCES NONE)
+
+if (WIN32)
+    set_property(TARGET Half APPEND PROPERTY
+       COMPILE_DEFINITIONS "HALF_EXPORTS")
+endif ()
+
+
+ADD_DEPENDENCIES ( Half toFloat eLut )
+
+INSTALL ( TARGETS
+  Half
+  DESTINATION
+  lib
+)
+
+Set(HEADERS
+  half.h
+  halfFunction.h
+  halfExport.h
+  halfLimits.h
+)
+
+INSTALL ( FILES ${HEADERS}
+  DESTINATION
+  include/OpenEXR
+)
+
+foreach(_H_FILE ${HEADERS})
+    add_custom_command(TARGET Half POST_BUILD
+                       COMMAND ${CMAKE_COMMAND} -E copy
+       "${CMAKE_CURRENT_SOURCE_DIR}/${_H_FILE}"
+       "${CMAKE_BINARY_DIR}/dependencies/include/OpenEXR")
+endforeach()

@@ -1,0 +1,2 @@
+/usr/bin/ar cq ../../../dependencies/lib/static/libIlmThread.a  CMakeFiles/IlmThread_static.dir/IlmThread.cpp.o CMakeFiles/IlmThread_static.dir/IlmThreadMutex.cpp.o CMakeFiles/IlmThread_static.dir/IlmThreadMutexPosix.cpp.o CMakeFiles/IlmThread_static.dir/IlmThreadPool.cpp.o CMakeFiles/IlmThread_static.dir/IlmThreadPosix.cpp.o CMakeFiles/IlmThread_static.dir/IlmThreadSemaphore.cpp.o CMakeFiles/IlmThread_static.dir/IlmThreadSemaphorePosixCompat.cpp.o CMakeFiles/IlmThread_static.dir/IlmThreadSemaphorePosix.cpp.o
+/usr/bin/ranlib ../../../dependencies/lib/static/libIlmThread.a

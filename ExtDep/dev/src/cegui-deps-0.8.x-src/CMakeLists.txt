@@ -191,6 +191,7 @@ option(DELTA3D_BUILD_NL "Specifies whether to build the Hawk NL library.  DELTA3
 option(DELTA3D_BUILD_GNE "Specifies whether to build the GNE library.  DELTA3D" TRUE)
 option(DELTA3D_BUILD_CAL3D "Specifies whether to build the cal3d library.  DELTA3D" TRUE)
 option(DELTA3D_BUILD_ALUT "Specifies whether to build the cal3d library.  ALUT" TRUE)
+option(DELTA3D_BUILD_OPENEXR "Specifies whether to build the cal3d library.  ALUT" TRUE)
 
 #if (CEGUI_BUILD_SILLY OR CEGUI_BUILD_CORONA OR CEGUI_BUILD_DEVIL)
     set(CEGUI_BUILD_LIBPNG TRUE)
@@ -202,7 +203,7 @@ option(DELTA3D_BUILD_ALUT "Specifies whether to build the cal3d library.  ALUT" 
 	set(CEGUI_BUILD_LIBTIFF TRUE)
 #endif()
 
-if (CEGUI_BUILD_PCRE OR CEGUI_BUILD_LIBPNG OR CEGUI_BUILD_LIBTIFF OR CEGUI_BUILD_MINIZIP)
+if (CEGUI_BUILD_PCRE OR CEGUI_BUILD_LIBPNG OR CEGUI_BUILD_LIBTIFF OR CEGUI_BUILD_MINIZIP OR DELTA3D_BUILD_OPENEXR)
     set(CEGUI_BUILD_ZLIB TRUE)
 endif()
 
@@ -248,7 +249,7 @@ if (CEGUI_BUILD_FREETYPE2)
 endif()
 
 if (CEGUI_BUILD_PCRE)
-    add_subdirectory(src/pcre-8.12/CEGUI-BUILD)
+    add_subdirectory(src/pcre-8.36/CEGUI-BUILD)
     set(pcreDep pcre)
 endif()
 
@@ -318,7 +319,7 @@ if (CEGUI_BUILD_TOLUAPP)
 endif()
 
 if (DELTA3D_BUILD_ODE)
-    add_subdirectory(src/ode-0.12/CEGUI-BUILD)
+    add_subdirectory(src/ode-0.13.1/CEGUI-BUILD)
 endif()
 
 if (DELTA3D_BUILD_CPPUNIT)
@@ -341,6 +342,10 @@ if (DELTA3D_BUILD_ALUT)
    add_subdirectory(src/freealut-1.1.0-src)
 endif()
 
+if (DELTA3D_BUILD_OPENEXR)    
+   add_subdirectory(src/ilmbase-2.2.0)
+   add_subdirectory(src/openexr-2.2.0)
+endif()
 
 add_custom_target(POST_BUILD_CLEANUP ALL DEPENDS
     ${zlibDep} ${libpngDep} ${jpegDep} ${libmngDep} ${libtiffDep} ${freetypeDep} ${pcreDep} ${luaDep} ${expatDep} ${xercesDep} ${SILLYDep} ${FreeImageDep} ${coronaDep} ${ILDep} ${ILUDep} ${Effects11Dep}

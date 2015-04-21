@@ -157,7 +157,7 @@ endif ()
 MAKE_DIRECTORY("${CMAKE_BINARY_DIR}/dependencies/include/${DEPNAME}/")
 
 foreach(_H_FILE ${HEADERS})
-    message(${_H_FILE})
+    #message(${_H_FILE})
     add_custom_command(TARGET ${DEPNAME} POST_BUILD 
                        COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_SOURCE_DIR}/../include/${DEPNAME}/${_H_FILE}" "${CMAKE_BINARY_DIR}/dependencies/include/${DEPNAME}/${_H_FILE}")
 endforeach()
