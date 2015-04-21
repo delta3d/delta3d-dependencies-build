@@ -1,0 +1,2 @@
+/usr/bin/ar cq ../../../dependencies/lib/static/libHalf.a  CMakeFiles/Half_static.dir/half.cpp.o
+/usr/bin/ranlib ../../../dependencies/lib/static/libHalf.a

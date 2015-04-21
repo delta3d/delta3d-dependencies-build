@@ -8,17 +8,17 @@ IF(NOT DEFINED ${VAR})
 #endif
 int main(){}
 ")
-  FILE(WRITE "${CMAKE_BINARY_DIR}/CMakeTmp/src.c" "${SOURCE}")
+  FILE(WRITE "${PROJECT_BINARY_DIR}/CMakeTmp/src.c" "${SOURCE}")
 
   MESSAGE(STATUS "Performing Test ${VAR}")
   TRY_COMPILE(${VAR}
-              ${CMAKE_BINARY_DIR}
-              ${CMAKE_BINARY_DIR}/CMakeTmp/src.c
+              ${PROJECT_BINARY_DIR}
+              ${PROJECT_BINARY_DIR}/CMakeTmp/src.c
               CMAKE_FLAGS
               "-DCOMPILE_DEFINITIONS:STRING=-fvisibility=hidden"
               OUTPUT_VARIABLE OUTPUT)
 
-  WRITE_FILE(${CMAKE_BINARY_DIR}/CMakeOutput.log
+  WRITE_FILE(${PROJECT_BINARY_DIR}/CMakeOutput.log
              "Performing manual C SOURCE FILE Test ${VAR} with the following output:\n"
              "${OUTPUT}\n"
              "Source file was:\n${SOURCE}\n" APPEND)

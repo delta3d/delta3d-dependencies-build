@@ -1,0 +1,2 @@
+/usr/bin/ar cq ../../../dependencies/lib/static/libImath.a  CMakeFiles/Imath_static.dir/ImathBox.cpp.o CMakeFiles/Imath_static.dir/ImathRandom.cpp.o CMakeFiles/Imath_static.dir/ImathColorAlgo.cpp.o CMakeFiles/Imath_static.dir/ImathShear.cpp.o CMakeFiles/Imath_static.dir/ImathFun.cpp.o CMakeFiles/Imath_static.dir/ImathVec.cpp.o CMakeFiles/Imath_static.dir/ImathMatrixAlgo.cpp.o
+/usr/bin/ranlib ../../../dependencies/lib/static/libImath.a

@@ -1,5 +1,0 @@
-# This is a generated file.
-  SET(ENV{srcdir} /Users/david/development/ext/src/cegui-deps-0.8.x-src/src/pcre-8.12)
-  SET(ENV{pcregrep} /Users/david/development/ext/src/cegui-deps-0.8.x-src/src/pcre-8.12/build/pcregrep)
-  SET(ENV{pcretest} /Users/david/development/ext/src/cegui-deps-0.8.x-src/src/pcre-8.12/build/pcretest)
-  

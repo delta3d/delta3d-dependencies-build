@@ -1,0 +1,2 @@
+/usr/bin/ar cq ../../../dependencies/lib/static/libIex.a  CMakeFiles/Iex_static.dir/IexBaseExc.cpp.o CMakeFiles/Iex_static.dir/IexThrowErrnoExc.cpp.o
+/usr/bin/ranlib ../../../dependencies/lib/static/libIex.a
