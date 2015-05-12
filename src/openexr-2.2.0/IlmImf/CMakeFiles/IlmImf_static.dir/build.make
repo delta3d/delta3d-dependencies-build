@@ -54,14 +54,9 @@ src/openexr-2.2.0/IlmImf/b44ExpLogTable.h: src/openexr-2.2.0/IlmImf/b44ExpLogTab
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating b44ExpLogTable.h"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && ./b44ExpLogTable > /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/b44ExpLogTable.h
 
-src/openexr-2.2.0/IlmImf/dwaLookups.h: src/openexr-2.2.0/IlmImf/dwaLookups
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_2)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating dwaLookups.h"
-	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && ./dwaLookups > /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/dwaLookups.h
-
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfAttribute.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfAttribute.cpp.o: src/openexr-2.2.0/IlmImf/ImfAttribute.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfAttribute.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfAttribute.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfAttribute.cpp
 
@@ -84,7 +79,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfAttribute.cpp.o.provide
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfBoxAttribute.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfBoxAttribute.cpp.o: src/openexr-2.2.0/IlmImf/ImfBoxAttribute.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_4)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfBoxAttribute.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfBoxAttribute.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfBoxAttribute.cpp
 
@@ -107,7 +102,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfBoxAttribute.cpp.o.prov
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfCRgbaFile.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfCRgbaFile.cpp.o: src/openexr-2.2.0/IlmImf/ImfCRgbaFile.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_5)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfCRgbaFile.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfCRgbaFile.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfCRgbaFile.cpp
 
@@ -130,7 +125,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfCRgbaFile.cpp.o.provide
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfChannelList.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfChannelList.cpp.o: src/openexr-2.2.0/IlmImf/ImfChannelList.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_6)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfChannelList.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfChannelList.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfChannelList.cpp
 
@@ -153,7 +148,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfChannelList.cpp.o.provi
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfChannelListAttribute.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfChannelListAttribute.cpp.o: src/openexr-2.2.0/IlmImf/ImfChannelListAttribute.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_7)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_6)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfChannelListAttribute.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfChannelListAttribute.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfChannelListAttribute.cpp
 
@@ -176,7 +171,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfChannelListAttribute.cp
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfFloatAttribute.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfFloatAttribute.cpp.o: src/openexr-2.2.0/IlmImf/ImfFloatAttribute.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_8)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_7)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfFloatAttribute.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfFloatAttribute.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfFloatAttribute.cpp
 
@@ -199,7 +194,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfFloatAttribute.cpp.o.pr
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfFrameBuffer.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfFrameBuffer.cpp.o: src/openexr-2.2.0/IlmImf/ImfFrameBuffer.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_9)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_8)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfFrameBuffer.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfFrameBuffer.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfFrameBuffer.cpp
 
@@ -222,7 +217,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfFrameBuffer.cpp.o.provi
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfHeader.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfHeader.cpp.o: src/openexr-2.2.0/IlmImf/ImfHeader.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_10)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_9)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfHeader.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfHeader.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfHeader.cpp
 
@@ -245,7 +240,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfHeader.cpp.o.provides.b
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfIO.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfIO.cpp.o: src/openexr-2.2.0/IlmImf/ImfIO.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_11)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_10)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfIO.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfIO.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfIO.cpp
 
@@ -268,7 +263,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfIO.cpp.o.provides.build
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfInputFile.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfInputFile.cpp.o: src/openexr-2.2.0/IlmImf/ImfInputFile.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_12)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_11)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfInputFile.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfInputFile.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfInputFile.cpp
 
@@ -291,7 +286,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfInputFile.cpp.o.provide
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfIntAttribute.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfIntAttribute.cpp.o: src/openexr-2.2.0/IlmImf/ImfIntAttribute.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_13)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_12)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfIntAttribute.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfIntAttribute.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfIntAttribute.cpp
 
@@ -314,7 +309,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfIntAttribute.cpp.o.prov
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfLineOrderAttribute.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfLineOrderAttribute.cpp.o: src/openexr-2.2.0/IlmImf/ImfLineOrderAttribute.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_14)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_13)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfLineOrderAttribute.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfLineOrderAttribute.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfLineOrderAttribute.cpp
 
@@ -337,7 +332,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfLineOrderAttribute.cpp.
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfMatrixAttribute.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfMatrixAttribute.cpp.o: src/openexr-2.2.0/IlmImf/ImfMatrixAttribute.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_15)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_14)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfMatrixAttribute.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfMatrixAttribute.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfMatrixAttribute.cpp
 
@@ -360,7 +355,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfMatrixAttribute.cpp.o.p
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfOpaqueAttribute.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfOpaqueAttribute.cpp.o: src/openexr-2.2.0/IlmImf/ImfOpaqueAttribute.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_16)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_15)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfOpaqueAttribute.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfOpaqueAttribute.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfOpaqueAttribute.cpp
 
@@ -383,7 +378,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfOpaqueAttribute.cpp.o.p
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfOutputFile.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfOutputFile.cpp.o: src/openexr-2.2.0/IlmImf/ImfOutputFile.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_17)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_16)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfOutputFile.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfOutputFile.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfOutputFile.cpp
 
@@ -406,7 +401,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfOutputFile.cpp.o.provid
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfRgbaFile.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfRgbaFile.cpp.o: src/openexr-2.2.0/IlmImf/ImfRgbaFile.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_18)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_17)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfRgbaFile.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfRgbaFile.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfRgbaFile.cpp
 
@@ -429,7 +424,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfRgbaFile.cpp.o.provides
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfStringAttribute.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfStringAttribute.cpp.o: src/openexr-2.2.0/IlmImf/ImfStringAttribute.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_19)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_18)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfStringAttribute.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfStringAttribute.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfStringAttribute.cpp
 
@@ -452,7 +447,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfStringAttribute.cpp.o.p
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfVecAttribute.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfVecAttribute.cpp.o: src/openexr-2.2.0/IlmImf/ImfVecAttribute.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_20)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_19)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfVecAttribute.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfVecAttribute.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfVecAttribute.cpp
 
@@ -475,7 +470,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfVecAttribute.cpp.o.prov
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfHuf.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfHuf.cpp.o: src/openexr-2.2.0/IlmImf/ImfHuf.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_21)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_20)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfHuf.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfHuf.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfHuf.cpp
 
@@ -498,7 +493,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfHuf.cpp.o.provides.buil
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfThreading.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfThreading.cpp.o: src/openexr-2.2.0/IlmImf/ImfThreading.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_22)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_21)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfThreading.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfThreading.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfThreading.cpp
 
@@ -521,7 +516,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfThreading.cpp.o.provide
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfWav.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfWav.cpp.o: src/openexr-2.2.0/IlmImf/ImfWav.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_23)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_22)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfWav.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfWav.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfWav.cpp
 
@@ -544,7 +539,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfWav.cpp.o.provides.buil
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfLut.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfLut.cpp.o: src/openexr-2.2.0/IlmImf/ImfLut.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_24)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_23)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfLut.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfLut.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfLut.cpp
 
@@ -567,7 +562,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfLut.cpp.o.provides.buil
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfCompressor.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfCompressor.cpp.o: src/openexr-2.2.0/IlmImf/ImfCompressor.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_25)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_24)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfCompressor.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfCompressor.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfCompressor.cpp
 
@@ -590,7 +585,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfCompressor.cpp.o.provid
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfRleCompressor.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfRleCompressor.cpp.o: src/openexr-2.2.0/IlmImf/ImfRleCompressor.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_26)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_25)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfRleCompressor.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfRleCompressor.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfRleCompressor.cpp
 
@@ -613,7 +608,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfRleCompressor.cpp.o.pro
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfZipCompressor.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfZipCompressor.cpp.o: src/openexr-2.2.0/IlmImf/ImfZipCompressor.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_27)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_26)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfZipCompressor.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfZipCompressor.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfZipCompressor.cpp
 
@@ -636,7 +631,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfZipCompressor.cpp.o.pro
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfPizCompressor.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfPizCompressor.cpp.o: src/openexr-2.2.0/IlmImf/ImfPizCompressor.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_28)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_27)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfPizCompressor.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfPizCompressor.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfPizCompressor.cpp
 
@@ -660,7 +655,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfPizCompressor.cpp.o.pro
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfB44Compressor.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfB44Compressor.cpp.o: src/openexr-2.2.0/IlmImf/ImfB44Compressor.cpp
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfB44Compressor.cpp.o: src/openexr-2.2.0/IlmImf/b44ExpLogTable.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_29)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_28)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfB44Compressor.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfB44Compressor.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfB44Compressor.cpp
 
@@ -684,7 +679,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfB44Compressor.cpp.o.pro
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDwaCompressor.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDwaCompressor.cpp.o: src/openexr-2.2.0/IlmImf/ImfDwaCompressor.cpp
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDwaCompressor.cpp.o: src/openexr-2.2.0/IlmImf/dwaLookups.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_30)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_29)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDwaCompressor.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfDwaCompressor.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfDwaCompressor.cpp
 
@@ -707,7 +702,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDwaCompressor.cpp.o.pro
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfMisc.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfMisc.cpp.o: src/openexr-2.2.0/IlmImf/ImfMisc.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_31)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_30)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfMisc.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfMisc.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfMisc.cpp
 
@@ -730,7 +725,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfMisc.cpp.o.provides.bui
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfCompressionAttribute.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfCompressionAttribute.cpp.o: src/openexr-2.2.0/IlmImf/ImfCompressionAttribute.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_32)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_31)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfCompressionAttribute.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfCompressionAttribute.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfCompressionAttribute.cpp
 
@@ -753,7 +748,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfCompressionAttribute.cp
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDoubleAttribute.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDoubleAttribute.cpp.o: src/openexr-2.2.0/IlmImf/ImfDoubleAttribute.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_33)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_32)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDoubleAttribute.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfDoubleAttribute.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfDoubleAttribute.cpp
 
@@ -776,7 +771,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDoubleAttribute.cpp.o.p
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfConvert.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfConvert.cpp.o: src/openexr-2.2.0/IlmImf/ImfConvert.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_34)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_33)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfConvert.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfConvert.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfConvert.cpp
 
@@ -799,7 +794,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfConvert.cpp.o.provides.
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfPreviewImage.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfPreviewImage.cpp.o: src/openexr-2.2.0/IlmImf/ImfPreviewImage.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_35)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_34)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfPreviewImage.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfPreviewImage.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfPreviewImage.cpp
 
@@ -822,7 +817,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfPreviewImage.cpp.o.prov
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfPreviewImageAttribute.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfPreviewImageAttribute.cpp.o: src/openexr-2.2.0/IlmImf/ImfPreviewImageAttribute.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_36)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_35)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfPreviewImageAttribute.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfPreviewImageAttribute.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfPreviewImageAttribute.cpp
 
@@ -845,7 +840,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfPreviewImageAttribute.c
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfVersion.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfVersion.cpp.o: src/openexr-2.2.0/IlmImf/ImfVersion.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_37)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_36)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfVersion.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfVersion.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfVersion.cpp
 
@@ -868,7 +863,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfVersion.cpp.o.provides.
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfChromaticities.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfChromaticities.cpp.o: src/openexr-2.2.0/IlmImf/ImfChromaticities.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_38)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_37)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfChromaticities.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfChromaticities.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfChromaticities.cpp
 
@@ -891,7 +886,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfChromaticities.cpp.o.pr
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfChromaticitiesAttribute.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfChromaticitiesAttribute.cpp.o: src/openexr-2.2.0/IlmImf/ImfChromaticitiesAttribute.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_39)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_38)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfChromaticitiesAttribute.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfChromaticitiesAttribute.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfChromaticitiesAttribute.cpp
 
@@ -914,7 +909,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfChromaticitiesAttribute
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfKeyCode.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfKeyCode.cpp.o: src/openexr-2.2.0/IlmImf/ImfKeyCode.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_40)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_39)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfKeyCode.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfKeyCode.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfKeyCode.cpp
 
@@ -937,7 +932,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfKeyCode.cpp.o.provides.
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfKeyCodeAttribute.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfKeyCodeAttribute.cpp.o: src/openexr-2.2.0/IlmImf/ImfKeyCodeAttribute.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_41)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_40)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfKeyCodeAttribute.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfKeyCodeAttribute.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfKeyCodeAttribute.cpp
 
@@ -960,7 +955,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfKeyCodeAttribute.cpp.o.
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfTimeCode.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfTimeCode.cpp.o: src/openexr-2.2.0/IlmImf/ImfTimeCode.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_42)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_41)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfTimeCode.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfTimeCode.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfTimeCode.cpp
 
@@ -983,7 +978,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfTimeCode.cpp.o.provides
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfTimeCodeAttribute.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfTimeCodeAttribute.cpp.o: src/openexr-2.2.0/IlmImf/ImfTimeCodeAttribute.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_43)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_42)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfTimeCodeAttribute.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfTimeCodeAttribute.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfTimeCodeAttribute.cpp
 
@@ -1006,7 +1001,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfTimeCodeAttribute.cpp.o
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfRational.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfRational.cpp.o: src/openexr-2.2.0/IlmImf/ImfRational.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_44)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_43)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfRational.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfRational.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfRational.cpp
 
@@ -1029,7 +1024,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfRational.cpp.o.provides
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfRationalAttribute.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfRationalAttribute.cpp.o: src/openexr-2.2.0/IlmImf/ImfRationalAttribute.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_45)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_44)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfRationalAttribute.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfRationalAttribute.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfRationalAttribute.cpp
 
@@ -1052,7 +1047,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfRationalAttribute.cpp.o
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfFramesPerSecond.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfFramesPerSecond.cpp.o: src/openexr-2.2.0/IlmImf/ImfFramesPerSecond.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_46)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_45)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfFramesPerSecond.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfFramesPerSecond.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfFramesPerSecond.cpp
 
@@ -1075,7 +1070,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfFramesPerSecond.cpp.o.p
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfStandardAttributes.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfStandardAttributes.cpp.o: src/openexr-2.2.0/IlmImf/ImfStandardAttributes.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_47)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_46)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfStandardAttributes.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfStandardAttributes.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfStandardAttributes.cpp
 
@@ -1098,7 +1093,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfStandardAttributes.cpp.
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfStdIO.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfStdIO.cpp.o: src/openexr-2.2.0/IlmImf/ImfStdIO.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_48)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_47)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfStdIO.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfStdIO.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfStdIO.cpp
 
@@ -1121,7 +1116,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfStdIO.cpp.o.provides.bu
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfEnvmap.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfEnvmap.cpp.o: src/openexr-2.2.0/IlmImf/ImfEnvmap.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_49)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_48)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfEnvmap.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfEnvmap.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfEnvmap.cpp
 
@@ -1144,7 +1139,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfEnvmap.cpp.o.provides.b
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfEnvmapAttribute.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfEnvmapAttribute.cpp.o: src/openexr-2.2.0/IlmImf/ImfEnvmapAttribute.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_50)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_49)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfEnvmapAttribute.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfEnvmapAttribute.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfEnvmapAttribute.cpp
 
@@ -1167,7 +1162,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfEnvmapAttribute.cpp.o.p
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfScanLineInputFile.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfScanLineInputFile.cpp.o: src/openexr-2.2.0/IlmImf/ImfScanLineInputFile.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_51)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_50)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfScanLineInputFile.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfScanLineInputFile.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfScanLineInputFile.cpp
 
@@ -1190,7 +1185,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfScanLineInputFile.cpp.o
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfTiledInputFile.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfTiledInputFile.cpp.o: src/openexr-2.2.0/IlmImf/ImfTiledInputFile.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_52)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_51)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfTiledInputFile.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfTiledInputFile.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfTiledInputFile.cpp
 
@@ -1213,7 +1208,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfTiledInputFile.cpp.o.pr
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfTiledMisc.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfTiledMisc.cpp.o: src/openexr-2.2.0/IlmImf/ImfTiledMisc.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_53)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_52)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfTiledMisc.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfTiledMisc.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfTiledMisc.cpp
 
@@ -1236,7 +1231,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfTiledMisc.cpp.o.provide
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfTiledOutputFile.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfTiledOutputFile.cpp.o: src/openexr-2.2.0/IlmImf/ImfTiledOutputFile.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_54)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_53)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfTiledOutputFile.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfTiledOutputFile.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfTiledOutputFile.cpp
 
@@ -1259,7 +1254,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfTiledOutputFile.cpp.o.p
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfTiledRgbaFile.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfTiledRgbaFile.cpp.o: src/openexr-2.2.0/IlmImf/ImfTiledRgbaFile.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_55)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_54)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfTiledRgbaFile.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfTiledRgbaFile.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfTiledRgbaFile.cpp
 
@@ -1282,7 +1277,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfTiledRgbaFile.cpp.o.pro
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfTileDescriptionAttribute.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfTileDescriptionAttribute.cpp.o: src/openexr-2.2.0/IlmImf/ImfTileDescriptionAttribute.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_56)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_55)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfTileDescriptionAttribute.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfTileDescriptionAttribute.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfTileDescriptionAttribute.cpp
 
@@ -1305,7 +1300,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfTileDescriptionAttribut
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfTileOffsets.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfTileOffsets.cpp.o: src/openexr-2.2.0/IlmImf/ImfTileOffsets.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_57)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_56)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfTileOffsets.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfTileOffsets.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfTileOffsets.cpp
 
@@ -1328,7 +1323,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfTileOffsets.cpp.o.provi
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfRgbaYca.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfRgbaYca.cpp.o: src/openexr-2.2.0/IlmImf/ImfRgbaYca.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_58)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_57)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfRgbaYca.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfRgbaYca.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfRgbaYca.cpp
 
@@ -1351,7 +1346,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfRgbaYca.cpp.o.provides.
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfPxr24Compressor.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfPxr24Compressor.cpp.o: src/openexr-2.2.0/IlmImf/ImfPxr24Compressor.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_59)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_58)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfPxr24Compressor.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfPxr24Compressor.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfPxr24Compressor.cpp
 
@@ -1374,7 +1369,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfPxr24Compressor.cpp.o.p
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfTestFile.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfTestFile.cpp.o: src/openexr-2.2.0/IlmImf/ImfTestFile.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_60)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_59)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfTestFile.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfTestFile.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfTestFile.cpp
 
@@ -1397,7 +1392,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfTestFile.cpp.o.provides
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfStringVectorAttribute.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfStringVectorAttribute.cpp.o: src/openexr-2.2.0/IlmImf/ImfStringVectorAttribute.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_61)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_60)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfStringVectorAttribute.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfStringVectorAttribute.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfStringVectorAttribute.cpp
 
@@ -1420,7 +1415,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfStringVectorAttribute.c
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfMultiView.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfMultiView.cpp.o: src/openexr-2.2.0/IlmImf/ImfMultiView.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_62)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_61)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfMultiView.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfMultiView.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfMultiView.cpp
 
@@ -1443,7 +1438,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfMultiView.cpp.o.provide
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfAcesFile.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfAcesFile.cpp.o: src/openexr-2.2.0/IlmImf/ImfAcesFile.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_63)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_62)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfAcesFile.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfAcesFile.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfAcesFile.cpp
 
@@ -1466,7 +1461,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfAcesFile.cpp.o.provides
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfMultiPartOutputFile.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfMultiPartOutputFile.cpp.o: src/openexr-2.2.0/IlmImf/ImfMultiPartOutputFile.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_64)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_63)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfMultiPartOutputFile.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfMultiPartOutputFile.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfMultiPartOutputFile.cpp
 
@@ -1489,7 +1484,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfMultiPartOutputFile.cpp
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfGenericOutputFile.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfGenericOutputFile.cpp.o: src/openexr-2.2.0/IlmImf/ImfGenericOutputFile.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_65)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_64)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfGenericOutputFile.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfGenericOutputFile.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfGenericOutputFile.cpp
 
@@ -1512,7 +1507,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfGenericOutputFile.cpp.o
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfOutputPartData.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfOutputPartData.cpp.o: src/openexr-2.2.0/IlmImf/ImfOutputPartData.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_66)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_65)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfOutputPartData.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfOutputPartData.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfOutputPartData.cpp
 
@@ -1535,7 +1530,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfOutputPartData.cpp.o.pr
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfMultiPartInputFile.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfMultiPartInputFile.cpp.o: src/openexr-2.2.0/IlmImf/ImfMultiPartInputFile.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_67)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_66)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfMultiPartInputFile.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfMultiPartInputFile.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfMultiPartInputFile.cpp
 
@@ -1558,7 +1553,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfMultiPartInputFile.cpp.
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfGenericInputFile.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfGenericInputFile.cpp.o: src/openexr-2.2.0/IlmImf/ImfGenericInputFile.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_68)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_67)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfGenericInputFile.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfGenericInputFile.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfGenericInputFile.cpp
 
@@ -1581,7 +1576,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfGenericInputFile.cpp.o.
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfPartType.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfPartType.cpp.o: src/openexr-2.2.0/IlmImf/ImfPartType.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_69)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_68)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfPartType.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfPartType.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfPartType.cpp
 
@@ -1604,7 +1599,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfPartType.cpp.o.provides
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfInputPartData.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfInputPartData.cpp.o: src/openexr-2.2.0/IlmImf/ImfInputPartData.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_70)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_69)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfInputPartData.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfInputPartData.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfInputPartData.cpp
 
@@ -1627,7 +1622,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfInputPartData.cpp.o.pro
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfOutputPart.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfOutputPart.cpp.o: src/openexr-2.2.0/IlmImf/ImfOutputPart.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_71)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_70)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfOutputPart.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfOutputPart.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfOutputPart.cpp
 
@@ -1650,7 +1645,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfOutputPart.cpp.o.provid
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfTiledOutputPart.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfTiledOutputPart.cpp.o: src/openexr-2.2.0/IlmImf/ImfTiledOutputPart.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_72)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_71)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfTiledOutputPart.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfTiledOutputPart.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfTiledOutputPart.cpp
 
@@ -1673,7 +1668,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfTiledOutputPart.cpp.o.p
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfInputPart.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfInputPart.cpp.o: src/openexr-2.2.0/IlmImf/ImfInputPart.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_73)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_72)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfInputPart.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfInputPart.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfInputPart.cpp
 
@@ -1696,7 +1691,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfInputPart.cpp.o.provide
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfTiledInputPart.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfTiledInputPart.cpp.o: src/openexr-2.2.0/IlmImf/ImfTiledInputPart.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_74)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_73)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfTiledInputPart.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfTiledInputPart.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfTiledInputPart.cpp
 
@@ -1719,7 +1714,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfTiledInputPart.cpp.o.pr
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDeepScanLineInputPart.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDeepScanLineInputPart.cpp.o: src/openexr-2.2.0/IlmImf/ImfDeepScanLineInputPart.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_75)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_74)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDeepScanLineInputPart.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfDeepScanLineInputPart.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfDeepScanLineInputPart.cpp
 
@@ -1742,7 +1737,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDeepScanLineInputPart.c
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDeepScanLineOutputPart.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDeepScanLineOutputPart.cpp.o: src/openexr-2.2.0/IlmImf/ImfDeepScanLineOutputPart.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_76)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_75)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDeepScanLineOutputPart.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfDeepScanLineOutputPart.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfDeepScanLineOutputPart.cpp
 
@@ -1765,7 +1760,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDeepScanLineOutputPart.
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDeepScanLineInputFile.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDeepScanLineInputFile.cpp.o: src/openexr-2.2.0/IlmImf/ImfDeepScanLineInputFile.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_77)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_76)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDeepScanLineInputFile.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfDeepScanLineInputFile.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfDeepScanLineInputFile.cpp
 
@@ -1788,7 +1783,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDeepScanLineInputFile.c
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDeepScanLineOutputFile.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDeepScanLineOutputFile.cpp.o: src/openexr-2.2.0/IlmImf/ImfDeepScanLineOutputFile.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_78)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_77)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDeepScanLineOutputFile.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfDeepScanLineOutputFile.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfDeepScanLineOutputFile.cpp
 
@@ -1811,7 +1806,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDeepScanLineOutputFile.
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDeepTiledInputPart.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDeepTiledInputPart.cpp.o: src/openexr-2.2.0/IlmImf/ImfDeepTiledInputPart.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_79)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_78)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDeepTiledInputPart.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfDeepTiledInputPart.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfDeepTiledInputPart.cpp
 
@@ -1834,7 +1829,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDeepTiledInputPart.cpp.
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDeepTiledOutputPart.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDeepTiledOutputPart.cpp.o: src/openexr-2.2.0/IlmImf/ImfDeepTiledOutputPart.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_80)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_79)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDeepTiledOutputPart.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfDeepTiledOutputPart.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfDeepTiledOutputPart.cpp
 
@@ -1857,7 +1852,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDeepTiledOutputPart.cpp
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDeepTiledInputFile.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDeepTiledInputFile.cpp.o: src/openexr-2.2.0/IlmImf/ImfDeepTiledInputFile.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_81)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_80)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDeepTiledInputFile.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfDeepTiledInputFile.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfDeepTiledInputFile.cpp
 
@@ -1880,7 +1875,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDeepTiledInputFile.cpp.
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDeepTiledOutputFile.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDeepTiledOutputFile.cpp.o: src/openexr-2.2.0/IlmImf/ImfDeepTiledOutputFile.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_82)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_81)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDeepTiledOutputFile.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfDeepTiledOutputFile.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfDeepTiledOutputFile.cpp
 
@@ -1903,7 +1898,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDeepTiledOutputFile.cpp
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDeepFrameBuffer.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDeepFrameBuffer.cpp.o: src/openexr-2.2.0/IlmImf/ImfDeepFrameBuffer.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_83)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_82)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDeepFrameBuffer.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfDeepFrameBuffer.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfDeepFrameBuffer.cpp
 
@@ -1926,7 +1921,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDeepFrameBuffer.cpp.o.p
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDeepCompositing.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDeepCompositing.cpp.o: src/openexr-2.2.0/IlmImf/ImfDeepCompositing.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_84)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_83)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDeepCompositing.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfDeepCompositing.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfDeepCompositing.cpp
 
@@ -1949,7 +1944,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDeepCompositing.cpp.o.p
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfCompositeDeepScanLine.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfCompositeDeepScanLine.cpp.o: src/openexr-2.2.0/IlmImf/ImfCompositeDeepScanLine.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_85)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_84)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfCompositeDeepScanLine.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfCompositeDeepScanLine.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfCompositeDeepScanLine.cpp
 
@@ -1972,7 +1967,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfCompositeDeepScanLine.c
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDeepImageStateAttribute.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDeepImageStateAttribute.cpp.o: src/openexr-2.2.0/IlmImf/ImfDeepImageStateAttribute.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_86)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_85)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDeepImageStateAttribute.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfDeepImageStateAttribute.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfDeepImageStateAttribute.cpp
 
@@ -1995,7 +1990,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfDeepImageStateAttribute
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfFastHuf.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfFastHuf.cpp.o: src/openexr-2.2.0/IlmImf/ImfFastHuf.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_87)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_86)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfFastHuf.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfFastHuf.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfFastHuf.cpp
 
@@ -2018,7 +2013,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfFastHuf.cpp.o.provides.
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfFloatVectorAttribute.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfFloatVectorAttribute.cpp.o: src/openexr-2.2.0/IlmImf/ImfFloatVectorAttribute.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_88)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_87)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfFloatVectorAttribute.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfFloatVectorAttribute.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfFloatVectorAttribute.cpp
 
@@ -2041,7 +2036,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfFloatVectorAttribute.cp
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfRle.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfRle.cpp.o: src/openexr-2.2.0/IlmImf/ImfRle.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_89)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_88)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfRle.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfRle.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfRle.cpp
 
@@ -2064,7 +2059,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfRle.cpp.o.provides.buil
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfSystemSpecific.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfSystemSpecific.cpp.o: src/openexr-2.2.0/IlmImf/ImfSystemSpecific.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_90)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_89)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfSystemSpecific.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfSystemSpecific.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfSystemSpecific.cpp
 
@@ -2087,7 +2082,7 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfSystemSpecific.cpp.o.pr
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfZip.cpp.o: src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/flags.make
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfZip.cpp.o: src/openexr-2.2.0/IlmImf/ImfZip.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_91)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/CMakeFiles $(CMAKE_PROGRESS_90)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/ImfZip.cpp.o"
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IlmImf_static.dir/ImfZip.cpp.o -c /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/ImfZip.cpp
 
@@ -2398,7 +2393,6 @@ src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/clean:
 .PHONY : src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/clean
 
 src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/depend: src/openexr-2.2.0/IlmImf/b44ExpLogTable.h
-src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/depend: src/openexr-2.2.0/IlmImf/dwaLookups.h
 	cd /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf /Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/openexr-2.2.0/IlmImf/CMakeFiles/IlmImf_static.dir/depend
 
