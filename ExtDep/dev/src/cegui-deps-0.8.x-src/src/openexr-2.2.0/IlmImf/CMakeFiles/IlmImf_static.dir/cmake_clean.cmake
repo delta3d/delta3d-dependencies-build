@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "b44ExpLogTable.h"
-  "dwaLookups.h"
   "CMakeFiles/IlmImf_static.dir/ImfAttribute.cpp.o"
   "CMakeFiles/IlmImf_static.dir/ImfBoxAttribute.cpp.o"
   "CMakeFiles/IlmImf_static.dir/ImfCRgbaFile.cpp.o"

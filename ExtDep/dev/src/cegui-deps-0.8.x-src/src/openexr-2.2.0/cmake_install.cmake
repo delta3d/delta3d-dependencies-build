@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "./stage")
+  set(CMAKE_INSTALL_PREFIX "/usr/local")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -28,11 +28,27 @@ if(NOT CMAKE_INSTALL_COMPONENT)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/./stage/include/OpenEXR" TYPE FILE FILES "/Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/config/OpenEXRConfig.h")
+  list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
+   "/usr/local/include/OpenEXR/OpenEXRConfig.h")
+  if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+file(INSTALL DESTINATION "/usr/local/include/OpenEXR" TYPE FILE FILES "/Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/config/OpenEXRConfig.h")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/./stage/share/doc/OpenEXR-2.2.0" TYPE FILE FILES
+  list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
+   "/usr/local/share/doc/OpenEXR-2.2.0/TechnicalIntroduction.pdf;/usr/local/share/doc/OpenEXR-2.2.0/ReadingAndWritingImageFiles.pdf;/usr/local/share/doc/OpenEXR-2.2.0/OpenEXRFileLayout.pdf;/usr/local/share/doc/OpenEXR-2.2.0/MultiViewOpenEXR.pdf;/usr/local/share/doc/OpenEXR-2.2.0/InterpretingDeepPixels.pdf;/usr/local/share/doc/OpenEXR-2.2.0/TheoryDeepPixels.pdf")
+  if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+file(INSTALL DESTINATION "/usr/local/share/doc/OpenEXR-2.2.0" TYPE FILE FILES
     "/Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/doc/TechnicalIntroduction.pdf"
     "/Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/doc/ReadingAndWritingImageFiles.pdf"
     "/Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/doc/OpenEXRFileLayout.pdf"
@@ -43,7 +59,15 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/./stage/share/doc/OpenEXR-2.2.0/examples" TYPE FILE FILES
+  list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
+   "/usr/local/share/doc/OpenEXR-2.2.0/examples/main.cpp;/usr/local/share/doc/OpenEXR-2.2.0/examples/drawImage.cpp;/usr/local/share/doc/OpenEXR-2.2.0/examples/rgbaInterfaceExamples.cpp;/usr/local/share/doc/OpenEXR-2.2.0/examples/rgbaInterfaceTiledExamples.cpp;/usr/local/share/doc/OpenEXR-2.2.0/examples/generalInterfaceExamples.cpp;/usr/local/share/doc/OpenEXR-2.2.0/examples/lowLevelIoExamples.cpp;/usr/local/share/doc/OpenEXR-2.2.0/examples/previewImageExamples.cpp;/usr/local/share/doc/OpenEXR-2.2.0/examples/generalInterfaceTiledExamples.cpp;/usr/local/share/doc/OpenEXR-2.2.0/examples/generalInterfaceTiledExamples.h;/usr/local/share/doc/OpenEXR-2.2.0/examples/drawImage.h;/usr/local/share/doc/OpenEXR-2.2.0/examples/rgbaInterfaceExamples.h;/usr/local/share/doc/OpenEXR-2.2.0/examples/generalInterfaceExamples.h;/usr/local/share/doc/OpenEXR-2.2.0/examples/rgbaInterfaceTiledExamples.h;/usr/local/share/doc/OpenEXR-2.2.0/examples/lowLevelIoExamples.h;/usr/local/share/doc/OpenEXR-2.2.0/examples/previewImageExamples.h;/usr/local/share/doc/OpenEXR-2.2.0/examples/namespaceAlias.h")
+  if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+file(INSTALL DESTINATION "/usr/local/share/doc/OpenEXR-2.2.0/examples" TYPE FILE FILES
     "/Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImfExamples/main.cpp"
     "/Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImfExamples/drawImage.cpp"
     "/Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/IlmImfExamples/rgbaInterfaceExamples.cpp"

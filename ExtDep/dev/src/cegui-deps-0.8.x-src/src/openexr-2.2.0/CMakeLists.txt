@@ -233,6 +233,10 @@ INSTALL ( FILES
 
 
 FILE ( COPY ${PROJECT_BINARY_DIR}/config/OpenEXRConfig.h DESTINATION "${CMAKE_BINARY_DIR}/dependencies/include/OpenEXR" )
+FILE ( COPY ${CMAKE_CURRENT_SOURCE_DIR}/LICENSE DESTINATION "${CMAKE_BINARY_DIR}/dependencies" )
+FILE ( RENAME "${CMAKE_BINARY_DIR}/dependencies/LICENSE" "${CMAKE_BINARY_DIR}/dependencies/openexr-license.txt")
+FILE ( COPY ${CMAKE_CURRENT_SOURCE_DIR}/PATENTS DESTINATION "${CMAKE_BINARY_DIR}/dependencies" )
+FILE ( RENAME "${CMAKE_BINARY_DIR}/dependencies/PATENTS" "${CMAKE_BINARY_DIR}/dependencies/openexr-patents.txt")
 
 # Documentation
 INSTALL ( FILES
