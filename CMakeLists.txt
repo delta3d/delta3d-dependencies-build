@@ -9,6 +9,9 @@ message(FATAL_ERROR
 "use with CEGUI.  Thanks!")
 endif()
 
+SET(CMAKE_MODULE_PATH
+"${CMAKE_SOURCE_DIR};${CMAKE_MODULE_PATH}")
+
 if (APPLE)
     set( CMAKE_OSX_ARCHITECTURES x86_64;i386 CACHE STRING "Build architectures for Mac OS X" )
     set( CMAKE_BUILD_TYPE Release CACHE STRING "Sets the configuration to build (Release, Debug, etc...)")
@@ -185,13 +188,14 @@ option(CEGUI_BUILD_GLM "Specifies whether to copy the GLM library headers.
 option(CEGUI_BUILD_TOLUAPP "Specifies whether to build the tolua++ library.
 (Required to build the Lua script module for CEGUI)" TRUE)
 
-option(DELTA3D_BUILD_ODE "Specifies whether to build the ode library.  DELTA3D" TRUE)
+option(DELTA3D_BUILD_ODE "Specifies whether to build the ode library.  DELTA3D" FALSE)
 option(DELTA3D_BUILD_CPPUNIT "Specifies whether to build the cppunit library.  DELTA3D" TRUE)
 option(DELTA3D_BUILD_NL "Specifies whether to build the Hawk NL library.  DELTA3D" TRUE)
 option(DELTA3D_BUILD_GNE "Specifies whether to build the GNE library.  DELTA3D" TRUE)
 option(DELTA3D_BUILD_CAL3D "Specifies whether to build the cal3d library.  DELTA3D" TRUE)
-option(DELTA3D_BUILD_ALUT "Specifies whether to build the cal3d library.  ALUT" TRUE)
-option(DELTA3D_BUILD_OPENEXR "Specifies whether to build the cal3d library.  ALUT" TRUE)
+option(DELTA3D_BUILD_ALUT "Specifies whether to build the alut library. DELTA3D" TRUE)
+option(DELTA3D_BUILD_OPENEXR "Specifies whether to build the openexr library. DELTA3D" TRUE)
+option(DELTA3D_BUILD_OPENVDB "Specifies whether to build the openvdb library. DELTA3D" TRUE)
 
 #if (CEGUI_BUILD_SILLY OR CEGUI_BUILD_CORONA OR CEGUI_BUILD_DEVIL)
     set(CEGUI_BUILD_LIBPNG TRUE)
@@ -342,9 +346,13 @@ if (DELTA3D_BUILD_ALUT)
    add_subdirectory(src/freealut-1.1.0-src)
 endif()
 
-if (DELTA3D_BUILD_OPENEXR)    
+if (DELTA3D_BUILD_OPENEXR OR DELTA3D_BUILD_OPENVDB)    
    add_subdirectory(src/ilmbase-2.2.0)
    add_subdirectory(src/openexr-2.2.0)
+endif()
+
+if (DELTA3D_BUILD_OPENVDB) 
+   add_subdirectory(src/openvdb/CEGUI-BUILD)
 endif()
 
 add_custom_target(POST_BUILD_CLEANUP ALL DEPENDS
