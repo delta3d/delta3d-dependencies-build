@@ -268,7 +268,7 @@ if (CEGUI_BUILD_EXPAT)
 endif()
 
 if (CEGUI_BUILD_XERCES)
-    add_subdirectory(src/xerces-c-3.1.1/CEGUI-BUILD)
+    add_subdirectory(src/xerces-c-3.1.2/CEGUI-BUILD)
     set(xercesDep xerces-c_3)
 endif()
 

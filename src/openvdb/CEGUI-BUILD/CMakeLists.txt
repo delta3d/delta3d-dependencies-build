@@ -127,7 +127,7 @@ set(HEADERS
 ../version.h
 )
 
-FIND_PACKAGE(Boost REQUIRED iostreams system thread)
+FIND_PACKAGE(Boost REQUIRED iostreams system thread filesystem)
 FIND_PACKAGE(TBB REQUIRED)
 
 #the root IS the include

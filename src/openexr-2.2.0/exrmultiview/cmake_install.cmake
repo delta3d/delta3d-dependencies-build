@@ -37,5 +37,11 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
 file(INSTALL DESTINATION "/usr/local/bin" TYPE EXECUTABLE FILES "/Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/src/openexr-2.2.0/exrmultiview/exrmultiview")
+  if(EXISTS "$ENV{DESTDIR}/usr/local/bin/exrmultiview" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/usr/local/bin/exrmultiview")
+    if(CMAKE_INSTALL_DO_STRIP)
+      execute_process(COMMAND "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip" "$ENV{DESTDIR}/usr/local/bin/exrmultiview")
+    endif()
+  endif()
 endif()
 
