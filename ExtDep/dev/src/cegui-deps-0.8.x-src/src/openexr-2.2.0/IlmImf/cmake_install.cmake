@@ -133,5 +133,17 @@ file(INSTALL DESTINATION "/usr/local/lib" TYPE SHARED_LIBRARY FILES
     "/Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/dependencies/lib/dynamic/libIlmImf.22.dylib"
     "/Users/david/development/ExtDepSrc/cegui-deps-0.8.x-src/dependencies/lib/dynamic/libIlmImf.dylib"
     )
+  foreach(file
+      "$ENV{DESTDIR}/usr/local/lib/libIlmImf.22.0.0.dylib"
+      "$ENV{DESTDIR}/usr/local/lib/libIlmImf.22.dylib"
+      "$ENV{DESTDIR}/usr/local/lib/libIlmImf.dylib"
+      )
+    if(EXISTS "${file}" AND
+       NOT IS_SYMLINK "${file}")
+      if(CMAKE_INSTALL_DO_STRIP)
+        execute_process(COMMAND "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip" "${file}")
+      endif()
+    endif()
+  endforeach()
 endif()
 
