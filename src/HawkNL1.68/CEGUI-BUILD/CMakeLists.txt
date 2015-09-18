@@ -17,7 +17,7 @@ set(SOURCES
 
 if(MSVC)
    set(SOURCESWIN "../src/ipx.c")
-   set(SOURCES ${SOURCESWIN})
+   list(APPEND SOURCES ${SOURCESWIN})
 endif()
 
 set(HEADERS 
@@ -33,6 +33,8 @@ if (APPLE)
        COMPILE_DEFINITIONS "_REENTRANT;MACOSX")
     set_target_properties(${DEPNAME}_static PROPERTIES
        COMPILE_DEFINITIONS "_REENTRANT;MACOSX")
+elseif (WIN32 OR WIN64)
+    target_link_libraries(${DEPNAME} wsock32)
 endif ()
 
 foreach(_H_FILE ${HEADERS})
