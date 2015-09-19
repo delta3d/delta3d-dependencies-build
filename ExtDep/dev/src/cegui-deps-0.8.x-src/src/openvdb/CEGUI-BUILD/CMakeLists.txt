@@ -131,7 +131,7 @@ FIND_PACKAGE(Boost REQUIRED iostreams system thread filesystem)
 FIND_PACKAGE(TBB REQUIRED)
 
 #the root IS the include
-include_directories(../../ ../../dependencies/include ${TBB_INCLUDE_DIR} ${Boost_INCLUDE_DIR})
+include_directories(../../ ../../../dependencies/include ${TBB_INCLUDE_DIR} ${Boost_INCLUDE_DIR})
 
 cegui_add_library(${DEPNAME} SOURCES NONE)
 target_link_libraries(${DEPNAME} ${TBB_LIBRARIES} Half zlib 
