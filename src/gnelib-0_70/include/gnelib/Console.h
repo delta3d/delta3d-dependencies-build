@@ -2,8 +2,8 @@
 #define CONSOLE_H_INCLUDED_C507037C
 
 /* GNE - Game Networking Engine, a portable multithreaded networking library.
- * Copyright (C) 2001 Jason Winnebeck (gillius@mail.rit.edu)
- * Project website: http://www.rit.edu/~jpw9607/
+ * Copyright (C) 2001-2006 Jason Winnebeck 
+ * Project website: http://www.gillius.org/gne/
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -20,14 +20,10 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include "SynchronizedObject.h"
-#include "ConsoleStreambuf.h"
+#include <gnelib/SynchronizedObject.h>
+#include <gnelib/ConsoleStreambuf.h>
 
-#ifdef OLD_CPP
-  #include <ostream.h>
-#else
-  #include <ostream>
-#endif
+#include <ostream>
 
 namespace GNE {
 /**
@@ -51,7 +47,7 @@ namespace GNE {
  * Note that the input functions are not thread-safe since there's only one
  * keyboard to be used ;).  It is okay, however, to be using the console
  * output functions at the same time you are using the locatable input
- * functions.  If you are using the inputfunctions that do not take
+ * functions.  If you are using the input functions that do not take
  * locations (like getString and gin), you cannot be doing output at the same
  * time, since they will move the cursor's location.
  */
@@ -104,7 +100,7 @@ class moveTo;
 
   /**
    * An ostream that works after the console part of GNE has been initialized.
-   * Normally cout doesn't work after the console has been initalized.  Note
+   * Normally cout doesn't work after the console has been initialized.  Note
    * if you have redirected stdin or stdout then cout and cin will still work
    * -- just not if they are writing or reading to the screen/keyboard.  This
    * is why I opted to create a separate stream from cout and cin.
@@ -133,7 +129,7 @@ class moveTo;
    * writing with gout.
    *
    * acquire is provided mostly for backwards compatibility, but it is not
-   * deprecated.  Creating a LockObject object is the prefered method as it
+   * deprecated.  Creating a LockObject object is the preferred method as it
    * is safer.
    *
    * @see release
@@ -145,7 +141,7 @@ class moveTo;
    * A manipulator to release the gout output.
    *
    * release is provided mostly for backwards compatibility, but it is not
-   * deprecated.  Creating a LockObject object is the prefered method as it
+   * deprecated.  Creating a LockObject object is the preferred method as it
    * is safer.
    *
    * @see acquire
@@ -154,19 +150,22 @@ class moveTo;
   extern ConsoleMutex release;
 
   /**
-   * Initalizes the console part of GNE.  This may be called multiple times.
+   * Initializes the console part of %GNE.  This may be called multiple times.
    *
    * Set the clearOnExit variable to true if after the program is finished the
    * console should clear the screen and move the cursor back to the top.
    * Set to false to preserve the screen contents and cursor position after
    * Console close if possible.
    *
+   * Shutting down %GNE with the GNE::shutdownGNE function will also shutdown
+   * the console API, if it is active.
+   *
    * @return true if the console could not be initialized.
    */
   bool initConsole( bool clearOnExit = true );
 
   /**
-   * Initalizes the console part of GNE.  This may be called multiple times.
+   * Initializes the console part of GNE.  This may be called multiple times.
    *
    * @return true if the console could not be initialized.
    * @deprecated the atexit pointer is no longer needed or used.  This method
@@ -227,7 +226,7 @@ class moveTo;
   int mlprintf(int x, int y, const char* format, ...);
 
   /**
-   * A syncronized version of the ANSI function putchar.
+   * A synchronized version of the ANSI function putchar.
    */
   void mputchar(int ch);
 
@@ -297,13 +296,13 @@ class moveTo;
   void mgetPos(int* x, int* y);
 
   /**
-   * The keycode the enter key gives from getch().
+   * The key code the enter key gives from getch().
    * @see getch
    */
   extern int ENTER;
 
   /**
-   * The keycode the backspace key gives from getch().
+   * The key code the backspace key gives from getch().
    * @see getch
    */
   extern int BACKSPACE;

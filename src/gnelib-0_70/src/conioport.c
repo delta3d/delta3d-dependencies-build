@@ -2,7 +2,7 @@
 //belongs to George foot gfoot@users.sourceforge.net.  The Windows portion
 //of this code is public domain.
 
-#include "../include/gnelib/conioport.h"
+#include <gnelib/conioport.h>
 
 #ifdef WIN32
 // *** WINDOWS API CONSOLE CODE ***
@@ -20,11 +20,13 @@ void conio_init (int* enterKey, int* backspaceKey) {
   conio_gotoxy( 0, 0 );
 }
 void conio_exit () { }
-int conio_kbhit () { return kbhit(); }
-int conio_getch () { return getch(); }
+int conio_kbhit () { return _kbhit(); }
+int conio_getch () { return _getch(); }
 
 void conio_gotoxy (int x, int y) {
-  COORD pos = {x, y};
+  COORD pos;
+  pos.X = (SHORT)x;
+  pos.Y = (SHORT)y;
   SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
 }
 

@@ -2,8 +2,8 @@
 #define _CUSTOMPACKET_H_
 
 /* GNE - Game Networking Engine, a portable multithreaded networking library.
- * Copyright (C) 2001 Jason Winnebeck (gillius@mail.rit.edu)
- * Project website: http://www.rit.edu/~jpw9607/
+ * Copyright (C) 2001-2006 Jason Winnebeck 
+ * Project website: http://www.gillius.org/gne/
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -20,15 +20,15 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include "Packet.h"
-#include "Buffer.h"
+#include <gnelib/Packet.h>
+#include <gnelib/Buffer.h>
 
 namespace GNE {
 
 /**
  * @ingroup midlevel
  *
- * Many times, espically during connection, you want to send some more
+ * Many times, especially during connection, you want to send some more
  * "free-form" data that may or may not all be related and will only be sent
  * once.  It may not make sense to create a completely new packet type just
  * to send a few things one time.  This packet type will allow you to send
@@ -73,10 +73,19 @@ public:
    * The position should be left at the point after your last write call.
    *
    * After a CustomPacket has been read, and you are pulling data out of it,
-   * the position and the limit will be the number of bytes stored in this
-   * CustomPacket.  You need to call rewind or flip (at this point, both are
-   * equivalent) on the buffer before pulling data from it, or a buffer
+   * the position will be the number of bytes stored in this CustomPacket.  You
+   * need to call flip on the buffer before pulling data from it, or a buffer
    * overflow exception will result.
+   *
+   * You can use the return from this method directly to modify the buffer, or
+   * you can store the returned reference (for a very short time) and work on
+   * that.  Here are two examples:
+   *
+   * <pre> CustomPacket cp;
+   * cp.getBuffer() << 15 << "whatever";
+   * //or
+   * Buffer& buf( cp.getBuffer() );
+   * buf << 15 << "whatever";</pre>
    */
   Buffer& getBuffer();
 

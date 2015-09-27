@@ -1,6 +1,6 @@
 /* GNE - Game Networking Engine, a portable multithreaded networking library.
- * Copyright (C) 2001 Jason Winnebeck (gillius@mail.rit.edu)
- * Project website: http://www.rit.edu/~jpw9607/
+ * Copyright (C) 2001-2006 Jason Winnebeck
+ * Project website: http://www.gillius.org/gne/
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -104,7 +104,7 @@ void packetTest(const PersonPacket& jason, const PersonPacket& elias) {
 
 void parseTest(const Packet& jason, const Packet& elias) {
   gout << "Starting packet tests.  If no \"Unexpected values\" are seen, everything worked." << endl;
-  Packet packet1;
+  EmptyPacket packet1;
   MyUnknownPacket packet2;
 
   Buffer raw1;

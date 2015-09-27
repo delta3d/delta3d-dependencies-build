@@ -2,8 +2,8 @@
 #define CONNECTIONLISTENER_H_INCLUDED_C43554C0
 
 /* GNE - Game Networking Engine, a portable multithreaded networking library.
- * Copyright (C) 2001 Jason Winnebeck (gillius@mail.rit.edu)
- * Project website: http://www.rit.edu/~jpw9607/
+ * Copyright (C) 2001-2006 Jason Winnebeck 
+ * Project website: http://www.gillius.org/gne/
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -21,8 +21,8 @@
  */
 
 
-#include "SmartPtr.h"
-#include "WeakPtr.h"
+#include <gnelib/SmartPtr.h>
+#include <gnelib/WeakPtr.h>
 
 namespace GNE {
 class Error;
@@ -45,7 +45,7 @@ class Connection;
  *
  * Note that there is only one event thread per Connection, so one one event
  * will be active at a time.  Take this into consideration that you may be
- * able to eliminated some syncronization and mutexes that would otherwise be
+ * able to eliminated some synchronization and mutexes that would otherwise be
  * needed.  onNewConn or onConnect or onConnectFailure are guaranteed to be
  * the first events from a connection, and won't be called multiple times.
  * onDisconnect will always be the last called (except after
@@ -53,7 +53,7 @@ class Connection;
  * called once.  Since only one event can be active at a time, you will want
  * to return quickly so other events can be processed, but note that if you
  * have a PacketFeeder set up for a connection, those events are independent
- * of ConnectionListener's events, so both types of events can be occuring
+ * of ConnectionListener's events, so both types of events can be occurring
  * at the same time.
  *
  * @see ServerConnectionListener::onListenFailure
@@ -87,7 +87,7 @@ public:
    *
    * You can also choose to refuse a connection by throwing an Error with an
    * error code of Error::ConnectionRefused, and will it will make the
-   * connection act as if an error just occured, so onListenFailure will be
+   * connection act as if an error just occurred, so onListenFailure will be
    * called and the above section of text still applies.
    *
    * This event does not have the "non-blocking" requirement that most GNE
@@ -139,7 +139,7 @@ public:
    *
    * You can also choose to refuse a connection by throwing an Error with an
    * error code of Error::ConnectionRefused, and will it will make the
-   * connection act as if an error just occured, so onListenFailure will be
+   * connection act as if an error just occurred, so onListenFailure will be
    * called and the above section of text still applies.
    *
    * Note: Only ServerConnection generates this function.  The SyncConnection
@@ -169,7 +169,7 @@ public:
    * The PacketStream is still valid, and there still may be data in the
    * queue for you to read, even if you pick up all data in the onReceive
    * events, there can be incoming data between the last onReceive and
-   * onDisconnect which will be very possible espically in planned
+   * onDisconnect which will be very possible especally in planned
    * disconnects.
    *
    * onDisconnect will always be the last event called on this listener, so
@@ -215,7 +215,7 @@ public:
    *
    * Remember that GNE does not automatically send PingPackets to give you the
    * choice for measuring ping times, so if you want to use PingPackets to
-   * keep onTimeout events from occuring, you have to send them yourself and
+   * keep onTimeout events from occurring, you have to send them yourself and
    * respond to them yourself as well.
    */
   virtual void onTimeout( Connection& conn );
@@ -223,7 +223,7 @@ public:
   /**
    * This event is triggered when a non-fatal error occurs in a connection
    * that does not force the connection to close, for example an unknown
-   * packet encounted is an error, but the connection can still proceed.
+   * packet encountered is an error, but the connection can still proceed.
    *
    * After this event is processed, connections resume normally.
    * Connection::disconnect() may also be called at this point if you wish
@@ -240,7 +240,7 @@ public:
 
   /**
    * This event is triggered when a fatal error occurs in a connection.
-   * When a fatal error occurs, communications cannot contiune and the
+   * When a fatal error occurs, communications cannot continue and the
    * socket will be disconnected.  An onDisconnect() event will occur
    * immediately after this event completes.  Most errors in GNE are fatal.
    *
@@ -253,7 +253,7 @@ public:
   virtual void onFailure( Connection& conn, const Error& error);
 
   /**
-   * Event triggered when one or more packets have been recieved.  It is
+   * Event triggered when one or more packets have been received.  It is
    * possible to get more packets while in this function, but if packets
    * arrive during this event, it will be called again, so you don't have to
    * make sure they have all been processed (there is no sure way to do

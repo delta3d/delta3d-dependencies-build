@@ -2,8 +2,8 @@
 #define _WRAPPERPACKET_H_ADG234
 
 /* GNE - Game Networking Engine, a portable multithreaded networking library.
- * Copyright (C) 2001 Jason Winnebeck (gillius@mail.rit.edu)
- * Project website: http://www.rit.edu/~jpw9607/
+ * Copyright (C) 2001-2006 Jason Winnebeck 
+ * Project website: http://www.gillius.org/gne/
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -20,7 +20,7 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include "Packet.h"
+#include <gnelib/Packet.h>
 
 namespace GNE {
   
@@ -33,24 +33,11 @@ namespace GNE {
  * types that perform this common functionality.
  */
 class WrapperPacket : public Packet {
+public: //typedefs
+  typedef SmartPtr<WrapperPacket> sptr;
+  typedef WeakPtr<WrapperPacket> wptr;
+
 public:
-  /**
-   * Initializes a new WrapperPacket with the given Packet ID and no
-   * encapsulated Packet.
-   */
-  WrapperPacket( int id );
-
-  /**
-   * Initializes a new WrapperPacket with the given Packet ID and encapsulated
-   * Packet.  The encapsulated Packet may be NULL.
-   */
-  WrapperPacket( int id, const Packet* packet );
-
-  /**
-   * Initializes this WrapperPacket with the given WrapperPacket.
-   */
-  WrapperPacket( const WrapperPacket& o );
-
   virtual ~WrapperPacket();
 
   /**
@@ -63,6 +50,12 @@ public:
    * currently be an encapsulated Packet, so this method may return NULL.
    */
   const Packet* getData() const;
+
+  /**
+   * Returns the encapsulated data in this WrapperPacket.  There may not
+   * currently be an encapsulated Packet, so this method may return NULL.
+   */
+  Packet* getData();
 
   /**
    * Replaces the given packet with the current packet as this WrapperPacket's
@@ -89,9 +82,21 @@ public:
   
 protected:
   /**
-   * This ctor is suitable for use only in the create method.
+   * Initializes a new WrapperPacket with the given Packet ID and no
+   * encapsulated Packet.
    */
-  WrapperPacket();
+  WrapperPacket( int id );
+
+  /**
+   * Initializes a new WrapperPacket with the given Packet ID and encapsulated
+   * Packet.  The encapsulated Packet may be NULL.
+   */
+  WrapperPacket( int id, const Packet* packet );
+
+  /**
+   * Initializes this WrapperPacket with the given WrapperPacket.
+   */
+  WrapperPacket( const WrapperPacket& o );
 
 private:
   /**

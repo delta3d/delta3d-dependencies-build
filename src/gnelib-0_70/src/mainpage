@@ -1,7 +1,7 @@
 //This file only contains the information useful for the main page of the
 //documentation - There is no code here.
 
-/** \mainpage %GNE -- Game Networking Engine
+/** \mainpage GNE -- Game Networking Engine
 
 See the Readme file and the specific readme for your compiler (ie readme.vc
 for MSVC) for requirements and installation instructions.
@@ -13,6 +13,8 @@ for MSVC) for requirements and installation instructions.
       <li> \ref threads </li>
       <li> \ref console </li>
       <li> \ref core </li>
+      <li> \ref shutdown </li>
+      <li> \ref smartptrs </li>
       <li> \ref highlevel </li>
     </ul>
   <li> \ref improve </li>
@@ -20,6 +22,8 @@ for MSVC) for requirements and installation instructions.
 </ul>
 
 \section beg Beginner's Guide to GNE
+
+Last updated 9-1-2003.
 
 This section has some information that will help you get started with using
 %GNE.  The purpose of this guide is not to teach you everything about %GNE but
@@ -80,7 +84,9 @@ you'll probably not need to use them directly in normal circumstances.
   <ul>
     <li> GNE::Thread * </li>
     <li> GNE::Mutex * </li>
-    <li> GNE::LockMutex </li>
+    <li> GNE::LockMutex (a GNE::Lock specialaized for GNE::Mutex)</li>
+    <li> GNE::LockCV</li>
+    <li> GNE::LockObject (useful for locking gout)</li>
     <li> GNE::ConditionVariable </li>
     <li> GNE::Timer </li>
     <li> GNE::TimerCallback </li>
@@ -119,9 +125,9 @@ you'll probably not need to use them directly in normal circumstances.
     <li> The GNE::Console namespace with C-style I/O functions </li>
     <li> The GNE::Console::gout object (works similar to cout) </li>
     <li> The GNE::Console::gin object (works similar to cin) </li>
-    <li> The GNE::Console::acquire and GNE::Console::release ConsoleMutex
-          objects for gout </li>
-    <li> The GNE::Console::ConsoleManipulator class GNE::Console::moveTo </li>
+    <li> The GNE::Console::acquire and GNE::Console::release 
+          objects for gout. </li>
+    <li> The class GNE::Console::moveTo to move the cursor with gout.</li>
   </ul>
 
   Standard C/C++ only allows for line buffered input and output.  It does not
@@ -152,7 +158,7 @@ you'll probably not need to use them directly in normal circumstances.
     <li> GNE::SyncConnection * </li>
     <li> GNE::ServerConnectionListener * </li>
     <li> GNE::Packet * </li>
-    <li> GNE::RawPacket * </li>
+    <li> GNE::Buffer * </li>
   </ul>
   
   The %Connection API provides the classes to send data between computers.
@@ -180,38 +186,137 @@ you'll probably not need to use them directly in normal circumstances.
   to connect to this server.
 
   The PacketStream represents an outgoing and an incoming queue of packets.
-  To get sent packets, use GNE::PacketStream::getNextPacket to receive the
+  To get sent packets, use GNE::PacketStream::getNextPacket or
+  GNE::PacketStream::getNextPacketSp to receive the
   next incoming packet.  Use GNE::PacketStream::writePacket to send one.
   
-  PacketStreams can also be tied with a PacketFeeder.  A PacketFeeder
+  PacketStreams can also be tied with a GNE::PacketFeeder.  A PacketFeeder
   provides a way to feed a continuous stream of packets that is based on the
   bandwidth of the connection.  For example if you wanted your client to send
   update packets as fast as it can, but you always want to send the latest
   information, what you would do is create a packet, send it, wait for it to
   be sent (based on the bandwidth of the connection), and then repeat again.
-  In GNE a PacketFeeder provides this sort of functionality.
+  In %GNE a PacketFeeder provides this sort of functionality.
 
   To send and receive packets, you will want to derive your own packet class
-  from GNE::Packet and register it with GNE::PacketParser::registerPackets.
+  from GNE::Packet and register it with GNE::PacketParser::defaultRegisterPacket.
   Override all of the relevant functions in Packet and in the writePacket and
   readPacket functions will be the only place you are likely to use the
-  GNE::RawPacket class.  The RawPacket represents the serialized form of a
-  packet.  Use it similarly to cout or cin.  Seeing the expacket example is
+  GNE::Buffer class.  The Buffer represents the serialized form of a
+  packet.  Use it similarly to an fstream.  Seeing the exhello example is
   probably the best way to learn how to make your own packets.
 
-  Once you make your own packet types and register them, %GNE will be able
-  to recognize and parse these packets and be able to send and receive them
-  through the PacketStream as it would any other packet.
+  Once you make your own packet types and register them, %GNE will be able to
+  recognize and parse these packets and be able to send and receive them through
+  the PacketStream as it would any other packet. You can use the
+  GNE::PacketParser methods GNE::PacketParser::createPacket,
+  GNE::PacketParser::clonePacket, and GNE::PacketParser::destroyPacket to create
+  and manipulate packets registered with %GNE.  The system allows for advanced
+  users to provide custom memory managers if needed to allocate the packets.
 
-  You only have to use SyncConnection when connecting, and even then, only to
-  get a pointer to the Connection object.  But the SyncConnection is a
-  helpful class to write connecting code or to do connections where you are
-  sending a packet and are waiting for a specific response packet.  See the
-  exsynchello example for a version of exhello using SyncConnections rather
-  than the PacketStream, and further note that exhello and exsynchello are
-  completely compatable with each other -- so they are doing the SAME thing
-  over the network but are simply just two ways of doing it.
+  You only have to use SyncConnection when connecting, and even then, only if
+  you want to negotiate a new connection using a blocking (rather than
+  event-driven) format.  But the SyncConnection is a helpful class to write
+  connecting code or to do connections where you are sending a packet and are
+  waiting for a specific response packet.  See the exsynchello example for a
+  version of exhello using SyncConnections rather than the PacketStream, and
+  further note that exhello and exsynchello are completely compatable with each
+  other -- so they are doing the SAME thing over the network but are simply just
+  two ways of doing it.
+
+  \subsection shutdown Shutting Down
+
+  %GNE will help you handle connections, threads, and timers when it shuts down
+  by gracefully disconnecting all connections (as if you had called disconnect
+  on them), calling shutDown on all threads (which you see as a flag being set
+  to true), and stopping all active timers.  %GNE internally keeps a list of all
+  of these active resources so they are shut down at program exit (as part of
+  the atexit routine), or when you explicitly call GNE::shutdownGNE.
+
+  By default %GNE will wait up to ten seconds for all threads to terminate,
+  after that time the process will be forcefully closed without a proper
+  shutdown.  On some operating systems when %GNE is compiled as debugging mode
+  you will see an assertion failure "assert( !isRunning() );" in %Thread.cpp if
+  the process is forcefully shutdown.
+
+  Ten seconds should be more than enough time as any blocking network operations
+  (say you were blocked on a SyncConnection read), will be terminated when %GNE
+  shuts down all of the sockets -- but if a user thread is in an infinite loop
+  then the thread can never be cleanly stopped unless it returns from its
+  GNE::Thread::run routine.
+
+  This means that like typical C++ threading schemes, you must not exit main
+  until all threads are completed.  If %GNE was the most recent library
+  registered in atexit, then the threads will be shutdown, otherwise some atexit
+  routines may be run.  When in doubt, an explicit call to GNE::shutdownGNE will
+  ensure your knowledge of when shutdown occurs.
+
+  You may be tempted to use the GNE::Thread::waitForAllThreads method but note
+  that at the current time it polls the thread count every quarter of a second
+  or so and thus is in a sleeping poll loop.  I may consider a threading model
+  to allow GNE's shutdown to wait indefinitely by joining on all threads but in
+  C-style threading there are issues with this so I decided to stick to
+  tradition.  Feel free to send the %GNE authors comments on that decision
+  though.
   
+  \ref toc
+
+  \subsection smartptrs Smart Pointers
+
+  In %GNE 0.70 I introduced smart pointers into the library, and used them for
+  all main %GNE objects.  I realized that keeping track of when objects can be
+  deleted in a multithreaded environment was more difficult that necessary, so I
+  decided to utilize reference counted smart pointers.  In the 0.70 API change
+  document, I described the smart pointers:
+
+  In this new version of %GNE I decided to make a move to using smart pointers.
+  The current implementation that I have chosen is Boost's shared_ptr, which is
+  a non-intrusive reference counted smart pointer. In the %GNE API, the smart
+  pointers manifest themselves as the GNE::SmartPtr class. Yes, I did find out
+  later the popular Loki library also has a class "SmartPtr" but this is what
+  namespaces are for.
+
+  Because SmartPtr is a reference counted pointer, that means when the last
+  SmartPtr pointing to an object dissapears, the object is automatically
+  deleted. Reference counting in this sense appears exactly like garbage
+  collection except for one major flaw -- if an object directly or indirectly
+  (through other classes) points to itself (this is called a cycle), then the
+  object will never be deleted, causing a memory leak. The way to break cycles
+  with boost::shared_ptr is to use boost::weak_ptr, which in %GNE manifests
+  itself as GNE::WeakPtr. Weak pointers "become empty" when no strong pointers
+  point to that object -- in other words weak pointers to not keep the object
+  from being destroyed.
+
+  Unfortunately this makes the generator-listener relationship difficult. To
+  keep the same design as %GNE 0.55 of registering listeners and then being able
+  to "forget" about them, I resolve cycles by keeping a SmartPtr to the listener
+  and manually resetting it when the generator generates its last event. Because
+  Connection and Timer objects are automatically shut down when %GNE is shutdown
+  on program exit, no memory leaks will result. This means you can safely retain
+  SmartPtr to %GNE's objects in your listeners. I wanted to make the issue of
+  cycles as transparent as possible to the end-developer so I place all of the
+  burden of handling possible cycles with %GNE.
+
+  Reference counting has a few key advantages over true garbage collection:
+
+  <ul>
+    <li>Objects are destroyed the instant they are not being used, so object
+    destructors can be used to free resources immediately rather than lingering
+    around until the next collection which may not come for minutes, hours, or
+    days depending on the memory environment.</li>
+    <li>Determining when an object ready to be deleted is much easier and much
+    more efficent in a reference-counted system as only a simple integer
+    decrement and test is required. Likewise copying a reference counted pointed
+    is efficent requiring only an increment operation and copying of typically
+    only an additional pointer to the count.</li>
+  </ul>
+
+  %GNE enforces the use of smart pointers to its objects by making the
+  constructors private and providing public static "create" methods that
+  construct a new object and return a SmartPtr to it. By forcing objects to be
+  referenced by a smart pointer from the very start, it prevents any accidental
+  leaks, espically unexpected ones due to exceptions.
+
   \ref toc
 
   \subsection highlevel High Level API
@@ -225,6 +330,23 @@ you'll probably not need to use them directly in normal circumstances.
   a list of players, and handle things like text communication amongst the
   players.
 
+  About the high-level API in %GNE 0.70: Partial experimental work has begun on
+  the high-level API. This work began about a year ago before I decided to
+  refactor the mid-level API and reexamine it for robustness and stability.
+  Instead of removing it for this release I decided to leave the %GNE code in
+  its current state. Work will now resume on the high-level parts of %GNE, so
+  this API might change. Therefore any parts of %GNE marked as "high-level" in
+  the %GNE documentation should be considered experimental quality and are
+  provided only as a preview -- their interfaces may change entirely in the next
+  release. You can treat the rest of %GNE as being in "late beta". I've tested
+  it somewhat but it hasn't been used in any major applications yet. In addition
+  to the high-level API already with some implementations, there are header
+  files in the include\gnelib\high directory of header files with documentation
+  of parts of the %GNE high-level API where implementation has not even started
+  (these files only available in the "zip" archive version at this time). I very
+  much welcome your feedback on any parts of the high-level API before I start
+  major implementation work.
+
   \ref toc
 
   \subsection lists List Server API
@@ -232,7 +354,7 @@ you'll probably not need to use them directly in normal circumstances.
   After the completion of the high level API a way to interact with list
   servers to search for games will be added.  Hopefully the %GNE team will
   be able to find a permanent connection and hardware to sponsor a master
-  list service that anyone using GNE will be able to easily register their
+  list service that anyone using %GNE will be able to easily register their
   game servers on.
 
   The list service was meant to address one of the largest problems with
@@ -253,8 +375,11 @@ to me at the %GNE website.
 
 \section moreinfo More Information / Website
 
-For more information, try the %GNE website: http://www.rit.edu/~jpw9607/ <br>
+For more information, try the %GNE website: http://www.gillius.org/gne/ <br>
 Or the %GNE SourgeForge site: http://www.sf.net/projects/gnelib/
+
+For more information on the major API changes from %GNE 0.50 to 0.70, view the
+API changes document at: http://www.gillius.org/gne/apichanges.htm
 
 There is also a mailing list called gnelib-users on the sourceforge website:
 http://lists.sourceforge.net/mailman/listinfo/gnelib-users

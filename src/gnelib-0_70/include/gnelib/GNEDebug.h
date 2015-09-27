@@ -2,8 +2,8 @@
 #define _GNEDEBUG_H_
 
 /* GNE - Game Networking Engine, a portable multithreaded networking library.
- * Copyright (C) 2001 Jason Winnebeck (gillius@mail.rit.edu)
- * Project website: http://www.rit.edu/~jpw9607/
+ * Copyright (C) 2001-2006 Jason Winnebeck 
+ * Project website: http://www.gillius.org/gne/
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -24,15 +24,33 @@
 
 namespace GNE {
 /**
- * Debugging level constants for the levelMask.
+ * Debugging level: startup, shutdown, and explicit error messages.
  */
 const int DLEVEL1 = 1;
-const int DLEVEL2 = 2;
-const int DLEVEL3 = 4;
-const int DLEVEL4 = 8;
-const int DLEVEL5 = 16;
 /**
- * Function to initalize debugging.  This is safe to call before
+ * Debugging level: connection, disconnection, and other "normal" operation.
+ */
+const int DLEVEL2 = 2;
+/**
+ * Debugging level: average level.  packet registration, socket registration
+ */
+const int DLEVEL3 = 4;
+/**
+ * Debugging level: events like onReceive and such, and some reporting.
+ */
+const int DLEVEL4 = 8;
+/**
+ * Debugging level: very low level -- thread creation, memory allocation.
+ */
+const int DLEVEL5 = 16;
+
+/**
+ * Includes all debugging levels.
+ */
+const int DLEVELALL = DLEVEL1 | DLEVEL2 | DLEVEL3 | DLEVEL4 | DLEVEL5;
+
+/**
+ * Function to initialize debugging.  This is safe to call before
  * initialization of GNE, but can be called at any time (but not multiple
  * times).  No debugging messages will be displayed until this function is
  * called, and it is save to use the debugging macros and doTrace before

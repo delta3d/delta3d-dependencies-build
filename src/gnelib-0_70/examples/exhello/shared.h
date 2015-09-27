@@ -2,8 +2,8 @@
 #define _SHARED_H_
 
 /* GNE - Game Networking Engine, a portable multithreaded networking library.
- * Copyright (C) 2001 Jason Winnebeck (gillius@mail.rit.edu)
- * Project website: http://www.rit.edu/~jpw9607/
+ * Copyright (C) 2001-2006 Jason Winnebeck
+ * Project website: http://www.gillius.org/gne/
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -38,7 +38,7 @@ public:
 public:
   HelloPacket() : Packet(ID) {}
   //copy ctor not needed
-  HelloPacket(string message2) : Packet(MIN_USER_ID), message(message2) {}
+  HelloPacket(string message2) : Packet(ID), message(message2) {}
 
   virtual ~HelloPacket() {}
 

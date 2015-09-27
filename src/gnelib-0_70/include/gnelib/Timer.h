@@ -2,8 +2,8 @@
 #define TIMER_H_INCLUDED_C517B9FE
 
 /* GNE - Game Networking Engine, a portable multithreaded networking library.
- * Copyright (C) 2001 Jason Winnebeck (gillius@mail.rit.edu)
- * Project website: http://www.rit.edu/~jpw9607/
+ * Copyright (C) 2001-2006 Jason Winnebeck 
+ * Project website: http://www.gillius.org/gne/
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -20,11 +20,11 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include "Thread.h"
-#include "Time.h"
-#include "Mutex.h"
-#include "SmartPtr.h"
-#include "WeakPtr.h"
+#include <gnelib/Thread.h>
+#include <gnelib/Time.h>
+#include <gnelib/Mutex.h>
+#include <gnelib/SmartPtr.h>
+#include <gnelib/WeakPtr.h>
 
 namespace GNE {
 class TimerCallback;
@@ -76,7 +76,7 @@ public:
   virtual ~Timer();
 
   /**
-   * Returns the current time from some arbitray point in the past.  This is
+   * Returns the current time from some arbitrary point in the past.  This is
    * usually a very high precision timer that likely provides microsecond
    * or better resolution.
    */
@@ -145,7 +145,7 @@ private:
   SmartPtr<TimerCallback> listener;
 
   /**
-   * Provides syncronization for some functions to make them thread safe.
+   * Provides synchronization for some functions to make them thread safe.
    */
   mutable Mutex sync;
 

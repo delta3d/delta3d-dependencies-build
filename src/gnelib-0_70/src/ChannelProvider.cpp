@@ -1,6 +1,6 @@
 /* GNE - Game Networking Engine, a portable multithreaded networking library.
- * Copyright (C) 2001 Jason Winnebeck (gillius@mail.rit.edu)
- * Project website: http://www.rit.edu/~jpw9607/
+ * Copyright (C) 2001-2006 Jason Winnebeck 
+ * Project website: http://www.gillius.org/gne/
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -17,12 +17,12 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include "../include/gnelib/gneintern.h"
-#include "../include/gnelib/ChannelProvider.h"
-#include "../include/gnelib/Packet.h"
-#include "../include/gnelib/ChannelPacket.h"
-#include "../include/gnelib/Connection.h"
-#include "../include/gnelib/Lock.h"
+#include "gneintern.h"
+#include <gnelib/ChannelProvider.h>
+#include <gnelib/Packet.h>
+#include <gnelib/ChannelPacket.h>
+#include <gnelib/Connection.h>
+#include <gnelib/Lock.h>
 
 namespace GNE {
 
@@ -119,6 +119,7 @@ void ChannelProvider::sendToChannel( ChannelPacket& packet, Connection* exclude,
     ChannelIterator iter = channels[chan]->conns.begin();
     while ( iter != channels[chan]->conns.end() ) {
       (*iter)->stream().writePacket( packet, reliable );
+      ++iter;
     }
   }
   sync.release();

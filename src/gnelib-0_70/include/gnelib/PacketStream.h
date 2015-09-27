@@ -2,8 +2,8 @@
 #define PACKETSTREAM_H_INCLUDED_C51CCBFF
 
 /* GNE - Game Networking Engine, a portable multithreaded networking library.
- * Copyright (C) 2001 Jason Winnebeck (gillius@mail.rit.edu)
- * Project website: http://www.rit.edu/~jpw9607/
+ * Copyright (C) 2001-2006 Jason Winnebeck 
+ * Project website: http://www.gillius.org/gne/
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -20,11 +20,11 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include "ConditionVariable.h"
-#include "Mutex.h"
-#include "Thread.h"
-#include "Time.h"
-#include "SmartPointers.h"
+#include <gnelib/ConditionVariable.h>
+#include <gnelib/Mutex.h>
+#include <gnelib/Thread.h>
+#include <gnelib/Time.h>
+#include <gnelib/SmartPointers.h>
 
 #include <queue>
 
@@ -86,7 +86,7 @@ public:
   /**
    * Returns the current outgoing queue length in packets.  This is meant
    * as a possible hint for your application to tune its performance by
-   * knowning when the queues are starting to fill up.
+   * knowing when the queues are starting to fill up.
    *
    * @param reliable true for the outgoing reliable packet queue.<br>
    *                 false for the outgoing unreliable packet queue.
@@ -243,7 +243,7 @@ public:
 
   /**
    * Blocks on this PacketStream until all packets have been sent.  Note that
-   * if you have set an active packet feeder, and it is constaly adding
+   * if you have set an active packet feeder, and it is constantly adding
    * packets to the queue, this function is likely not to return until it
    * times out, so you may want to communicate with that feeder somehow or
    * turn off the feeder (by setting a NULL feeder) so more packets are not
@@ -260,7 +260,7 @@ public:
   void shutDown();
 
   /**
-   * Add the given packet to the incoming queue.  This is normalled used
+   * Add the given packet to the incoming queue.  This is normally used
    * internally by the Connection class to add the packets, but it is safe
    * for the user to call, if they want to delay processing of the packets
    * for a later time and see what other packets are available.\n
@@ -323,13 +323,13 @@ private:
 
   /**
    * Discovers the amount of time passed and updates the currOutRemain so we
-   * know much data we can send.  This should be called almost everytime
+   * know much data we can send.  This should be called almost every time
    * before we use currOutRemain.  outQCtrl MUST be acquired when you call
    * this function.
    */
   void updateRates();
 
-  //These 3 variables syncronized by outQCtrl, and must be since the writer
+  //These 3 variables synchronized by outQCtrl, and must be since the writer
   //thread has to wait on conditions of the feeder.
   SmartPtr<PacketFeeder> feeder;
   bool feederAllowed; //set false after thread dies so feeder is never set again.
@@ -338,7 +338,7 @@ private:
   int lowPacketsThreshold;
 
   /**
-   * Generates and processes the onLowPackets event immedately if conditions
+   * Generates and processes the onLowPackets event immediately if conditions
    * are appropriate, returning when the event has completed.
    */
   void onLowPackets( int numPackets );

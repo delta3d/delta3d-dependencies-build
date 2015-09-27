@@ -2,8 +2,8 @@
 #define _OBJECTBROKERSERVER_H_ASDF423
 
 /* GNE - Game Networking Engine, a portable multithreaded networking library.
- * Copyright (C) 2001 Jason Winnebeck (gillius@mail.rit.edu)
- * Project website: http://www.rit.edu/~jpw9607/
+ * Copyright (C) 2001-2006 Jason Winnebeck 
+ * Project website: http://www.gillius.org/gne/
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -20,12 +20,12 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include "ObjectBroker.h"
-#include "ObjectBrokerPacket.h"
-#include "ObjectCreationPacket.h"
-#include "ObjectUpdatePacket.h"
-#include "ObjectDeathPacket.h"
-#include "Mutex.h"
+#include <gnelib/ObjectBroker.h>
+#include <gnelib/ObjectBrokerPacket.h>
+#include <gnelib/ObjectCreationPacket.h>
+#include <gnelib/ObjectUpdatePacket.h>
+#include <gnelib/ObjectDeathPacket.h>
+#include <gnelib/Mutex.h>
 
 namespace GNE {
   class NetworkObject;

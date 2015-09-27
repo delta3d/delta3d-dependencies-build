@@ -1,6 +1,6 @@
 /* GNE - Game Networking Engine, a portable multithreaded networking library.
- * Copyright (C) 2001 Jason Winnebeck (gillius@mail.rit.edu)
- * Project website: http://www.rit.edu/~jpw9607/
+ * Copyright (C) 2001-2006 Jason Winnebeck 
+ * Project website: http://www.gillius.org/gne/
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -17,17 +17,17 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include "../include/gnelib/gneintern.h"
-#include "../include/gnelib/ServerConnectionListener.h"
-#include "../include/gnelib/ConnectionEventGenerator.h"
-#include "../include/gnelib/ServerConnection.h"
-#include "../include/gnelib/ConnectionListener.h"
-#include "../include/gnelib/Connection.h"
-#include "../include/gnelib/ConnectionParams.h"
-#include "../include/gnelib/GNE.h"
-#include "../include/gnelib/Address.h"
-#include "../include/gnelib/Errors.h"
-#include "../include/gnelib/Lock.h"
+#include "gneintern.h"
+#include <gnelib/ServerConnectionListener.h>
+#include <gnelib/ConnectionEventGenerator.h>
+#include <gnelib/ServerConnection.h>
+#include <gnelib/ConnectionListener.h>
+#include <gnelib/Connection.h>
+#include <gnelib/ConnectionParams.h>
+#include <gnelib/GNE.h>
+#include <gnelib/Address.h>
+#include <gnelib/Errors.h>
+#include <gnelib/Lock.h>
 
 namespace GNE {
 
@@ -67,7 +67,7 @@ bool ServerConnectionListener::open(int port) {
   LockMutex lock(sync);
 
   if ( socket == NL_INVALID ) {
-    socket = nlOpen(port, NL_RELIABLE_PACKETS);
+    socket = nlOpen( (NLushort)port, NL_RELIABLE_PACKETS );
     return (socket == NL_INVALID);
   } else
     return false;
@@ -176,7 +176,7 @@ void ServerConnectionListener::rawClose() {
     GNE::eGen->unreg(socket);
     listening = false;
   }
-
+  
   if ( socket != NL_INVALID ) {
     nlClose(socket);
     socket = NL_INVALID;
@@ -184,16 +184,14 @@ void ServerConnectionListener::rawClose() {
 }
 
 void ServerConnectionListener::processOnListenFailure( const Error& error, const Address& from, const ConnectionListener::sptr& listener) {
-  //LockMutex lock( sync );
   onListenFailure( error, from, listener );
 }
 
 void ServerConnectionListener::processOnListenSuccess( const ConnectionListener::sptr& listener ) {
-  //LockMutex lock( sync );
   onListenSuccess( listener );
 }
 
-void ServerConnectionListener::onListenSuccess(const ConnectionListener::sptr& listener) {
+void ServerConnectionListener::onListenSuccess(const ConnectionListener::sptr&) {
   //The default behavior for this event is to do nothing.
 }
 

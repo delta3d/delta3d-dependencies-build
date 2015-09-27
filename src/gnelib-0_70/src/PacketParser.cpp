@@ -1,6 +1,6 @@
 /* GNE - Game Networking Engine, a portable multithreaded networking library.
- * Copyright (C) 2001 Jason Winnebeck (gillius@mail.rit.edu)
- * Project website: http://www.rit.edu/~jpw9607/
+ * Copyright (C) 2001-2006 Jason Winnebeck 
+ * Project website: http://www.gillius.org/gne/
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -17,24 +17,24 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include "../include/gnelib/gneintern.h"
-#include "../include/gnelib/PacketParser.h"
-#include "../include/gnelib/Buffer.h"
-#include "../include/gnelib/Mutex.h"
-#include "../include/gnelib/Lock.h"
-#include "../include/gnelib/Error.h"
-#include "../include/gnelib/Errors.h"
+#include "gneintern.h"
+#include <gnelib/PacketParser.h>
+#include <gnelib/Buffer.h>
+#include <gnelib/Mutex.h>
+#include <gnelib/Lock.h>
+#include <gnelib/Error.h>
+#include <gnelib/Errors.h>
 
 //Packet type includes used for registration.
-#include "../include/gnelib/Packet.h"
-#include "../include/gnelib/CustomPacket.h"
-#include "../include/gnelib/ExitPacket.h"
-#include "../include/gnelib/PingPacket.h"
-#include "../include/gnelib/RateAdjustPacket.h"
-#include "../include/gnelib/ObjectCreationPacket.h"
-#include "../include/gnelib/ObjectUpdatePacket.h"
-#include "../include/gnelib/ObjectDeathPacket.h"
-#include "../include/gnelib/ChannelPacket.h"
+#include <gnelib/EmptyPacket.h>
+#include <gnelib/CustomPacket.h>
+#include <gnelib/ExitPacket.h>
+#include <gnelib/PingPacket.h>
+#include <gnelib/RateAdjustPacket.h>
+#include <gnelib/ObjectCreationPacket.h>
+#include <gnelib/ObjectUpdatePacket.h>
+#include <gnelib/ObjectDeathPacket.h>
+#include <gnelib/ChannelPacket.h>
 
 namespace GNE {
 namespace PacketParser {
@@ -66,7 +66,7 @@ void registerGNEPackets() {
     packets[c].destroyFunc = NULL;
   }
 
-  defaultRegisterPacket<Packet>();
+  defaultRegisterPacket<EmptyPacket>();
   defaultRegisterPacket<CustomPacket>();
   defaultRegisterPacket<ExitPacket>();
   defaultRegisterPacket<RateAdjustPacket>();

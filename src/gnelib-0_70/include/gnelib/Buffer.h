@@ -2,8 +2,8 @@
 #define BUFFER_H_LRP401
 
 /* GNE - Game Networking Engine, a portable multithreaded networking library.
- * Copyright (C) 2001 Jason Winnebeck (gillius@mail.rit.edu)
- * Project website: http://www.rit.edu/~jpw9607/
+ * Copyright (C) 2001-2006 Jason Winnebeck 
+ * Project website: http://www.gillius.org/gne/
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -20,7 +20,7 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include "gnetypes.h"
+#include <gnelib/gnetypes.h>
 
 namespace GNE {
   class Time;
@@ -28,17 +28,17 @@ namespace GNE {
 
 /**
  * The Buffer class provides functionality to pull data types out of a raw
- * binary data buffer.  This class is the replacement for the Buffer class
+ * binary data buffer.  This class is the replacement for the RawPacket class
  * that used to exist.  There are a few reasons for this rename.  The first
  * being that I wanted to fix up the interface -- it had changed so much I
  * didn't want people getting confused so it's a new class now.  The second
- * reason is because people were getting confused thinking Buffer was a
+ * reason is because people were getting confused thinking RawPacket was a
  * Packet type since all Packets typically are named WhateverPacket.  The
  * third reason is because I chose to somewhat base my interface off a class
  * by the same name in Java, java.nio.Buffer.
  *
- * Advantages over Buffer include easier and much much safer memory
- * allocation and management.  Previously in Buffer there was no knowledge
+ * Advantages over RawPacket include easier and much much safer memory
+ * allocation and management.  Previously in RawPacket there was no knowledge
  * about the buffer size and it was very easy to overflow or underflow the
  * buffer.
  *
@@ -101,7 +101,7 @@ public:
    * two Buffers with the same data, position, and limit.  Changes made to one
    * will not affect the other.
    *
-   * To make this operation efficent, the backing array for this Buffer is only
+   * To make this operation efficient, the backing array for this Buffer is only
    * recreated if the capacity of the left Buffer is smaller than the capacity
    * of the right.  Thus the resulting Buffer's capacity is equal to or greater
    * than the capacities of the two Buffers before the operation.
@@ -205,7 +205,7 @@ public:
   static int getSizeOf(guint32 x) { return sizeof(x); }
   static int getSizeOf(gsingle x) { return sizeof(x); }
   static int getSizeOf(gdouble x) { return sizeof(x); }
-  static int getSizeOf(const Time& x) { return sizeof(gint32)*2; }
+  static int getSizeOf(const Time&) { return sizeof(gint32)*2; }
 
   /**
    * Writes all remaining bytes in Buffer src to this Buffer.  This is the
@@ -316,8 +316,7 @@ public:
 
   /**
    * The max length of a %GNE network packet.  This constant is used mostly by
-   * %GNE's internal code to create packet combonation buffers.
-   * You may set this before initialization.
+   * %GNE's internal code to create packet combination buffers.
    */
   static const int RAW_PACKET_LEN;
 

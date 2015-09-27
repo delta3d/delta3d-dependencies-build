@@ -1,6 +1,6 @@
 /* GNE - Game Networking Engine, a portable multithreaded networking library.
- * Copyright (C) 2001 Jason Winnebeck (gillius@mail.rit.edu)
- * Project website: http://www.rit.edu/~jpw9607/
+ * Copyright (C) 2001-2006 Jason Winnebeck 
+ * Project website: http://www.gillius.org/gne/
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -17,10 +17,11 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include "../include/gnelib/gneintern.h"
-#include "../include/gnelib/Mutex.h"
-#include "../include/gnelib/MutexData.h"
-#include "../include/gnelib/Thread.h"
+#include "gneintern.h"
+#include <gnelib/Mutex.h>
+#include <gnelib/Thread.h>
+
+#include "MutexData.h"
 
 namespace GNE {
 
@@ -79,6 +80,8 @@ Mutex::~Mutex() {
     valassert(pthread_mutex_destroy( &data->dbgMutex ), 0);
   #endif
 #endif
+
+  delete data;
 }
 
 void Mutex::acquire() {

@@ -2,8 +2,8 @@
 #define _GNETYPES_H_
 
 /* GNE - Game Networking Engine, a portable multithreaded networking library.
- * Copyright (C) 2001 Jason Winnebeck (gillius@mail.rit.edu)
- * Project website: http://www.rit.edu/~jpw9607/
+ * Copyright (C) 2001-2006 Jason Winnebeck 
+ * Project website: http://www.gillius.org/gne/
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -21,6 +21,7 @@
  */
 
 //Header file containing GNE-wide typedefs.
+#include <boost/cstdint.hpp>
 
 namespace GNE {
   /**
@@ -28,8 +29,8 @@ namespace GNE {
    * implementations (as defined in the GNE protocol document).
    * "u" type variables denote unsigned versions.
    */
-  typedef signed   char  gint8;
-  typedef unsigned char  guint8;
+  typedef boost::int8_t  gint8;
+  typedef boost::uint8_t guint8;
   typedef guint8         gbyte;
 
   /**
@@ -46,11 +47,11 @@ namespace GNE {
    */
   const gbool gFalse = 0;
   
-  typedef signed   short gint16;
-  typedef unsigned short guint16;
+  typedef boost::int16_t  gint16;
+  typedef boost::uint16_t guint16;
   
-  typedef signed   int   gint32;
-  typedef unsigned int   guint32;
+  typedef boost::int32_t  gint32;
+  typedef boost::uint32_t  guint32;
   
   /**
    * A single precision 32-bit IEEE 754 floating point variable.
