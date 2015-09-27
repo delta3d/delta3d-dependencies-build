@@ -2,8 +2,8 @@
 #define MUTEX_H_INCLUDED_C51DB1E6
 
 /* GNE - Game Networking Engine, a portable multithreaded networking library.
- * Copyright (C) 2001 Jason Winnebeck (gillius@mail.rit.edu)
- * Project website: http://www.rit.edu/~jpw9607/
+ * Copyright (C) 2001-2006 Jason Winnebeck 
+ * Project website: http://www.gillius.org/gne/
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -35,7 +35,7 @@ namespace GNE {
 class Mutex {
 public:
   /**
-   * Initalizes this mutex.
+   * Initializes this mutex.
    */
   Mutex();
 
@@ -56,12 +56,6 @@ public:
 
 private:
 #ifdef _DEBUG
-  //In the POSIX threads case, I can't assume a mutex is always released with
-  //its release method, because of wait on ConditionVariable.  So I need to
-  //mark my debugging info as if I released and acquired the mutex without
-  //actually performing the operation
-  friend class ConditionVariable;
-
   void markAcquired();
 
   void markReleased();

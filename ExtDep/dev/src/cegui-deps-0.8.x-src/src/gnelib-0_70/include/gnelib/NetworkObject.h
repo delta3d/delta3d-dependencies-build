@@ -2,8 +2,8 @@
 #define _NETWORKOBJECT_H_234512
 
 /* GNE - Game Networking Engine, a portable multithreaded networking library.
- * Copyright (C) 2001 Jason Winnebeck (gillius@mail.rit.edu)
- * Project website: http://www.rit.edu/~jpw9607/
+ * Copyright (C) 2001-2006 Jason Winnebeck 
+ * Project website: http://www.gillius.org/gne/
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -98,7 +98,7 @@ public: //Events
    * already, but a Packet is desired to send to the remote object so that it
    * may update its copy with new information.  Unlike the
    * createCreationPacket method, the Packet returned by this method may be of
-   * any type, and the type of Packet returned need not be consistant, since
+   * any type, and the type of Packet returned need not be consistent, since
    * object updates are routed by object ID rather than by packet ID.
    *
    * The parameter given to this function exists to give the update function a
@@ -136,7 +136,7 @@ public: //Events
    *
    * On the "server" side, this event is called after any possible
    * createDeathPacket calls.  On the "client" side, this event always
-   * immedately follows incomingDeathPacket.
+   * immediately follows incomingDeathPacket.
    *
    * The objectID for this object has been set to an invalid ID, indicating it
    * has been released from the ObjectBroker.  The ID that this object used to

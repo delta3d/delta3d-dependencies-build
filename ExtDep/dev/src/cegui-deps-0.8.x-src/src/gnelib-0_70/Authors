@@ -3,10 +3,10 @@ Contributors of GNE, in order of appearance:
 --------------------------------------------------------------------------------
 
 April, 2001
-Jason Winnebeck (gillius@users.sourceforge.net)
+Jason Winnebeck (gillius_at_users dot sourceforge dot net)
   Started the library.  Did everything someone else didn't.
 
-Elias Pschernig (elias@users.sourceforge.net)
+Elias Pschernig (elias_at_users dot sourceforge dot net)
   Created and maintains MingW makefile, helps with rest of makefile system.
   Created the Allegro example exballs.
 
@@ -14,3 +14,20 @@ November, 2002
 Peter Hull
   One of few who reported and proposed fixes for the pthread compilation
    problem under Linux.
+
+July, 2006
+Luigi Auriemma (aluigi_at_autistici dot org) http://aluigi.org/
+  Reported security bug in ConsoleStreambuf
+
+November, 2009
+David Guthrie
+Alion Science and Technology
+BMH Operation
+  Provided various patches to fix bugs in GNE (see SVN revision history for
+  the specific changes).
+
+March, 2012
+Héber Costa Ferreira
+  Discovered the HawkNL/GNE incompatibility between 32 and 64 bit Linux clients,
+  which actually ended up being an endian detection error, and provided
+  suggested fixes and testing of those fixes for both HawkNL and GNE.  

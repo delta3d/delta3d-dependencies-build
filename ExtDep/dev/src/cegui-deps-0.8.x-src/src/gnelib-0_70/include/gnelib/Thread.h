@@ -2,8 +2,8 @@
 #define THREAD_H_INCLUDED_C51E3746
 
 /* GNE - Game Networking Engine, a portable multithreaded networking library.
- * Copyright (C) 2001 Jason Winnebeck (gillius@mail.rit.edu)
- * Project website: http://www.rit.edu/~jpw9607/
+ * Copyright (C) 2001-2006 Jason Winnebeck 
+ * Project website: http://www.gillius.org/gne/
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -20,9 +20,9 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include "Mutex.h"
-#include "SmartPtr.h"
-#include "WeakPtr.h"
+#include <gnelib/Mutex.h>
+#include <gnelib/SmartPtr.h>
+#include <gnelib/WeakPtr.h>
 
 #include <string>
 
@@ -45,7 +45,7 @@ public: //typedefs
 
 public:
   /**
-   * An enum for specifing the thread type.  You should never need to use this
+   * An enum for specifying the thread type.  You should never need to use this
    * directly, since anything you create should have type USER.
    */
   enum ThreadType {
@@ -112,7 +112,7 @@ public:
    * The implementation of this method is simple and therefore not intended
    * to be used to create a program where you create detached threads and
    * then use the main thread to sit in this function until the "real"
-   * program completes.  It is meant solely as a method of definitvely
+   * program completes.  It is meant solely as a method of definitively
    * verifying the completion of temporary threads, and waiting short times
    * for these threads to finish if needed.  If you need to wait a long time
    * (over 10 seconds) use join on the threads you've made, as join is much
@@ -143,7 +143,7 @@ public:
    * Only %GNE itself should call requestAllShutdown with a parameter
    * besides "USER".  If you call this function, you should only use the
    * parameter USER.  If you want to shut down timers or connections, use
-   * the appopriate functions of those classes.
+   * the appropriate functions of those classes.
    *
    * Threads marked as SYSTEM should never be touched by the user.  They will
    * shutdown when GNE exits.
@@ -162,7 +162,7 @@ public:
    * Makes a request that this thread should shutdown.
    * Tells this thread to shutdown, if it is in an infinite loop.  You will
    * probably want to call join right after calling this to wait for the
-   * shutdown to complete which is dependant on the thread you are shutting
+   * shutdown to complete which is dependent on the thread you are shutting
    * down.
    *
    * This function is virtual if the thread needs any additional actions to
@@ -222,7 +222,7 @@ public:
   /**
    * A lowered priority for a thread.  Might be good for background
    * operations like loading and saving files or something so it does not
-   * interfer with the user interface (be it a GUI or a game or whatever).
+   * interfere with the user interface (be it a GUI or a game or whatever).
    */
   static const int LOW_PRI;
 

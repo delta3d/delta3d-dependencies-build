@@ -1,6 +1,6 @@
 /* GNE - Game Networking Engine, a portable multithreaded networking library.
- * Copyright (C) 2001 Jason Winnebeck (gillius@mail.rit.edu)
- * Project website: http://www.rit.edu/~jpw9607/
+ * Copyright (C) 2001-2006 Jason Winnebeck 
+ * Project website: http://www.gillius.org/gne/
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -17,22 +17,22 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include "../include/gnelib/gneintern.h"
-#include "../include/gnelib/Connection.h"
-#include "../include/gnelib/ConnectionStats.h"
-#include "../include/gnelib/ConnectionListener.h"
-#include "../include/gnelib/Buffer.h"
-#include "../include/gnelib/Packet.h"
-#include "../include/gnelib/ExitPacket.h"
-#include "../include/gnelib/PacketParser.h"
-#include "../include/gnelib/ConnectionEventGenerator.h"
-#include "../include/gnelib/Error.h"
-#include "../include/gnelib/Errors.h"
-#include "../include/gnelib/SocketPair.h"
-#include "../include/gnelib/Address.h"
-#include "../include/gnelib/GNE.h"
-#include "../include/gnelib/EventThread.h"
-#include "../include/gnelib/Lock.h"
+#include "gneintern.h"
+#include <gnelib/Connection.h>
+#include <gnelib/ConnectionStats.h>
+#include <gnelib/ConnectionListener.h>
+#include <gnelib/Buffer.h>
+#include <gnelib/Packet.h>
+#include <gnelib/ExitPacket.h>
+#include <gnelib/PacketParser.h>
+#include <gnelib/ConnectionEventGenerator.h>
+#include <gnelib/Error.h>
+#include <gnelib/Errors.h>
+#include <gnelib/SocketPair.h>
+#include <gnelib/Address.h>
+#include <gnelib/GNE.h>
+#include <gnelib/EventThread.h>
+#include <gnelib/Lock.h>
 
 namespace GNE {
 
@@ -195,6 +195,7 @@ void Connection::checkVersions(Buffer& raw) {
   //And convert it to a string, making sure it is of the proper length and
   //NULL-terminated.
   char gameName[GNE::MAX_GAME_NAME_LEN + 1];
+  memset( gameName, 0, GNE::MAX_GAME_NAME_LEN + 1 );
   strncpy(gameName, (const char*)rawName, GNE::MAX_GAME_NAME_LEN);
 
   //Read the user version number

@@ -2,8 +2,8 @@
 #define WEAKPTR_H_NOP203
 
 /* GNE - Game Networking Engine, a portable multithreaded networking library.
- * Copyright (C) 2001 Jason Winnebeck (gillius@mail.rit.edu)
- * Project website: http://www.rit.edu/~jpw9607/
+ * Copyright (C) 2001-2006 Jason Winnebeck 
+ * Project website: http://www.gillius.org/gne/
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -21,7 +21,7 @@
  */
 
 #include <boost/weak_ptr.hpp>
-#include "SmartPtr.h"
+#include <gnelib/SmartPtr.h>
 
 namespace GNE {
 
@@ -30,7 +30,7 @@ namespace GNE {
  *
  * The WeakPtr class is a weak pointer to an object managed by SmartPtr.
  * Weak pointers do not prevent the objects they refer to from being destroyed
- * when all strong pointers dissapear.
+ * when all strong pointers disappear.
  *
  * You cannot access the object directly through the weak pointer.  You have
  * to construct a strong pointer (SmartPtr) in order to use the object.  If

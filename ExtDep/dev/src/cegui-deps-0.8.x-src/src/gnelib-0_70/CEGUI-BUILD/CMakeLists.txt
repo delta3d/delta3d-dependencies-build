@@ -4,6 +4,7 @@ set(DEPNAME gne)
 set(SOURCES
 ../src/Address.cpp
 ../src/Buffer.cpp
+../src/CMakeLists.txt
 ../src/ChannelPacket.cpp
 ../src/ChannelProvider.cpp
 ../src/ClientConnection.cpp
@@ -18,6 +19,7 @@ set(SOURCES
 ../src/ConsoleStreambuf.cpp
 ../src/Counter.cpp
 ../src/CustomPacket.cpp
+../src/EmptyPacket.cpp
 ../src/Error.cpp
 ../src/Errors.cpp
 ../src/EventThread.cpp
@@ -50,14 +52,9 @@ set(SOURCES
 ../src/Timer.cpp
 ../src/TimerCallback.cpp
 ../src/WrapperPacket.cpp
-../src/gneintern.cpp
 ../src/conioport.c
+../src/gneintern.cpp
 )
-
-#if(MSVC)
-#   set(SOURCESWIN ../src/ipx.c")
-#   set(SOURCES ${SOURCESWIN})
-#endif()
 
 set(HEADERS 
 gnelib.h
@@ -78,6 +75,7 @@ gnelib/ConsoleStream.h
 gnelib/ConsoleStreambuf.h
 gnelib/Counter.h
 gnelib/CustomPacket.h
+gnelib/EmptyPacket.h
 gnelib/Error.h
 gnelib/Errors.h
 gnelib/EventThread.h
@@ -87,7 +85,6 @@ gnelib/GNEDebug.h
 gnelib/ListServerConnection.h
 gnelib/Lock.h
 gnelib/Mutex.h
-gnelib/MutexData.h
 gnelib/NetworkObject.h
 gnelib/ObjectBroker.h
 gnelib/ObjectBrokerClient.h
@@ -119,7 +116,6 @@ gnelib/TimerCallback.h
 gnelib/WeakPtr.h
 gnelib/WrapperPacket.h
 gnelib/conioport.h
-gnelib/gneintern.h
 gnelib/gnetypes.h
 )
 

@@ -1,6 +1,6 @@
 /* GNE - Game Networking Engine, a portable multithreaded networking library.
- * Copyright (C) 2001 Jason Winnebeck (gillius@mail.rit.edu)
- * Project website: http://www.rit.edu/~jpw9607/
+ * Copyright (C) 2001-2006 Jason Winnebeck 
+ * Project website: http://www.gillius.org/gne/
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -17,16 +17,16 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include "../include/gnelib/gneintern.h"
-#include "../include/gnelib/EventThread.h"
-#include "../include/gnelib/ConnectionListener.h"
-#include "../include/gnelib/Connection.h"
-#include "../include/gnelib/Thread.h"
-#include "../include/gnelib/Timer.h"
-#include "../include/gnelib/Time.h"
-#include "../include/gnelib/Error.h"
-#include "../include/gnelib/ConditionVariable.h"
-#include "../include/gnelib/Lock.h"
+#include "gneintern.h"
+#include <gnelib/EventThread.h>
+#include <gnelib/ConnectionListener.h>
+#include <gnelib/Connection.h>
+#include <gnelib/Thread.h>
+#include <gnelib/Timer.h>
+#include <gnelib/Time.h>
+#include <gnelib/Error.h>
+#include <gnelib/ConditionVariable.h>
+#include <gnelib/Lock.h>
 
 namespace GNE {
 
@@ -79,8 +79,8 @@ int EventThread::getTimeout() const {
 
 void EventThread::setTimeout(int ms) {
   int microsec;
-  if (ms > INT_MAX / 1000)
-    microsec = INT_MAX / 1000;
+  if (ms > std::numeric_limits<int>::max() / 1000)
+    microsec = std::numeric_limits<int>::max() / 1000;
   else
     microsec = ms * 1000;
 

@@ -1,6 +1,6 @@
 /* GNE - Game Networking Engine, a portable multithreaded networking library.
- * Copyright (C) 2001 Jason Winnebeck (gillius@mail.rit.edu)
- * Project website: http://www.rit.edu/~jpw9607/
+ * Copyright (C) 2001-2006 Jason Winnebeck 
+ * Project website: http://www.gillius.org/gne/
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -17,14 +17,14 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include "../include/gnelib/gneintern.h"
-#include "../include/gnelib/Thread.h"
-#include "../include/gnelib/ConditionVariable.h"
-#include "../include/gnelib/Error.h"
-#include "../include/gnelib/Timer.h"
-#include "../include/gnelib/Time.h"
-#include "../include/gnelib/GNE.h"
-#include "../include/gnelib/Lock.h"
+#include "gneintern.h"
+#include <gnelib/Thread.h>
+#include <gnelib/ConditionVariable.h>
+#include <gnelib/Error.h>
+#include <gnelib/Timer.h>
+#include <gnelib/Time.h>
+#include <gnelib/GNE.h>
+#include <gnelib/Lock.h>
 
 namespace GNE {
 
@@ -98,6 +98,8 @@ void* Thread::threadStart(void* thread) {
   mapSync.acquire();
   mapSync.release();
 
+  gnedbg1( 5, "Thread %s starting", thr->getName().c_str() );
+
   try {
     thr->run();
     thr->end();
@@ -109,7 +111,7 @@ void* Thread::threadStart(void* thread) {
   //is started by throwing an exception, and placing a catch all here will
   //keep the debugger from starting.
 
-  gnedbg2( 5, "%x: Thread %s Ending", thr.get(), thr->getName().c_str() );
+  gnedbg1( 5, "Thread %s ending", thr->getName().c_str() );
   ThreadIDData idData = *(thr->id);
   Thread::remove( idData );
   thr.reset();
@@ -184,8 +186,8 @@ bool Thread::waitForAllThreads( int ms ) {
   //we can only call this from the main thread.
   assert( !Thread::currentThread() );
 
-  if (ms > INT_MAX / 1000)
-    ms = INT_MAX / 1000;
+  if (ms > std::numeric_limits<int>::max() / 1000)
+    ms = std::numeric_limits<int>::max() / 1000;
 
   Time t = Timer::getCurrentTime();
   t += ms * 1000;
@@ -196,13 +198,7 @@ bool Thread::waitForAllThreads( int ms ) {
     ret = timeout = (Timer::getCurrentTime() >= t);
     if (!timeout) {
       //Take into accout the CEG thread.
-#ifdef OLD_CPP
-      //DUMB workaround for GCC 2.9x.  This is insane.
-      SmartPtr<GNE::ConnectionEventGenerator> temp = eGen;
-      ret = (liveThreads <= ((temp) ? 1 : 0) );
-#else
       ret = (liveThreads <= ((eGen) ? 1 : 0 ) );
-#endif
     }
     if (!ret)
       sleep(20);
@@ -320,8 +316,6 @@ void Thread::start() {
   //this object.
   threads[ id->thread_id ] = this_;
   ++liveThreads;
-
-  gnedbgo1( 5, "Starting Thread %s", name.c_str() );
 }
 
 int Thread::getPriority() const {

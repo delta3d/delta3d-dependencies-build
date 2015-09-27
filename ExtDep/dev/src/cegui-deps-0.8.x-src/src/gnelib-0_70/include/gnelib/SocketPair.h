@@ -2,8 +2,8 @@
 #define SOCKETS_H_INCLUDED_C44D55A7
 
 /* GNE - Game Networking Engine, a portable multithreaded networking library.
- * Copyright (C) 2001 Jason Winnebeck (gillius@mail.rit.edu)
- * Project website: http://www.rit.edu/~jpw9607/
+ * Copyright (C) 2001-2006 Jason Winnebeck 
+ * Project website: http://www.gillius.org/gne/
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -20,10 +20,10 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include "ConnectionStats.h"
+#include <gnelib/ConnectionStats.h>
 #include <nl.h>
-#include "gnetypes.h"
-#include "Buffer.h"
+#include <gnelib/gnetypes.h>
+#include <gnelib/Buffer.h>
 
 namespace GNE {
 class Address;
@@ -87,7 +87,10 @@ public:
    *
    * @param reliable select which socket to perform read on.
    * @param buf data arrives in this buffer.
-   * @return number of bytes read, and the new limit for buf
+   *
+   * @return number of bytes read, and the new limit for buf, or NL_INVALID
+   *         if there was an error. If NL_INVALID is returned, the Buffer
+   *         given was still cleared.
    */
   int rawRead(bool reliable, Buffer& buf) const;
 

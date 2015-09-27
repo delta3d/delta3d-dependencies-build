@@ -2,8 +2,8 @@
 #define _CONSOLEBUFFER_H_
 
 /* GNE - Game Networking Engine, a portable multithreaded networking library.
- * Copyright (C) 2001 Jason Winnebeck (gillius@mail.rit.edu)
- * Project website: http://www.rit.edu/~jpw9607/
+ * Copyright (C) 2001-2006 Jason Winnebeck 
+ * Project website: http://www.gillius.org/gne/
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -20,7 +20,7 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include "SynchronizedObject.h"
+#include <gnelib/SynchronizedObject.h>
 
 #include <string>
 #include <list>
@@ -110,7 +110,7 @@ public:
 
   /**
    * Clears all the text from the console, leaving an empty buffer.  Whether
-   * auto render is enabled or disabled, erase is called immedately.
+   * auto render is enabled or disabled, erase is called immediately.
    */
   void clear();
 
@@ -160,7 +160,7 @@ protected:
    * will not be newline characters in the text string.  The renderHints
    * parameter contains hints for the renderer.  At this time the only hint
    * is ConsoleBuffer::REDRAW_HINT, which is set when redrawing to a location.
-   * The renderHints field is a bitmask, so use the bitwise and operator to
+   * The renderHints field is a bit mask, so use the bitwise and operator to
    * check for hints.
    */
   virtual void render( int x, int y, std::string text, int renderHints ) = 0;
@@ -168,12 +168,12 @@ protected:
   /**
    * Tells the renderer that the console is scrolling by the specified height
    * in units.  If the renderer supports some sort of scrolling scheme, it
-   * should invove it.  If it can do so, the renderer shall return true, and
+   * should involve it.  If it can do so, the renderer shall return true, and
    * then only the changed and new lines will be sent to render.
    *
    * If the renderer does not support scrolling, it shall return false.  In
    * this case, all lines are resent to the render function, and it will act
-   * as a total redraw.  The default behaviour is to return false.
+   * as a total redraw.  The default behavior is to return false.
    */
   virtual bool scroll( int height );
 
@@ -196,7 +196,7 @@ protected:
    *
    * The default required delimiter set is a dash.
    * Depending on your preference, you may wish to add characters such as ";."
-   * or other puncutation marks.
+   * or other punctuation marks.
    *
    * Required delimiters are considered to the be the last part of a word,
    * whereas optional delimiters are considered to be the beginning of the

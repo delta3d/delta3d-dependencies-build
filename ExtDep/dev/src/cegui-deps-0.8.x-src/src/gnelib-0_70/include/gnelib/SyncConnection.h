@@ -2,8 +2,8 @@
 #define SYNCCONNECTION_H_INCLUDED_C43C0621
 
 /* GNE - Game Networking Engine, a portable multithreaded networking library.
- * Copyright (C) 2001 Jason Winnebeck (gillius@mail.rit.edu)
- * Project website: http://www.rit.edu/~jpw9607/
+ * Copyright (C) 2001-2006 Jason Winnebeck 
+ * Project website: http://www.gillius.org/gne/
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -20,10 +20,10 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include "Error.h"
-#include "ConnectionListener.h"
-#include "ConditionVariable.h"
-#include "Mutex.h"
+#include <gnelib/Error.h>
+#include <gnelib/ConnectionListener.h>
+#include <gnelib/ConditionVariable.h>
+#include <gnelib/Mutex.h>
 
 namespace GNE {
 class Address;
@@ -36,7 +36,7 @@ class ConnectionParams;
 /**
  * @ingroup midlevel
  *
- * A class for performing syncronous connections.  All methods of this class
+ * A class for performing synchronous connections.  All methods of this class
  * except writing block until completion.  This is useful while
  * connecting or performing trivial connections/communications.  Many times
  * if you want to perform non-game transfers, for example a server-query
@@ -56,12 +56,12 @@ class ConnectionParams;
  *
  * When you wrap a Connection with this class, the event listener for that
  * Connection is suspended and SyncConnection "takes over" until it is
- * release()d.  So while in syncronous mode you will receive no events
- * through your asyncronous event listener, with the exception of
+ * release()d.  So while in synchronous mode you will receive no events
+ * through your asynchronous event listener, with the exception of
  * onDisconnect and onConnect.  It is best only to use SyncConnection
  * while connecting, because of possible side-effects when you
  * wrap the Connection.  If there was already data pending that you did not
- * receive in asyncronous mode -- it was not lost, but you will get it from
+ * receive in asynchronous mode -- it was not lost, but you will get it from
  * the next packet read.  If you start out with a SyncConnection, then you
  * can be certain no unexpected packets will be arriving.
  *
@@ -150,7 +150,7 @@ public:
    * necessary, and onDoneWriting will be called after release if any data
    * since writing packets.
    *
-   * @throw Error if an error has occured since the last operation on this
+   * @throw Error if an error has occurred since the last operation on this
    *              SyncConnection instance.
    */
   void release();
@@ -171,7 +171,7 @@ public:
    * The connection will remain connected in this case.
    *
    * @throw PacketTypeMismatch if the read packet was of the wrong type.
-   * @throw Error if an error occured while reading, or an error occured
+   * @throw Error if an error occurred while reading, or an error occurred
    *              since the last interaction with this object.
    */
   SyncConnection& operator >> (Packet& packet);
@@ -189,7 +189,7 @@ public:
    * A SyncConnection should be released or destroyed before the start of
    * %GNE shutdown if you want to guarantee all packet sends were attempted.
    *
-   * @throw Error if an error occured while writing, or an error occured
+   * @throw Error if an error occurred while writing, or an error occurred
    *              since the last interaction with this object.
    */
   SyncConnection& operator << (const Packet& packet);
@@ -234,7 +234,7 @@ private:
    * calling functions can manipulate the mutexes, which are not necessarily
    * recursive.
    *
-   * @throw Error if an error occured while releasing, or an error occured
+   * @throw Error if an error occurred while releasing, or an error occurred
    *              since the last interaction with this object.
    */
   void doRelease();
@@ -261,9 +261,9 @@ private:
   ConditionVariable recvNotify;
 
   /**
-   * Checks to see if an error has occured, and if so, throws it.
+   * Checks to see if an error has occurred, and if so, throws it.
    *
-   * @throw Error if an error has occured.
+   * @throw Error if an error has occurred.
    */
   void checkError();
 
@@ -278,7 +278,7 @@ private:
   wptr thisPtr;
 
   /**
-   * Syncronization for release and connecting events.
+   * Synchronization for release and connecting events.
    */
   Mutex sync;
 
@@ -295,7 +295,7 @@ private:
   SmartPtr<Connection> conn;
 
   /**
-   * The old listener for asyncronous communications that the Connection just
+   * The old listener for asynchronous communications that the Connection just
    * had.  If this is NULL, then this object has been released.
    */
   SmartPtr<ConnectionListener> oldListener;

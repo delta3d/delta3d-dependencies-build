@@ -2,8 +2,8 @@
 #define CONNECTION_H_INCLUDED_C51DC478
 
 /* GNE - Game Networking Engine, a portable multithreaded networking library.
- * Copyright (C) 2001 Jason Winnebeck (gillius@mail.rit.edu)
- * Project website: http://www.rit.edu/~jpw9607/
+ * Copyright (C) 2001-2006 Jason Winnebeck 
+ * Project website: http://www.gillius.org/gne/
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -20,16 +20,16 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include "Thread.h"
-#include "PacketStream.h"
-#include "ReceiveEventListener.h"
-#include "Error.h"
-#include "Errors.h"
-#include "SocketPair.h"
-#include "Address.h"
-#include "ConnectionStats.h"
-#include "SmartPtr.h"
-#include "WeakPtr.h"
+#include <gnelib/Thread.h>
+#include <gnelib/PacketStream.h>
+#include <gnelib/ReceiveEventListener.h>
+#include <gnelib/Error.h>
+#include <gnelib/Errors.h>
+#include <gnelib/SocketPair.h>
+#include <gnelib/Address.h>
+#include <gnelib/ConnectionStats.h>
+#include <gnelib/SmartPtr.h>
+#include <gnelib/WeakPtr.h>
 
 namespace GNE {
 class ConnectionListener;
@@ -54,7 +54,7 @@ class SyncConnection;
 class Connection {
 protected:
   /**
-   * Intializes this class with a NULL listener, which must be set before any
+   * Initializes this class with a NULL listener, which must be set before any
    * operations are performed on this instance.
    *
    * THE CHILD CLASS IS RESPONSIBLE FOR SETTING THE THISPOINTER.  This is
@@ -142,7 +142,7 @@ public:
    * signifies that no timeouts should occur.  Values less than 0 are invalid.
    *
    * An onTimeout event occurs ms milliseconds after the last onReceive event,
-   * the last onTimeout event, or since setTimeout occured.  Any of these
+   * the last onTimeout event, or since setTimeout occurred.  Any of these
    * events sets the "timeout counter" back to zero to say it another way.
    *
    * @see GNE::ConnectionListener::onTimeout
@@ -218,7 +218,7 @@ public:
   bool isConnected() const;
 
   /**
-   * Immediately disconnects this socket.  No more data will be recieved or
+   * Immediately disconnects this socket.  No more data will be received or
    * sent on this socket.  If you want to disconnect more nicely, use
    * disconnectSendAll.  It is okay to call this function even when this
    * Connection is already disconnected.  Note that even though the
@@ -329,7 +329,7 @@ protected:
   void startConnecting();
 
   /**
-   * Does the work needed to start up the PacketStream and EventThread thrads.
+   * Does the work needed to start up the PacketStream and EventThread threads.
    *
    * @pre state must be Connecting.
    */
@@ -420,7 +420,7 @@ private:
   friend class SyncConnection;
 
   /**
-   * Parses the packets recieved, then calls onReceive.
+   * Parses the packets received, then calls onReceive.
    */
   void onReceive(bool reliable);
 

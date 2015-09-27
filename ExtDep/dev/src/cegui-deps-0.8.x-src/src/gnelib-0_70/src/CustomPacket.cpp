@@ -1,6 +1,6 @@
 /* GNE - Game Networking Engine, a portable multithreaded networking library.
- * Copyright (C) 2001 Jason Winnebeck (gillius@mail.rit.edu)
- * Project website: http://www.rit.edu/~jpw9607/
+ * Copyright (C) 2001-2006 Jason Winnebeck 
+ * Project website: http://www.gillius.org/gne/
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -17,10 +17,11 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include "../include/gnelib/gneintern.h"
-#include "../include/gnelib/CustomPacket.h"
-#include "../include/gnelib/Buffer.h"
-#include "../include/gnelib/Packet.h"
+#include "gneintern.h"
+#include <gnelib/CustomPacket.h>
+#include <gnelib/Buffer.h>
+#include <gnelib/Packet.h>
+#include <gnelib/EmptyPacket.h>
 
 namespace GNE {
 
@@ -36,7 +37,7 @@ CustomPacket::~CustomPacket() {
 }
 
 int CustomPacket::getMaxUserDataSize() {
-  Packet packet;
+  EmptyPacket packet;
   return Buffer::RAW_PACKET_LEN - packet.getSize() - Buffer::getSizeOf( guint16(0) );
 }
 

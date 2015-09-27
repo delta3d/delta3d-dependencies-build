@@ -1,6 +1,6 @@
 /* GNE - Game Networking Engine, a portable multithreaded networking library.
- * Copyright (C) 2001 Jason Winnebeck (gillius@mail.rit.edu)
- * Project website: http://www.rit.edu/~jpw9607/
+ * Copyright (C) 2001-2006 Jason Winnebeck 
+ * Project website: http://www.gillius.org/gne/
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -17,20 +17,20 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include "../include/gnelib/gneintern.h"
-#include "../include/gnelib/ConnectionEventGenerator.h"
-#include "../include/gnelib/ConnectionStats.h"
-#include "../include/gnelib/PacketParser.h"
-#include "../include/gnelib/GNE.h"
-#include "../include/gnelib/Address.h"
-#include "../include/gnelib/Error.h"
-#include "../include/gnelib/Errors.h"
-#include "../include/gnelib/PingPacket.h"
-#include "../include/gnelib/ObjectBrokerClient.h"
-#include "../include/gnelib/Timer.h"
-#include "../include/gnelib/Connection.h"
-#include "../include/gnelib/Console.h"
-#include "../include/gnelib/ServerConnectionListener.h"
+#include "gneintern.h"
+#include <gnelib/ConnectionEventGenerator.h>
+#include <gnelib/ConnectionStats.h>
+#include <gnelib/PacketParser.h>
+#include <gnelib/GNE.h>
+#include <gnelib/Address.h>
+#include <gnelib/Error.h>
+#include <gnelib/Errors.h>
+#include <gnelib/PingPacket.h>
+#include <gnelib/ObjectBrokerClient.h>
+#include <gnelib/Timer.h>
+#include <gnelib/Connection.h>
+#include <gnelib/Console.h>
+#include <gnelib/ServerConnectionListener.h>
 
 #ifndef WIN32
 #include <signal.h>
@@ -43,7 +43,7 @@ namespace GNE {
     void registerGNEPackets();
   }
 
-char gameNameBuf[32] = {0};
+char gameNameBuf[ MAX_GAME_NAME_LEN + 1 ] = {0};
 guint32 userVersion = 0;
 ConnectionEventGenerator::sptr eGen;
 
@@ -57,15 +57,13 @@ bool initGNE(NLenum networkType, int (*atexit_ptr)(void (*func)(void)), int time
     ObjectBrokerClient::staticInit();
     timeToWait = timeToClose;
 
-    //This is a little hacky, but I checked the HawkNL source to make sure this
-    //worked before I did this.
-    nlEnable(NL_LITTLE_ENDIAN_DATA);
 
     if (networkType != NO_NET) {
       if (nlInit() == NL_FALSE)
         return true;
       if (nlSelectNetwork(networkType) == NL_FALSE)
         return true;
+      nlEnable(NL_LITTLE_ENDIAN_DATA);
       nlEnable(NL_BLOCKING_IO);
       nlEnable(NL_TCP_NO_DELAY);
       //GNE sends its data in little endian format.
@@ -73,6 +71,10 @@ bool initGNE(NLenum networkType, int (*atexit_ptr)(void (*func)(void)), int time
       eGen = ConnectionEventGenerator::create();
       eGen->start();
       initialized = true; //We need only to set this to true if we are using HawkNL
+    } else {
+      //This is a little hacky, but I checked the HawkNL source to make sure this
+      //worked before I did this.
+      nlEnable(NL_LITTLE_ENDIAN_DATA);
     }
 
 #ifndef WIN32
@@ -94,40 +96,43 @@ bool initGNE(NLenum networkType, int (*atexit_ptr)(void (*func)(void)), int time
 
 void shutdownGNE() {
   if ( initialized ) {
-    if ( eGen ) {
-      gnedbg( 1, "Shutting down CEG." );
-      eGen->shutDown();
-      //I'd like to use a join because that's cleaner, but I want to make sure
-      //the program does not block indefinitely when closing.
-    }
+  if ( eGen ) {
+    gnedbg( 1, "Shutting down CEG." );
+    eGen->shutDown();
+    //I'd like to use a join because that's cleaner, but I want to make sure
+    //the program does not block indefinitely when closing.
+  }
 
-    gnedbg( 1, "GNE Shutdown begin: Closing all listeners." );
-    ServerConnectionListener::closeAllListeners();
-    gnedbg( 1, "Shutting down all connections." );
-    Connection::disconnectAll();
-    gnedbg( 1, "Stopping all timers." );
-    Timer::stopAll();
-    gnedbg( 1, "Shutting down all user threads." );
-    Thread::requestAllShutdown( Thread::USER );
+  gnedbg( 1, "GNE Shutdown begin: Closing all listeners." );
+  ServerConnectionListener::closeAllListeners();
+  gnedbg( 1, "Shutting down all connections." );
+  Connection::disconnectAll();
+  gnedbg( 1, "Stopping all timers." );
+  Timer::stopAll();
+  gnedbg( 1, "Shutting down all user threads." );
+  Thread::requestAllShutdown( Thread::USER );
 
-    gnedbg1( 1, "Waiting up to %d ms for all threads to shutdown.", timeToWait );
-    bool timeout = Thread::waitForAllThreads( timeToWait );
-    if ( timeout ) {
-      gnedbg( 1, "Wait timeout: NOT ALL THREADS SHUT DOWN!" );
-    }
+  gnedbg1( 1, "Waiting up to %d ms for all threads to shutdown.", timeToWait );
+  bool timeout = Thread::waitForAllThreads( timeToWait );
+  if ( timeout ) {
+    gnedbg( 1, "Wait timeout: NOT ALL THREADS SHUT DOWN!" );
+  }
 
-    if ( eGen && eGen->isRunning() ) {
-      gnedbg( 1, "CEG failed to shut down properly!  Please file a bug report." );
-    }
-    eGen.reset();
+  if ( eGen && eGen->isRunning() ) {
+    gnedbg( 1, "CEG failed to shut down properly!  Please file a bug report." );
+  }
+  eGen.reset();
 
     gnedbg( 1, "Shutting down HawkNL." );
     nlShutdown();
     initialized = false;
-    Console::shutdownConsole();
+  Console::shutdownConsole();
 
-    gnedbg(1, "GNE Shutdown");
-  }
+  gameNameBuf[0] = '\0';
+  userVersion = 0;
+
+  gnedbg(1, "GNE Shutdown");
+}
 
 }
 
@@ -185,6 +190,8 @@ GNEProtocolVersionNumber getGNEProtocolVersion() {
   GNEProtocolVersionNumber ret;
   ret.version = 0;
   ret.subVersion = 0;
+  //Consider keeping this number under 255 to detect endian issues, due to a
+  //historial bug
   ret.build = 7;
 
   return ret;
@@ -207,6 +214,7 @@ void setGameInformation(std::string gameName, guint32 version) {
 
   userVersion = version;
   strncpy(gameNameBuf, gameName.c_str(), MAX_GAME_NAME_LEN);
+  gameNameBuf[ MAX_GAME_NAME_LEN ] = 0;
 }
 
 void checkVersions(const GNEProtocolVersionNumber& otherGNE,

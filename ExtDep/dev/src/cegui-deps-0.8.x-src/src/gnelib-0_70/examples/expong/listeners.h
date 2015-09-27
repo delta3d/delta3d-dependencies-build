@@ -1,6 +1,6 @@
 /* GNE - Game Networking Engine, a portable multithreaded networking library.
- * Copyright (C) 2001 Jason Winnebeck (gillius@mail.rit.edu)
- * Project website: http://www.rit.edu/~jpw9607/
+ * Copyright (C) 2001-2006 Jason Winnebeck
+ * Project website: http://www.gillius.org/gne/
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -43,7 +43,7 @@ protected:
 public:
   /**
    * The PongClient requires a paddle passed to be designated as its
-   * associated network player.  If note is not NULL, then that CV is notifed
+   * associated network player.  If note is not NULL, then that CV is notified
    * when a connection is made (this is for the server to sleep for a client
    * to enter).  The localPlayer is passed so that we may accredit him with
    * points when the remote paddle misses the ball.
@@ -63,6 +63,7 @@ public:
   }
 
   void onConnect(SyncConnection& conn) {
+    //Code for the client when it connects to the server.
     ourConn = conn.getConnection();
 
     //Do connection negotiation here.  If it fails, onConnectFailure will be
@@ -79,6 +80,7 @@ public:
     //accepted.  If not, throw a connection refused error.
     gbool accepted;
     conn >> buf;
+    buf.getBuffer().flip();
     buf.getBuffer() >> accepted;
     if (!accepted) {
       conn.disconnect();
@@ -86,7 +88,6 @@ public:
     }
 
     //If we are accepted, we should be receiving the remote player's name.
-    conn >> buf;
     string remoteName;
     buf.getBuffer() >> remoteName;
     remotePlayer->setName(remoteName);
@@ -100,19 +101,18 @@ public:
   }
 
   void onNewConn(SyncConnection& conn) {
+    //Code for the server, when a client connects.
     ourConn = conn.getConnection();
 
     CustomPacket buf;
     //Tell the client that they have been accepted
     buf.getBuffer() << gTrue;
-    conn << buf;
-    //and send them our name.
-    buf.clear();
     buf.getBuffer() << localPlayer->getName();
     conn << buf;
 
     //Now we wait for the client's name.
     conn >> buf;
+    buf.getBuffer().flip();
 
     string remoteName;
     buf.getBuffer() >> remoteName;
@@ -287,7 +287,7 @@ public:
         return p;
 
       } else if( kbhit() ) {
-        //We were woken up by a keypress, so refuse any further connections.
+        //We were woken up by a key press, so refuse any further connections.
         accept = false;
 
         //We don't need to wait around if anyone is in the middle of connecting,

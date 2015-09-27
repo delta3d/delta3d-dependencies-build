@@ -1,0 +1,4 @@
+FILE( GLOB GNE_USER_HEADERS *.h )
+
+INSTALL( FILES ${GNE_USER_HEADERS}
+         DESTINATION include/gnelib )

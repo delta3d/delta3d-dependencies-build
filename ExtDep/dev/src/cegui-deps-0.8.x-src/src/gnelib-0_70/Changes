@@ -1,4 +1,59 @@
-GNE 0.55 to current
+GNE 0.70 to current
+  Fix compile bug with INT_MAX in examples, due to missing <climits> include.
+  GNE can also build HawkNL with itself if the CMake build-based branch of
+    HawkNL is placed into the directory "hawknl" at the top-level GNE folder.
+  GNE generates the appropriate error message when a HawkNL method returns
+    NL_SYSTEM_ERROR, when it did not include the details before. Thanks to
+    David Guthrie for the patch.
+  Workaround issue when HawkNL returns a system error code 9 when it should
+    have reported NL_INVALID_SOCKET. Appears that this happens only on
+    UNIX-like systems. Thanks to David Guthrie for the patch.
+  Fixed error in SocketPair that caused InvalidBufferLimit error when NL
+    returned error code. Thanks to David Guthrie for a patch.
+  Support building shared object version under UNIX/Linux type systems.
+  Changed ClientConnection's private inheritance on Thread into public, to
+    fix a compatibility issue with smart pointers and Boost 1.36.
+  Use std::numeric_limits<int>::max() instead of INT_MAX where INT_MAX was
+    used. This caused compiler errors on GCC 4.3 because I never included
+    <climits>.
+  Moved a "thread starting" debugging call that was causing a deadlock,
+    typically on multi-CPU or dual-core systems.
+  Included GNE debug logging symbols, even in release library.  This was done
+    so that release and debug library have same symbols, and also allows user
+    to explicitly call debug code if desired.  If it is not used the overhead
+    is probably only a few kilobytes of code, so let's leave it in.
+  Added constant DLEVELALL to include all debug log levels.
+  Removed completely the OLD_CPP functionality used for GCC 2.9x.
+  Added some more checks to string copys in debug log code and game name
+    checking to enhance security.
+  Complete rearchitecture of build system, using CMake 2.4 or higher.
+  Fixed crashing bug in SyncConnection when trying to print a SmartPtr with
+    debugging macros.
+  Fixed one compile warning in Mutex when compiling in debug mode.
+  Fixed security bug in ConsoleStreambuf when using gout where printf-style
+    formatting characters were being interpreted when they shouldn't.
+    This bug as reported by Luigi Auriemma
+  Updated project files to MSVC 2k5 (version 8), and fixed compile bug in
+    GNEDebug.
+  Fixed bug in operator !=
+  _REENTRANT is defined as required in Linux.
+  Packet is now an uninstantiable class.  If sending an empty packet is desired,
+    use the new EmptyPacket class, that has the ID of 0.
+  Packet::type is const; it should never change during the lifetime of the
+    object.
+  PingPacket::isRequest is now a const method.
+  URL change to gillius.org in documents.
+  Fixed a minor memory leak in Mutex.
+  Updated to latest version of Doxygen for pre-generated documentation; this
+    results in much better formatting.
+  Updated file header on all files for new website and copyright dates.
+  Spruce up some documentation, including clairifications on GNE init/shutdown
+    functions and CustomPacket::getBuffer and miscellaneous spelling corrections.
+  Fixed bug with setGameInformation not working after shutdown and restart.
+  Fixed bug in ChannelProvider
+  Fixed MSVC 2k3 compile bug in ConsoleStreambuf
+  
+GNE 0.55 to 0.70
   Added ErrorCode User for user-inherited Error objects.
   Throwing exceptions during readPacket and writePacket is now allowed.
   RawPacket class was retired and replaced by the new safer class Buffer.
@@ -31,7 +86,7 @@ GNE 0.55 to current
     methods added.
   optional clearOnExit param to Console::initConsole
   Thread::waitForAllThreads didn't work right at all.  How did I miss that?!
-  Major API changes, see http://www.rit.edu/~jpw9607/gne/apichanges.htm
+  Major API changes, see http://www.gillius.org/gne/apichanges.htm
     There were a LOT of changes not listed here.  That document covers most of
     what is not listed here.
   Added Console::mclearConsole method.

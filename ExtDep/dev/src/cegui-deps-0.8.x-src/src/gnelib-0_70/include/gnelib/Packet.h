@@ -2,8 +2,8 @@
 #define PACKET_H_INCLUDED_C51B374A
 
 /* GNE - Game Networking Engine, a portable multithreaded networking library.
- * Copyright (C) 2001 Jason Winnebeck (gillius@mail.rit.edu)
- * Project website: http://www.rit.edu/~jpw9607/
+ * Copyright (C) 2001-2006 Jason Winnebeck 
+ * Project website: http://www.gillius.org/gne/
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -20,8 +20,8 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include "SmartPtr.h"
-#include "WeakPtr.h"
+#include <gnelib/SmartPtr.h>
+#include <gnelib/WeakPtr.h>
 
 namespace GNE {
 class Buffer;
@@ -31,7 +31,7 @@ class Buffer;
  *
  * The base packet class, used for dealing with all types of packets at a
  * fundamental level.  All types of packets must inherit from this class to
- * be recognized by %GNE.  %GNE already implmenets some types of packets.
+ * be recognized by %GNE.  %GNE already implements some types of packets.
  *
  * When you create a new packet you MUST define your own versions of all
  * virtual functions or the program will fail.
@@ -45,33 +45,7 @@ public: //typedefs
   typedef WeakPtr<Packet> wptr;
 
 public:
-  /**
-   * Constructs a packet with the given ID.  If you pass no ID, the ID for an
-   * empty packet is assumed.  Normally sending blank packets are not useful,
-   * however.  If you are wanting to use a blank packet for some purpose such
-   * as a end-of-data marker or for sending some message that requires no
-   * data, it is suggested that you simply derive a class from Packet that
-   * adds no data, but has a unique ID so it can be "recognized" easier.
-   *
-   * @param id a number from PacketParser::MIN_USER_ID to
-   *   PacketParser::MAX_USER_ID, inclusive.  %GNE packet id's are less than
-   *   MIN_USER_ID.
-   */
-  explicit Packet(int id = 0);
-
-  /**
-   * Copy constructor.  If your Packet is using the default packet clone
-   * function in registration, remember that it uses the copy constructor so
-   * if you need to override the default implementation, you must do it.
-   */
-  Packet( const Packet& o );
-
   virtual ~Packet();
-
-  /**
-   * The ID for this type of packet.
-   */
-  static const int ID;
 
   /**
    * Returns a newly allocated exact copy of this packet, using the
@@ -118,11 +92,33 @@ public:
    *
    * This method is allowed to throw any subclass of Error.  This can happen
    * if accessing the Packet causes a buffer underflow, but an error might
-   * occur in the format or consistancy of the data for the user's derived
+   * occur in the format or consistency of the data for the user's derived
    * class.  If you cannot construct a proper Packet of your type from the
    * data in raw, then you should throw a subclass of Error.
    */
   virtual void readPacket(Buffer& raw);
+
+protected:
+  /**
+   * Constructs a packet with the given ID.  If you pass no ID, the ID for an
+   * empty packet is assumed.  Normally sending blank packets are not useful,
+   * however.  If you are wanting to use a blank packet for some purpose such
+   * as a end-of-data marker or for sending some message that requires no
+   * data, it is suggested that you simply derive a class from Packet that
+   * adds no data, but has a unique ID so it can be "recognized" easier.
+   *
+   * @param id a number from PacketParser::MIN_USER_ID to
+   *   PacketParser::MAX_USER_ID, inclusive.  %GNE packet id's are less than
+   *   MIN_USER_ID.
+   */
+  explicit Packet( int id );
+
+  /**
+   * Copy constructor.  If your Packet is using the default packet clone
+   * function in registration, remember that it uses the copy constructor so
+   * if you need to override the default implementation, you must do it.
+   */
+  Packet( const Packet& o );
 
   /**
    * Copy operator you can use to help you in creating your own.
@@ -141,7 +137,7 @@ private:
   /**
    * The type ID for this Packet.
    */
-  guint8 type;
+  const guint8 type;
 };
 
 }

@@ -1,6 +1,6 @@
 /* GNE - Game Networking Engine, a portable multithreaded networking library.
- * Copyright (C) 2001 Jason Winnebeck (gillius@mail.rit.edu)
- * Project website: http://www.rit.edu/~jpw9607/
+ * Copyright (C) 2001-2006 Jason Winnebeck 
+ * Project website: http://www.gillius.org/gne/
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -17,17 +17,18 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
+#include "gneintern.h"
 
-#include "../include/gnelib/gneintern.h"
-
-#include "../include/gnelib/GNEDebug.h"
-#include "../include/gnelib/Mutex.h"
-#include "../include/gnelib/Lock.h"
-#include "../include/gnelib/Thread.h"
+#include <gnelib/GNEDebug.h>
+#include <gnelib/Mutex.h>
+#include <gnelib/Lock.h>
+#include <gnelib/Thread.h>
 #include <ctime>
 #include <cstring>
 
 namespace GNE {
+
+static const int BUF_SIZE = 512;
 
 static int dbgLevelMask = 0;
 static FILE* logFile = NULL;
@@ -40,13 +41,14 @@ bool initDebug(int levelMask, const char* fileName) {
 
   dbgLevelMask = levelMask;
 
-  buf = new char[512];
+  buf = new char[BUF_SIZE];
+  memset( buf, 0, BUF_SIZE );
   if (fileName == NULL) {
     time_t now = time(NULL);
     struct tm *t = localtime (&now);
     strftime (buf, 100, "gne%H'%M'%S.log", t);
   } else
-    strcpy(buf, fileName);
+    strncpy(buf, fileName,BUF_SIZE-1);
 
   logFile = fopen(buf, "wt");
   if (!logFile) {
@@ -93,7 +95,8 @@ void doTrace(int level, const char* fn, int lineno, const char* msg, ...) {
 
     LockMutexEx lock( sync );
     if ( initialized ) {
-      vsprintf(buf, msg, arg);
+      vsnprintf(buf, BUF_SIZE-1, msg, arg);
+      buf[ BUF_SIZE-1 ] = 0;
 
       //Remove the path to the file, to conserve line width.
       const char* temp = strrchr(fn, '\\'); //Try Microsoft style path
@@ -117,7 +120,3 @@ void doTrace(int level, const char* fn, int lineno, const char* msg, ...) {
 }
 
 }
-
-
-
-

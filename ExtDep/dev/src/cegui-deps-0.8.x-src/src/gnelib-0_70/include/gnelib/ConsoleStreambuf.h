@@ -2,8 +2,8 @@
 #define _CONSOLESTREAMBUF_H_
 
 /* GNE - Game Networking Engine, a portable multithreaded networking library.
- * Copyright (C) 2001 Jason Winnebeck (gillius@mail.rit.edu)
- * Project website: http://www.rit.edu/~jpw9607/
+ * Copyright (C) 2001-2006 Jason Winnebeck 
+ * Project website: http://www.gillius.org/gne/
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -20,9 +20,6 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#ifdef OLD_CPP
-#include "OldConsoleStreambuf.h"
-#else
 #include <streambuf>
 
 namespace GNE {
@@ -74,7 +71,19 @@ public:
 protected:
   int sync();
   void flush_output();
+
+#if (_MSC_VER == 1310 )
+  //While still technically correct and valid, it's not quite as robust as the
+  //next line because this makes the assumption on what traits_type is defined
+  //as.
+  int_type overflow(int_type meta = std::char_traits<char>::eof());
+#else
+  //For some reason, in MSVC.NET 2003 alone (not 2002), this line generates
+  //the following error:
+  //error C2653: 'char_traits<char>' : is not a class or namespace name
   int_type overflow(int_type meta = traits_type::eof());
+#endif
+
   std::streamsize xsputn(const char_type *ptr, std::streamsize count);
 
 private:
@@ -87,5 +96,4 @@ private:
 }
 }
 
-#endif //#ifdef OLD_CPP #else
 #endif //#ifndef _CONSOLESTREAMBUF_H_

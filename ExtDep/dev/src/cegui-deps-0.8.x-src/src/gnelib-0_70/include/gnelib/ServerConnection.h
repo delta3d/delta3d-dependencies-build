@@ -2,8 +2,8 @@
 #define SERVERCONNECTION_H_INCLUDED_C4FE6FF3
 
 /* GNE - Game Networking Engine, a portable multithreaded networking library.
- * Copyright (C) 2001 Jason Winnebeck (gillius@mail.rit.edu)
- * Project website: http://www.rit.edu/~jpw9607/
+ * Copyright (C) 2001-2006 Jason Winnebeck 
+ * Project website: http://www.gillius.org/gne/
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -20,10 +20,10 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include "Connection.h"
-#include "Thread.h"
-#include "SmartPtr.h"
-#include "WeakPtr.h"
+#include <gnelib/Connection.h>
+#include <gnelib/Thread.h>
+#include <gnelib/SmartPtr.h>
+#include <gnelib/WeakPtr.h>
 
 namespace GNE {
 class ConnectionListener;
@@ -38,6 +38,12 @@ class ConnectionParams;
  * A GNE "internal" class.  Users will use this class, but probably only as
  * its base class -- a Connection.  This class is created by
  * ServerConnectionListener when incoming connections are comming in.
+ *
+ * The fact that a ServerConnection is a Thread is an implementation detail
+ * and should not be used outside of this class's implementation. Originally
+ * it was private, but this presented a compatibility issue with Boost 1.36.
+ * Long-term, the Thread will be encapsulated as a private object, rather than
+ * inheritance abuse.
  */
 class ServerConnection : public Connection, public Thread {
 protected:
