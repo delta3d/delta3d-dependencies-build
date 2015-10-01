@@ -2,9 +2,14 @@
 
 SET(CMAKE_INCLUDE_CURRENT_DIR 1)
 
-ADD_EXECUTABLE ( b44ExpLogTable
-  b44ExpLogTable.cpp
+SET(SOURCES b44ExpLogTable.cpp)
+cegui_add_executable ( b44ExpLogTable
+   SOURCES
 )
+if (WIN32 AND BUILD_SHARED_LIBS)
+    set_property(TARGET b44ExpLogTable APPEND PROPERTY
+       COMPILE_DEFINITIONS "OPENEXR_DLL")
+endif ()
 
 TARGET_LINK_LIBRARIES ( b44ExpLogTable
   Half
@@ -15,13 +20,17 @@ TARGET_LINK_LIBRARIES ( b44ExpLogTable
 
 ADD_CUSTOM_COMMAND (
   OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/b44ExpLogTable.h
-  COMMAND ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR}/b44ExpLogTable > ${CMAKE_CURRENT_BINARY_DIR}/b44ExpLogTable.h
+  COMMAND b44ExpLogTable > ${CMAKE_CURRENT_BINARY_DIR}/b44ExpLogTable.h
   DEPENDS b44ExpLogTable
 )
-
-ADD_EXECUTABLE ( dwaLookups
-  dwaLookups.cpp
+SET(SOURCES dwaLookups.cpp)
+cegui_add_executable ( dwaLookups
+  SOURCES
 )
+if (WIN32 AND BUILD_SHARED_LIBS)
+    set_property(TARGET dwaLookups APPEND PROPERTY
+       COMPILE_DEFINITIONS "OPENEXR_DLL")
+endif ()
 
 TARGET_LINK_LIBRARIES ( dwaLookups
   Half
@@ -32,7 +41,7 @@ TARGET_LINK_LIBRARIES ( dwaLookups
 
 ADD_CUSTOM_COMMAND (TARGET dwaLookups POST_BUILD
   #OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/dwaLookups.h
-  COMMAND ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR}/dwaLookups > ${CMAKE_CURRENT_BINARY_DIR}/dwaLookups.h
+  COMMAND dwaLookups > ${CMAKE_CURRENT_BINARY_DIR}/dwaLookups.h
   DEPENDS dwaLookups
 )
 
@@ -132,7 +141,7 @@ cegui_add_library(IlmImf ILMIMF_SRCS NONE)
 
 if (WIN32)
     set_property(TARGET IlmImf APPEND PROPERTY
-       COMPILE_DEFINITIONS "ILMIMF_EXPORTS")
+       COMPILE_DEFINITIONS "ILMIMF_EXPORTS" "OPENEXR_DLL")
 endif ()
 
 

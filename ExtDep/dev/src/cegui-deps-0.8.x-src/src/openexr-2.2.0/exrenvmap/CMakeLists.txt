@@ -1,5 +1,9 @@
 # yue.nicholas@gmail.com
 
+IF(BUILD_SHARED_LIBS AND WIN32)
+    ADD_DEFINITIONS("-DOPENEXR_DLL")
+ENDIF()
+
 ADD_EXECUTABLE ( exrenvmap
   makeLatLongMap.cpp
   readInputImage.cpp

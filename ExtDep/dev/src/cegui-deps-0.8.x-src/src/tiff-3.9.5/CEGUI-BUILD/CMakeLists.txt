@@ -38,6 +38,12 @@ if (NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/../libtiff/tif_config.h")
     endif()
 endif()
 
+foreach(_H_FILE ${HEADERS})
+   list(APPEND HEADERS_WITH_PATH "../libtiff/${_H_FILE}")    
+endforeach()
+
+
+SET(SOURCES ${SOURCES} ${HEADERS_WITH_PATH})
 cegui_add_library(${DEPNAME} SOURCES NONE)
 
 target_link_libraries(${DEPNAME} zlib jpeg)

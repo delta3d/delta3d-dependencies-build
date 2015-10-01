@@ -1,6 +1,9 @@
 # yue.nicholas@gmail.com
 
 # IlmImfTest
+IF(BUILD_SHARED_LIBS AND WIN32)
+    ADD_DEFINITIONS("-DOPENEXR_DLL")
+ENDIF()
 
 ADD_EXECUTABLE ( IlmImfTest
   compareB44.cpp

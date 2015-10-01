@@ -1,5 +1,9 @@
 # yue.nicholas@gmail.com
 
+IF(BUILD_SHARED_LIBS)
+    ADD_DEFINITIONS("-DOPENEXR_DLL")
+ENDIF()
+
 ADD_EXECUTABLE ( IlmImfFuzzTest
   fuzzFile.cpp
   main.cpp

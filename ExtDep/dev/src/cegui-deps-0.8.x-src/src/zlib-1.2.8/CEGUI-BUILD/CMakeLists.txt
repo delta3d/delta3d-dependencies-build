@@ -14,10 +14,10 @@ set_target_properties(${DEPNAME} PROPERTIES
 
 if (APPLE)
     set_target_properties(${DEPNAME} PROPERTIES
-        COMPILE_DEFINITIONS Z_HAVE_UNISTD_H)
+        COMPILE_DEFINITIONS HAVE_UNISTD_H)
 
     set_target_properties(${DEPNAME}_static PROPERTIES
-        COMPILE_DEFINITIONS Z_HAVE_UNISTD_H)
+        COMPILE_DEFINITIONS HAVE_UNISTD_H)
 endif()
 
 

@@ -57,8 +57,22 @@
 #define XERCES_U16BIT_INT uint16_t
 #define XERCES_U32BIT_INT uint32_t
 #define XERCES_U64BIT_INT uint64_t
+
 #define XERCES_XMLCH_T uint16_t
+
+
 #define XERCES_SIZE_T size_t
+#ifdef _MSC_VER
+#ifndef _SSIZE_T_DEFINED
+#ifdef  _WIN64
+typedef unsigned __int64    ssize_t;
+#else
+typedef _W64 unsigned int   ssize_t;
+#endif
+#define _SSIZE_T_DEFINED
+#endif
+#endif
+
 #define XERCES_SSIZE_T ssize_t
 
 #define XERCES_HAS_CPP_NAMESPACE
@@ -89,7 +103,11 @@ typedef XERCES_SSIZE_T				XMLSSize_t;
 // ---------------------------------------------------------------------------
 //  Define our version of the XML character
 // ---------------------------------------------------------------------------
-typedef XERCES_XMLCH_T				XMLCh;
+#ifdef _MSC_VER
+typedef wchar_t				XMLCh;
+#else
+typedef XERCES_XMLCH_T    XMLCh;
+#endif
 
 // ---------------------------------------------------------------------------
 //  Define unsigned 16, 32, and 64 bit integers

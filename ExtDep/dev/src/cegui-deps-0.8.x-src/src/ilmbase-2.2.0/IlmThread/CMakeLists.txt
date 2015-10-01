@@ -24,7 +24,7 @@ cegui_add_library(IlmThread SOURCES NONE)
 
 if (WIN32)
     set_property(TARGET IlmThread APPEND PROPERTY
-       COMPILE_DEFINITIONS "ILMTHREAD_EXPORTS")
+       COMPILE_DEFINITIONS "ILMTHREAD_EXPORTS" "OPENEXR_DLL")
 endif ()
 
 

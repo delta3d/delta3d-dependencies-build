@@ -46,7 +46,7 @@ cegui_add_library(Half SOURCES NONE)
 
 if (WIN32)
     set_property(TARGET Half APPEND PROPERTY
-       COMPILE_DEFINITIONS "HALF_EXPORTS")
+       COMPILE_DEFINITIONS "HALF_EXPORTS" "OPENEXR_DLL")
 endif ()
 
 

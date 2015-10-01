@@ -17,7 +17,7 @@ cegui_add_library(IexMath SOURCES NONE)
 
 if (WIN32)
     set_property(TARGET IexMath APPEND PROPERTY
-       COMPILE_DEFINITIONS "IEXMATH_EXPORTS")
+       COMPILE_DEFINITIONS "IEXMATH_EXPORTS" "OPENEXR_DLL")
 endif ()
 
 
