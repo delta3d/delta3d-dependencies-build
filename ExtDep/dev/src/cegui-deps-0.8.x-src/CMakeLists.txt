@@ -146,10 +146,10 @@ option(CEGUI_BUILD_PCRE "Specifies whether to build the pcre library.
 (Required for text validation / restriction within CEGUI::Editbox)" TRUE)
 
 option(CEGUI_BUILD_EXPAT "Specifies whether to build the expat XML parser library.
-(Required to build the CEGUIExpatParser module for CEGUI)" TRUE)
+(Required to build the CEGUIExpatParser module for CEGUI)" FALSE)
 
 option(CEGUI_BUILD_XERCES "Specifies whether to build the xerces-c++ XML parser library.
-(Required to build the CEGUIXercesParser module for CEGUI)" FALSE)
+(Required to build the CEGUIXercesParser module for CEGUI)" TRUE)
 
 option(CEGUI_BUILD_LUA "Specifies whether to build the lua library.
 (Required to build the lua scripting module for CEGUI)" TRUE)
