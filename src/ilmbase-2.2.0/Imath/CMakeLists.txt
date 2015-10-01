@@ -15,22 +15,6 @@ set (SOURCES
   ImathMatrixAlgo.cpp
 )
 
-cegui_add_library(Imath SOURCES NONE)
-
-if (WIN32)
-    set_property(TARGET Imath APPEND PROPERTY
-       COMPILE_DEFINITIONS "IMATH_EXPORTS")
-endif ()
-
-TARGET_LINK_LIBRARIES(Imath Iex)
-
-
-INSTALL ( TARGETS
-  Imath
-  DESTINATION
-  lib
-)
-
 set(HEADERS
   ImathBoxAlgo.h
   ImathBox.h
@@ -65,6 +49,24 @@ set(HEADERS
   ImathSphere.h
   ImathVecAlgo.h
   ImathVec.h
+)
+
+SET(SOURCES ${SOURCES} ${HEADERS})
+
+cegui_add_library(Imath SOURCES NONE)
+
+if (WIN32)
+    set_property(TARGET Imath APPEND PROPERTY
+       COMPILE_DEFINITIONS "IMATH_EXPORTS" "OPENEXR_DLL")
+endif ()
+
+TARGET_LINK_LIBRARIES(Imath Iex)
+
+
+INSTALL ( TARGETS
+  Imath
+  DESTINATION
+  lib
 )
 
 INSTALL ( FILES 

@@ -10,7 +10,7 @@ ADD_EXECUTABLE ( HalfTest
   testLimits.cpp
   testSize.cpp
   )
-
+ADD_DEFINITIONS("-DOPENEXR_DLL")
 TARGET_LINK_LIBRARIES ( HalfTest Half )
 
 ADD_TEST ( TestHalf  HalfTest )

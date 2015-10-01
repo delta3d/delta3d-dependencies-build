@@ -35,6 +35,7 @@
 
 // Windows specific configuration
 #ifdef _WIN32
+    #define NOMINMAX
 
     // By default, assume we're building OpenVDB as a DLL if we're dynamically
     // linking in the CRT, unless OPENVDB_STATICLIB is defined.

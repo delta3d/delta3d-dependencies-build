@@ -133,6 +133,12 @@ FIND_PACKAGE(TBB REQUIRED)
 #the root IS the include
 include_directories(../../ ../../../dependencies/include ${TBB_INCLUDE_DIR} ${Boost_INCLUDE_DIR})
 
+SET(SOURCES ${SOURCES} ${HEADERS})
+
+if (MSVC)
+    SET(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} " /bigobj")
+endif()
+
 cegui_add_library(${DEPNAME} SOURCES NONE)
 target_link_libraries(${DEPNAME} ${TBB_LIBRARIES} Half zlib 
 	${Boost_IOSTREAMS_LIBRARIES} ${Boost_SYSTEM_LIBRARIES} ${Boost_THREAD_LIBRARIES})
@@ -146,7 +152,10 @@ SET_TARGET_PROPERTIES ( ${DEPNAME}
 
 if (MSVC)
     set_property(TARGET ${DEPNAME} APPEND PROPERTY
-       COMPILE_DEFINITIONS "OPENVDB_DLL")
+       COMPILE_DEFINITIONS "OPENVDB_PRIVATE")
+
+    set_property(TARGET ${DEPNAME}_static APPEND PROPERTY
+       COMPILE_DEFINITIONS "OPENVDB_STATICLIB" "OPENVDB_OPENEXR_STATICLIB")
 
 endif ()
 
