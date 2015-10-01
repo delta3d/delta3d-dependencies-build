@@ -334,7 +334,7 @@ if (DELTA3D_BUILD_NL)
 endif()
 
 if (DELTA3D_BUILD_GNE)
-    add_subdirectory(src/gnelib-0_70/CEGUI-BUILD)
+    add_subdirectory(src/gnelib-0_75-trunk/CEGUI-BUILD)
 endif()
 
 if (DELTA3D_BUILD_CAL3D)    
