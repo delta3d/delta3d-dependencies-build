@@ -171,7 +171,7 @@ SET(PCRE_SUPPORT_PCREGREP_JIT ON CACHE BOOL
 SET(PCRE_SUPPORT_UTF ON CACHE BOOL
     "Enable support for Unicode Transformation Format (UTF-8/UTF-16/UTF-32) encoding.")
 
-SET(PCRE_SUPPORT_UNICODE_PROPERTIES OFF CACHE BOOL
+SET(PCRE_SUPPORT_UNICODE_PROPERTIES ON CACHE BOOL
     "Enable support for Unicode properties (if set, UTF support will be enabled as well).")
 
 SET(PCRE_SUPPORT_BSR_ANYCRLF OFF CACHE BOOL
@@ -622,9 +622,9 @@ cegui_add_library(pcre SOURCES NONE)
 # the shared build
 add_dependencies(pcre_static zlib)
 
-foreach(_H_FILE ${HEADERS})
+foreach(_H_FILE ${PCRE_HEADERS} ${PCREPOSIX_HEADERS} ${PCRECPP_HEADERS})
     add_custom_command(TARGET pcre POST_BUILD
-                       COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_SOURCE_DIR}/../${_H_FILE}" "${CMAKE_BINARY_DIR}/dependencies/include/${_H_FILE}")
+                       COMMAND ${CMAKE_COMMAND} -E copy "${_H_FILE}" "${CMAKE_BINARY_DIR}/dependencies/include")
 endforeach()
 
 add_custom_command(TARGET pcre POST_BUILD
