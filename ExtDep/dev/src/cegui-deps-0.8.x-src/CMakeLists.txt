@@ -1,13 +1,13 @@
 cmake_minimum_required(VERSION 2.8)
 include(CMakeDependentOption)
 
-if (NOT APPLE AND NOT WIN32)
-message(FATAL_ERROR
-"This dependency pack is intended for use on Apple OS X and MS Windows only. "
-"For other systems, such as GNU/Linux, please consult your package manager or "
-"distribution maintainer to discover how to install the libraries you wish to "
-"use with CEGUI.  Thanks!")
-endif()
+#if (NOT APPLE AND NOT WIN32)
+#message(FATAL_ERROR
+#"This dependency pack is intended for use on Apple OS X and MS Windows only. "
+#"For other systems, such as GNU/Linux, please consult your package manager or "
+#"distribution maintainer to discover how to install the libraries you wish to "
+#"use with CEGUI.  Thanks!")
+#endif()
 
 SET(CMAKE_MODULE_PATH
 "${CMAKE_SOURCE_DIR};${CMAKE_MODULE_PATH}")
@@ -130,6 +130,13 @@ macro(cegui_add_executable _NAME _SOURCES_VAR)
 
 endmacro()
 
+# only the delta3d dependencies are necessary on linux
+# On linux install boost, gdal, openal, libsilly, libxerces, and libpcre as
+# distro packages.
+# libglm, libglfw, and libglew are not necessary for delta3d, but newer
+# cegui can use them if you want the dependencies
+
+if (APPLE OR WIN32)
 cmake_dependent_option(CEGUI_BUILD_EFFECTS11
 "Specifies whether to build the D3DX11Effects library.
 Source code need to be located at '%DXSDK_DIR%/Samples/C++/Effects11'.
@@ -187,24 +194,27 @@ option(CEGUI_BUILD_GLM "Specifies whether to copy the GLM library headers.
 option(CEGUI_BUILD_TOLUAPP "Specifies whether to build the tolua++ library.
 (Required to build the Lua script module for CEGUI)" TRUE)
 
+endif()
+
 option(DELTA3D_BUILD_ODE "Specifies whether to build the ode library.  DELTA3D" FALSE)
 option(DELTA3D_BUILD_CPPUNIT "Specifies whether to build the cppunit library.  DELTA3D" TRUE)
 option(DELTA3D_BUILD_NL "Specifies whether to build the Hawk NL library.  DELTA3D" TRUE)
 option(DELTA3D_BUILD_GNE "Specifies whether to build the GNE library.  DELTA3D" TRUE)
 option(DELTA3D_BUILD_CAL3D "Specifies whether to build the cal3d library.  DELTA3D" TRUE)
 option(DELTA3D_BUILD_ALUT "Specifies whether to build the alut library. DELTA3D" TRUE)
-option(DELTA3D_BUILD_OPENEXR "Specifies whether to build the openexr library. DELTA3D" TRUE)
+option(DELTA3D_USE_EXTERNAL_OPENEXR "Specifies whether to assume an external openexr dependency. DELTA3D" FALSE)
+cmake_dependent_option(DELTA3D_BUILD_OPENEXR "Specifies whether to build the openexr library. DELTA3D" ON "NOT DELTA3D_USE_EXTERNAL_OPENEXR"  OFF)
 option(DELTA3D_BUILD_OPENVDB "Specifies whether to build the openvdb library. DELTA3D" TRUE)
 
-#if (CEGUI_BUILD_SILLY OR CEGUI_BUILD_CORONA OR CEGUI_BUILD_DEVIL)
+if (CEGUI_BUILD_SILLY OR CEGUI_BUILD_CORONA OR CEGUI_BUILD_DEVIL)
     set(CEGUI_BUILD_LIBPNG TRUE)
     set(CEGUI_BUILD_JPEG TRUE)
-#endif()
+endif()
 
-#if (CEGUI_BUILD_DEVIL)
+if (CEGUI_BUILD_DEVIL)
 	set(CEGUI_BUILD_LIBMNG TRUE)
 	set(CEGUI_BUILD_LIBTIFF TRUE)
-#endif()
+endif()
 
 if (CEGUI_BUILD_PCRE OR CEGUI_BUILD_LIBPNG OR CEGUI_BUILD_LIBTIFF OR CEGUI_BUILD_MINIZIP OR DELTA3D_BUILD_OPENEXR)
     set(CEGUI_BUILD_ZLIB TRUE)
@@ -345,7 +355,7 @@ if (DELTA3D_BUILD_ALUT)
    add_subdirectory(src/freealut-1.1.0-src)
 endif()
 
-if (DELTA3D_BUILD_OPENEXR OR DELTA3D_BUILD_OPENVDB)    
+if (DELTA3D_BUILD_OPENEXR OR (DELTA3D_BUILD_OPENVDB AND NOT DELTA3D_USE_EXTERNAL_OPENEXR))    
    add_subdirectory(src/ilmbase-2.2.0)
    add_subdirectory(src/openexr-2.2.0)
 endif()
