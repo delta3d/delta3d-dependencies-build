@@ -15,12 +15,8 @@ cd dependencies/include
 
 cp -av AL cppunit xercesc ode nl.h gnelib.h gnelib cal3d OpenEXR openvdb pcre* $EXT/include
 
-mv $EXT/include/AL $EXT/include/OpenAL
+#mv $EXT/include/AL $EXT/include/OpenAL
 
 cd ../lib/dynamic
 
 cp -av libopenvdb* libHalf* libIlm* libIex* libImath* libNL.* libalut* libcal3d.* libcppunit.* libgne.* libode.* libxerces-c* libzlib.dylib $EXT/lib
-
-cd ..
-
-cp -av static/libexpat.a static/libfreetype.a static/libglew.a static/libglfw.a static/libjpeg.a static/liblibpng.a static/liblua.a static/libpcre.a static/libSILLY.a  static/libtoluapp.a dynamic/libxerces-c* dynamic/libzlib.* $EXT/src/CEGUI-0.7.9/projects/Xcode/dependencies/lib
