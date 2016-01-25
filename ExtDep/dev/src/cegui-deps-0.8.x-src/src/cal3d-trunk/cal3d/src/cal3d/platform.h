@@ -15,14 +15,17 @@
 // Compiler configuration                                                     //
 //****************************************************************************//
 
-#if defined(_WIN32) && defined(_WIN64) && !defined(__MINGW32__) && !defined(__CYGWIN__)
+#if defined(_WIN32) || defined(_WIN64) && !defined(__MINGW32__) && !defined(__CYGWIN__)
 #pragma warning(disable : 4251)
 #pragma warning(disable : 4786)
 #define snprintf _snprintf
 #endif
 
-#if !defined(_WIN32) && !defined(_WIN32) || defined(__MINGW32__) || defined(__CYGWIN__)
+#if (!defined(_WIN32) && !defined(_WIN64)) || defined(__MINGW32__) || defined(__CYGWIN__)
 #define stricmp strcasecmp
+#endif
+#if defined(_MSC_VER) && _MSC_VER >= 1600
+#define stricmp _stricmp
 #endif
 
 #if defined(_MSC_VER) && _MSC_VER <= 1200
