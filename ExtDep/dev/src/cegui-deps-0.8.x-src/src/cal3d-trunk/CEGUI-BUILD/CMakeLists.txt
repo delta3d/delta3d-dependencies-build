@@ -112,6 +112,8 @@ cegui_add_library(${DEPNAME} SOURCES NONE)
 if (MSVC)
     set_property(TARGET ${DEPNAME} APPEND PROPERTY
        COMPILE_DEFINITIONS "CAL3D_EXPORTS")
+    set_property(TARGET ${DEPNAME}_static APPEND PROPERTY
+       COMPILE_DEFINITIONS "CAL3D_STATIC")
 endif ()
 
 #set_target_properties(${DEPNAME}_static PROPERTIES
@@ -135,3 +137,7 @@ set(SOURCES_CAL3D_CONVERTER
     
 cegui_add_executable(cal3d_converter SOURCES_CAL3D_CONVERTER)
 target_link_libraries(cal3d_converter cal3d_static)
+if (MSVC)
+    set_property(TARGET cal3d_converter APPEND PROPERTY
+       COMPILE_DEFINITIONS "CAL3D_STATIC")
+endif ()

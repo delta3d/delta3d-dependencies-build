@@ -36,7 +36,7 @@ typedef int intptr_t;
 // Dynamic library export setup                                               //
 //****************************************************************************//
 
-#if (defined(_WIN32) || defined(_WIN64))  && !defined(__MINGW32__) && !defined(__CYGWIN__)
+#if !defined (CAL3D_STATIC) && (defined(_WIN32) || defined(_WIN64))  && !defined(__MINGW32__) && !defined(__CYGWIN__)
 
 #ifndef CAL3D_API
 #ifdef CAL3D_EXPORTS
