@@ -13,7 +13,7 @@ GetTiXmlBinding( StlIntVector const &,  StlIntVector const &  )
 #endif
 
 
-#if defined(WIN32) || defined (_WIN64)
+#ifdef _MSC_VER
 #undef TIXML_USE_STL
 #else
 #define TIXML_USE_STL
@@ -95,7 +95,7 @@ ConvertToString<long>(long const & d )
   return buffer;
 }
 
-#ifdef WIN64
+#ifdef _WIN64
 template<>
 char const *
 ConvertToString<unsigned __int64>( unsigned __int64 const & d )
