@@ -24,6 +24,7 @@ ADD_CUSTOM_COMMAND (
   DEPENDS b44ExpLogTable
 )
 SET(SOURCES dwaLookups.cpp)
+INCLUDE_DIRECTORIES(${CMAKE_BINARY_DIR}/dependencies/include)
 cegui_add_executable ( dwaLookups
   SOURCES
 )

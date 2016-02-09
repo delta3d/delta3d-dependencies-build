@@ -272,6 +272,7 @@ ConvertToString( CalIndex const (&vertexId)[2] )
     return outStr.c_str();
 }
 
+
 template <>
 void
 ConvertFromString( char const * inStr, CalIndex (*vertexId)[3] )
